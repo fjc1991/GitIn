@@ -12,8 +12,8 @@ from logger import get_logger
 logger = get_logger(__name__)
 
 # Base paths
-BASE_PROJECTS_PATH = r"crypto_projects_structured"
-MASTER_OUTPUT_DIR = r"/Volumes/nVME1T/block-oss-diff"
+LEGACY_PROJECTS_PATH = r"crypto_projects_structured"
+MASTER_OUTPUT_DIR = r"gitin-done"
 MASTER_TEMP_DIR = os.path.abspath(r"temp")
 
 # Function to ensure directory exists

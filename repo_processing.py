@@ -1,5 +1,4 @@
 import os
-import json
 import shutil
 import traceback
 import gc
@@ -8,6 +7,8 @@ from datetime import datetime, timedelta
 from pydriller import Repository
 import time
 from tqdm import tqdm
+import hashlib
+import json
 
 from logger import get_logger
 from utils import ensure_dir, extract_commit_info
@@ -114,8 +115,9 @@ def process_repo_chunk(repo_url, chunk_start, chunk_end, temp_dir_prefix, output
     repo_name = repo_url.split('/')[-1] if '/' in repo_url else 'unnamed_repo'
     chunk_id = f"{chunk_start.strftime('%Y%m%d') if chunk_start else 'start'}_to_{chunk_end.strftime('%Y%m%d') if chunk_end else 'end'}"
     
-    # Create a temporary directory for this chunk
-    temp_dir = f"{temp_dir_prefix}_{repo_name}_{chunk_id}"
+    # Create a temporary directory for this chunk - SIMPLIFIED PATH
+    repo_hash = hashlib.md5(repo_name.encode()).hexdigest()[:8]
+    temp_dir = os.path.join(temp_dir_prefix, f"{repo_hash}_{chunk_id}")
     ensure_dir(temp_dir)
     
     try:
@@ -240,8 +242,10 @@ def process_single_repo(repo_index, repo, project_name, ecosystem, category, sta
     
     logger.debug(f"Processing {repo_name} from {project_name}")
     
-    # Create subfolder for this repo
-    repo_temp_dir = os.path.join(temp_dir, repo_name)
+    # Create a simpler temp directory path for this repo - SIMPLIFIED PATH
+    # Use a short hash of the repo name to avoid long paths
+    repo_hash = hashlib.md5(repo_name.encode()).hexdigest()[:8]
+    repo_temp_dir = os.path.join(temp_dir, repo_hash)
     ensure_dir(repo_temp_dir)
     
     timeframe = ""
@@ -339,8 +343,10 @@ def process_repo_directly(project_name, repo_url, start_date, end_date, ecosyste
     else:
         timeframe = "full_history"
     
-    # Create a temporary directory for this repository
-    repo_temp_dir = os.path.join(temp_dir, f"{project_name}_{repo_name}")
+    # Create a simpler temporary directory for this repository - SIMPLIFIED PATH
+    # Use a short hash of the repo name to avoid long paths
+    repo_hash = hashlib.md5(repo_name.encode()).hexdigest()[:8]
+    repo_temp_dir = os.path.join(temp_dir, f"{repo_hash}")
     ensure_dir(repo_temp_dir)
     
     # Create output path early

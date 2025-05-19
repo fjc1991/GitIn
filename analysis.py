@@ -1,5 +1,4 @@
 import os
-import json
 import traceback
 import concurrent.futures
 import multiprocessing
@@ -12,6 +11,7 @@ import threading
 import gc
 import psutil
 import subprocess
+import json
 
 from logger import get_logger
 from utils import ensure_dir, extract_commit_info, MASTER_OUTPUT_DIR, MASTER_TEMP_DIR, get_repo_date_range
@@ -21,17 +21,6 @@ from metrics import calculate_process_metrics_optimized, calculate_process_metri
 logger = get_logger(__name__)
 
 def check_output_exists(output_dir, pattern):
-    """
-    Check if output file exists in either JSON or 7z format.
-    This handles cases where previous runs may have used 7z compression.
-    
-    Args:
-        output_dir (str): Directory to check
-        pattern (str): Glob pattern to match files (with or without file extension)
-    
-    Returns:
-        list: List of existing files that match the pattern in either format
-    """
     import glob
     import os
     
@@ -326,12 +315,8 @@ def analyze_repo_timeframe_enhanced(project_name, repo_url, start_year=None, sta
 
 def analyze_organization_repos_enhanced(project_name, ecosystem, repos, start_year=None, start_month=None, 
                                        end_year=None, end_month=None, use_parallel=True, max_workers=None,
-                                       split_large_repos=True, batch_size=1000, memory_limit=85):
-    """
-    Enhanced version of analyze_organization_repos with support for splitting large repositories.
-    Modified to have cleaner console output, better timeout handling, and memory optimization.
-    Also organizes repositories into proper subfolder structure.
-    """
+                                       split_large_repos=True, batch_size=1000, memory_limit=85, output_dir_override=None):
+
     # Determine number of available CPUs for parallel processing
     if max_workers is None:
         max_workers = max(1, min(multiprocessing.cpu_count() - 1, 4))  # Limit workers to avoid memory pressure
@@ -349,178 +334,191 @@ def analyze_organization_repos_enhanced(project_name, ecosystem, repos, start_ye
         else:
             end_date = datetime(end_year, end_month + 1, 1) - timedelta(days=1)
     
-    # Create output directories for each repo category
+    # Create output directories
     if start_date and end_date:
         timeframe = f"{start_date.year}_{start_date.month}_to_{end_date.year}_{end_date.month}"
     else:
         timeframe = "full_history"
     
-    # Group repositories by category (core, organization, other)
-    repos_by_category = {}
-    for repo in repos:
-        category = repo['repo_category']
-        if category not in repos_by_category:
-            repos_by_category[category] = []
-        repos_by_category[category].append(repo)
-    
-    # Import job scheduler for memory-efficient processing
-    try:
-        from memory_scheduler import get_scheduler, process_repos_with_scheduler
-        use_scheduler = True
-        logger.info("Using memory-aware scheduler for repository processing")
-    except ImportError:
-        use_scheduler = False
-        logger.warning("Memory scheduler not available, falling back to standard processing")
-    
-    # Process each category separately
-    for category, category_repos in repos_by_category.items():
-        if not category_repos:
-            continue
-        
-        base_output_dir = os.path.join(MASTER_OUTPUT_DIR, ecosystem, category)
+    # Handle output directory based on whether we have an override
+    if output_dir_override:
+        # If we have an override, use it directly and process all repos together
+        base_output_dir = output_dir_override
         ensure_dir(base_output_dir)
         
-        logger.debug(f"Processing {len(category_repos)} {category} repositories for {project_name}")
+        logger.debug(f"Using override output directory: {base_output_dir}")
         
         # Create a temp directory for this analysis
-        temp_dir_name = f"{project_name}_{category}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        temp_dir_name = f"{project_name}_all_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
         temp_dir = os.path.join(MASTER_TEMP_DIR, temp_dir_name)
         ensure_dir(temp_dir)
         
         try:
-            # Organization specific handling for organization_repos and other_repos
-            if category == 'organization':
-                # For organization_repos, group repos by organization first
-                org_repos = {}
-                for repo in category_repos:
-                    repo_url = repo['repo_url']
-                    org_name = repo.get('org_name')
-                    if not org_name:
-                        # Try to extract org name from URL if not provided
-                        from utils import extract_org_from_url
-                        org_name = extract_org_from_url(repo_url) or "unknown_org"
-                    
-                    if org_name not in org_repos:
-                        org_repos[org_name] = []
-                    
-                    org_repos[org_name].append(repo)
-                
-                # Process each organization's repos separately
-                for org_name, org_specific_repos in org_repos.items():
-                    # Create org-specific output directory
-                    org_output_dir = os.path.join(base_output_dir, org_name)
-                    ensure_dir(org_output_dir)
-                    
-                    # Process this organization's repos
-                    process_repo_group(
-                        project_name, 
-                        ecosystem, 
-                        org_specific_repos, 
-                        org_name,
-                        start_date, 
-                        end_date, 
-                        temp_dir, 
-                        org_output_dir, 
-                        use_parallel, 
-                        max_workers, 
-                        use_scheduler, 
-                        split_large_repos, 
-                        batch_size, 
-                        memory_limit,
-                        timeframe
-                    )
-            
-            elif category == 'other':
-                # For other_repos, group by GitHub organization
-                org_repos = {}
-                for repo in category_repos:
-                    repo_url = repo['repo_url']
-                    # Extract organization name from GitHub URL
-                    from utils import extract_org_from_url
-                    org_name = extract_org_from_url(repo_url) or "unknown_org"
-                    
-                    if org_name not in org_repos:
-                        org_repos[org_name] = []
-                    
-                    org_repos[org_name].append(repo)
-                
-                # Process each GitHub organization's repos separately
-                for org_name, org_specific_repos in org_repos.items():
-                    # Create org-specific output directory
-                    org_output_dir = os.path.join(base_output_dir, org_name)
-                    ensure_dir(org_output_dir)
-                    
-                    # Process this organization's repos
-                    process_repo_group(
-                        project_name, 
-                        ecosystem, 
-                        org_specific_repos, 
-                        org_name,
-                        start_date, 
-                        end_date, 
-                        temp_dir, 
-                        org_output_dir, 
-                        use_parallel, 
-                        max_workers, 
-                        use_scheduler, 
-                        split_large_repos, 
-                        batch_size, 
-                        memory_limit,
-                        timeframe
-                    )
-            
-            else:
-                # For core repos, process using the base output directory
-                process_repo_group(
-                    project_name, 
-                    ecosystem, 
-                    category_repos, 
-                    category,
-                    start_date, 
-                    end_date, 
-                    temp_dir, 
-                    base_output_dir, 
-                    use_parallel, 
-                    max_workers, 
-                    use_scheduler, 
-                    split_large_repos, 
-                    batch_size, 
-                    memory_limit,
-                    timeframe
-                )
-        
+            # Process all repositories together
+            process_repo_group(
+                project_name, 
+                ecosystem, 
+                repos,  # Process all repos together 
+                "all",  # Group name
+                start_date, 
+                end_date, 
+                temp_dir, 
+                base_output_dir,  # Use the override directory
+                use_parallel, 
+                max_workers, 
+                False,  # Don't use scheduler with override
+                split_large_repos, 
+                batch_size, 
+                memory_limit,
+                timeframe
+            )
         except Exception as e:
-            logger.error(f"Error analyzing {project_name} {category} repositories: {str(e)}")
+            logger.error(f"Error analyzing {project_name} repositories: {str(e)}")
             logger.debug(traceback.format_exc())
         finally:
             # Clean up temp directory
             if os.path.exists(temp_dir):
                 import shutil
                 shutil.rmtree(temp_dir, ignore_errors=True)
+    else:
+        # Original implementation - group repositories by category
+        repos_by_category = {}
+        for repo in repos:
+            category = repo['repo_category']
+            if category not in repos_by_category:
+                repos_by_category[category] = []
+            repos_by_category[category].append(repo)
+        
+        # Process each category separately
+        for category, category_repos in repos_by_category.items():
+            if not category_repos:
+                continue
+            
+            base_output_dir = os.path.join(MASTER_OUTPUT_DIR, ecosystem, category)
+            ensure_dir(base_output_dir)
+            
+            logger.debug(f"Processing {len(category_repos)} {category} repositories for {project_name}")
+            
+            # Create a temp directory for this analysis
+            temp_dir_name = f"{project_name}_{category}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+            temp_dir = os.path.join(MASTER_TEMP_DIR, temp_dir_name)
+            ensure_dir(temp_dir)
+            
+            try:
+                # Organization specific handling for organization_repos and other_repos
+                if category == 'organization':
+                    # For organization_repos, group repos by organization first
+                    org_repos = {}
+                    for repo in category_repos:
+                        repo_url = repo['repo_url']
+                        org_name = repo.get('org_name')
+                        if not org_name:
+                            # Try to extract org name from URL if not provided
+                            from utils import extract_org_from_url
+                            org_name = extract_org_from_url(repo_url) or "unknown_org"
+                        
+                        if org_name not in org_repos:
+                            org_repos[org_name] = []
+                        
+                        org_repos[org_name].append(repo)
+                    
+                    # Process each organization's repos separately
+                    for org_name, org_specific_repos in org_repos.items():
+                        # Create org-specific output directory
+                        org_output_dir = os.path.join(base_output_dir, org_name)
+                        ensure_dir(org_output_dir)
+                        
+                        # Process this organization's repos
+                        process_repo_group(
+                            project_name, 
+                            ecosystem, 
+                            org_specific_repos, 
+                            org_name,
+                            start_date, 
+                            end_date, 
+                            temp_dir, 
+                            org_output_dir, 
+                            use_parallel, 
+                            max_workers, 
+                            True,  # Use scheduler for organization-level processing
+                            split_large_repos, 
+                            batch_size, 
+                            memory_limit,
+                            timeframe
+                        )
+                
+                elif category == 'other':
+                    # For other_repos, group by GitHub organization
+                    org_repos = {}
+                    for repo in category_repos:
+                        repo_url = repo['repo_url']
+                        # Extract organization name from GitHub URL
+                        from utils import extract_org_from_url
+                        org_name = extract_org_from_url(repo_url) or "unknown_org"
+                        
+                        if org_name not in org_repos:
+                            org_repos[org_name] = []
+                        
+                        org_repos[org_name].append(repo)
+                    
+                    # Process each GitHub organization's repos separately
+                    for org_name, org_specific_repos in org_repos.items():
+                        # Create org-specific output directory
+                        org_output_dir = os.path.join(base_output_dir, org_name)
+                        ensure_dir(org_output_dir)
+                        
+                        # Process this organization's repos
+                        process_repo_group(
+                            project_name, 
+                            ecosystem, 
+                            org_specific_repos, 
+                            org_name,
+                            start_date, 
+                            end_date, 
+                            temp_dir, 
+                            org_output_dir, 
+                            use_parallel, 
+                            max_workers, 
+                            True,  # Use scheduler for organization-level processing
+                            split_large_repos, 
+                            batch_size, 
+                            memory_limit,
+                            timeframe
+                        )
+                
+                else:
+                    # For core repos, process using the base output directory
+                    process_repo_group(
+                        project_name, 
+                        ecosystem, 
+                        category_repos, 
+                        category,
+                        start_date, 
+                        end_date, 
+                        temp_dir, 
+                        base_output_dir, 
+                        use_parallel, 
+                        max_workers, 
+                        True,  # Use scheduler for core-level processing
+                        split_large_repos, 
+                        batch_size, 
+                        memory_limit,
+                        timeframe
+                    )
+            
+            except Exception as e:
+                logger.error(f"Error analyzing {project_name} {category} repositories: {str(e)}")
+                logger.debug(traceback.format_exc())
+            finally:
+                # Clean up temp directory
+                if os.path.exists(temp_dir):
+                    import shutil
+                    shutil.rmtree(temp_dir, ignore_errors=True)
 
 def process_repo_group(project_name, ecosystem, repos, group_name, start_date, end_date, 
                    temp_dir, output_dir, use_parallel, max_workers, use_scheduler, 
                    split_large_repos, batch_size, memory_limit, timeframe):
-    """
-    Process a group of repositories and save the results to the specified output directory.
-    
-    Args:
-        project_name (str): Name of the project
-        ecosystem (str): Ecosystem name
-        repos (list): List of repository dictionaries
-        group_name (str): Name of the group (organization name or category)
-        start_date (datetime): Start date for analysis
-        end_date (datetime): End date for analysis
-        temp_dir (str): Temporary directory path
-        output_dir (str): Output directory path
-        use_parallel (bool): Whether to use parallel processing
-        max_workers (int): Maximum number of worker processes
-        use_scheduler (bool): Whether to use memory scheduler
-        split_large_repos (bool): Whether to split large repositories
-        batch_size (int): Batch size for commit processing
-        memory_limit (int): Memory usage limit percentage
-        timeframe (str): Timeframe identifier string
-    """
+
     # Initialize combined metrics dictionaries
     combined_metrics = {
         "combined_summary": {
@@ -533,12 +531,12 @@ def process_repo_group(project_name, ecosystem, repos, group_name, start_date, e
         "weekly_metrics": {}
     }
     
-    # Process repositories in parallel or sequentially
     all_repo_results = []
     failed_repos = []
 
     # --- Pre-check: filter out missing/private repos (parallelized) ---
     import subprocess
+    import hashlib
     from concurrent.futures import ThreadPoolExecutor, as_completed
 
     def check_access(repo):
@@ -586,12 +584,14 @@ def process_repo_group(project_name, ecosystem, repos, group_name, start_date, e
             max_workers=max_workers
         )
     else:
-        # Sequentially process accessible repos
         for i, repo in enumerate(accessible_repos):
             repo_url = repo['repo_url']
             repo_name = repo_url.split('/')[-1] if '/' in repo_url else f"repo_{i}"
 
-            # Check for existing output file
+            repo_hash = hashlib.md5(repo_name.encode()).hexdigest()[:8]
+            repo_temp_dir = os.path.join(temp_dir, repo_hash)
+            ensure_dir(repo_temp_dir)
+
             output_pattern = os.path.join(
                 output_dir, f"{project_name}_{repo_name}_*_analysis"
             )
@@ -600,10 +600,8 @@ def process_repo_group(project_name, ecosystem, repos, group_name, start_date, e
                 logger.info(f"Skipping already completed repo: {repo_name} (output exists: {os.path.basename(existing_files[0])})")
                 continue
 
-            # Check memory pressure before starting new repository
             if check_memory_pressure(memory_limit):
                 logger.warning(f"Memory pressure before processing {repo_name}, waiting...")
-                # Wait until memory drops below threshold - 5%
                 while get_memory_usage() > memory_limit - 5:
                     time.sleep(2)
                     gc.collect()
@@ -617,17 +615,16 @@ def process_repo_group(project_name, ecosystem, repos, group_name, start_date, e
                     repo,
                     project_name,
                     ecosystem,
-                    group_name,  # Use group_name as category
+                    group_name,
                     start_date,
                     end_date,
-                    temp_dir,
+                    repo_temp_dir,
                     output_dir,
                     batch_size=batch_size,
                     memory_limit=memory_limit
                 )
                 logger.debug(f"Finished process_single_repo for {repo_name}")
                 
-                # Force garbage collection after each repo
                 gc.collect()
             except Exception as e:
                 logger.error(f"Exception in process_single_repo for {repo_name}: {str(e)}")
@@ -640,10 +637,9 @@ def process_repo_group(project_name, ecosystem, repos, group_name, start_date, e
             else:
                 all_repo_results.append(repo_result)
 
-    # After processing all repos, combine results
-    # Initialize file for combined output
     combined_output_filename = f"{project_name}_{group_name}_combined_{timeframe}_analysis.json"
     combined_output_path = os.path.join(output_dir, combined_output_filename)
+    
     
     with open(combined_output_path, 'w') as f:
         f.write('{\n')
