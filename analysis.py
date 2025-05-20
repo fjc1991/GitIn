@@ -77,11 +77,6 @@ def check_memory_pressure(threshold=85):
 def analyze_repo_timeframe_enhanced(project_name, repo_url, start_year=None, start_month=None, end_year=None, end_month=None, 
                                   ecosystem=None, repo_category=None, calculate_weekly=True, split_large_repos=True, 
                                   max_workers=None, batch_size=1000, memory_limit=85):
-    """
-    Enhanced version of analyze_repo_timeframe with support for splitting large repositories.
-    Optimized for lower memory usage through streaming processing.
-    """
-    # Determine number of available CPUs for parallel processing
     if max_workers is None:
         max_workers = max(1, multiprocessing.cpu_count() - 1)
     
@@ -173,7 +168,6 @@ def analyze_repo_timeframe_enhanced(project_name, repo_url, start_year=None, sta
         repository = Repository(**repo_args)
 
         # --- Chunk-based processing for large repos ---
-        # Estimate repo size and decide on chunking
         from repo_processing import estimate_repo_size, split_date_range, process_repo_chunk, merge_commit_results
         estimated_commits, should_split = estimate_repo_size(repo_url, temp_dir, start_date, end_date)
 
