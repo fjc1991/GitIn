@@ -8,20 +8,16 @@ import sys
 import time
 import json
 
-from logger import get_logger
-from utils import ensure_dir, cleanup_temp_dirs, MASTER_OUTPUT_DIR, CACHE_DIR, get_file_hash, load_file_cache, save_file_cache, get_repo_path
-from project_finder import find_all_projects  # Use the existing, but updated project_finder
-from analysis import analyze_organization_repos_enhanced
-from file_filters import should_analyze_file
+# Update imports to use src module
+from src.logger import get_logger
+from src.utils import ensure_dir, cleanup_temp_dirs, MASTER_OUTPUT_DIR, CACHE_DIR, get_file_hash, load_file_cache, save_file_cache, get_repo_path
+from src.project_finder import find_all_projects
+from src.analysis import analyze_organization_repos_enhanced
+from src.file_filters import should_analyze_file
 from tqdm import tqdm
 
-# Set up logger for this module
 logger = get_logger(__name__)
-
-# Increase recursion limit significantly to handle deep call stacks
 sys.setrecursionlimit(100000)
-
-# Path for tracking completed usernames
 COMPLETED_USERS_FILE = os.path.join(MASTER_OUTPUT_DIR, 'completed_users.json')
 
 def load_completed_users():
