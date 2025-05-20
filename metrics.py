@@ -396,26 +396,10 @@ def calculate_process_metrics_optimized(repo_url, repo_path, since=None, to=None
                 traceback.print_exc()
         
         return weekly_metrics
+    
 
 def calculate_process_metrics_stream(repo_url, repo_path, since=None, to=None, calculate_weekly=True, use_parallel=True, max_workers=4, memory_limit=85):
-    """
-    Memory-efficient version of calculate_process_metrics that processes the repository
-    in a streaming fashion without storing all commits in memory.
-    
-    Args:
-        repo_url (str): URL of the repository
-        repo_path (str): Local path to the repository
-        since (datetime, optional): Start date for analysis. If None, analyze entire history.
-        to (datetime, optional): End date for analysis. If None, analyze entire history.
-        calculate_weekly (bool): Whether to calculate metrics on a weekly basis
-        use_parallel (bool): Whether to use parallel processing for weekly metrics
-        max_workers (int): Maximum number of parallel workers
-        memory_limit (int): Memory percentage threshold for limiting processing
-    
-    Returns:
-        Dictionary containing metrics data.
-    """
-    # Handle case when dates are not provided but weekly metrics are requested
+
     if calculate_weekly and (since is None or to is None):
         logger.info("No date range provided. Determining repository date range for weekly metrics...")
         start_date, end_date = get_repo_date_range(repo_url, repo_path)
@@ -428,19 +412,21 @@ def calculate_process_metrics_stream(repo_url, repo_path, since=None, to=None, c
             logger.info("Could not determine repository date range. Falling back to overall metrics.")
             calculate_weekly = False
     
-    # Initialize repository
+    if since and since.tzinfo:
+        since = since.replace(tzinfo=None)
+    if to and to.tzinfo:
+        to = to.replace(tzinfo=None)
+
     repo_args = {'path_to_repo': repo_url}
     if since is not None:
         repo_args['since'] = since
     if to is not None:
         repo_args['to'] = to
     
-    # Generate weekly ranges if needed
     weekly_ranges = []
     if calculate_weekly:
         weekly_ranges = generate_weekly_ranges(since, to)
     
-    # Define internal classes to manage state efficiently
     class MetricsAccumulator:
         def __init__(self):
             self.file_changes = {}
@@ -453,46 +439,38 @@ def calculate_process_metrics_stream(repo_url, repo_path, since=None, to=None, c
             self.lines_removed_by_file = {}
             
         def update_from_modified_file(self, filename, modified_file, author_name):
-            # Update file changes
             if filename not in self.file_changes:
                 self.file_changes[filename] = 0
             self.file_changes[filename] += 1
             
-            # Update code churn
             if filename not in self.code_churn:
                 self.code_churn[filename] = 0
             file_churn = modified_file.added_lines + modified_file.deleted_lines
             self.code_churn[filename] += file_churn
             
-            # Update commits by file
             if filename not in self.commits_by_file:
                 self.commits_by_file[filename] = 0
             self.commits_by_file[filename] += 1
             
-            # Update contributors by file
             if filename not in self.contributors_by_file:
                 self.contributors_by_file[filename] = set()
             self.contributors_by_file[filename].add(author_name)
             
-            # Update commit counts per author per file
             if filename not in self.contributors_commit_count:
                 self.contributors_commit_count[filename] = {}
             if author_name not in self.contributors_commit_count[filename]:
                 self.contributors_commit_count[filename][author_name] = 0
             self.contributors_commit_count[filename][author_name] += 1
             
-            # Update hunks by file
             if filename not in self.hunks_by_file:
                 self.hunks_by_file[filename] = 0
             if hasattr(modified_file, 'diff_parsed') and modified_file.diff_parsed:
                 self.hunks_by_file[filename] += len(modified_file.diff_parsed.get('added', [])) + len(modified_file.diff_parsed.get('deleted', []))
             
-            # Update lines added by file
             if filename not in self.lines_added_by_file:
                 self.lines_added_by_file[filename] = 0
             self.lines_added_by_file[filename] += modified_file.added_lines
-            
-            # Update lines removed by file
+
             if filename not in self.lines_removed_by_file:
                 self.lines_removed_by_file[filename] = 0
             self.lines_removed_by_file[filename] += modified_file.deleted_lines
@@ -500,43 +478,42 @@ def calculate_process_metrics_stream(repo_url, repo_path, since=None, to=None, c
     # Create accumulators
     overall_accumulator = MetricsAccumulator()
     weekly_accumulators = {week_label: MetricsAccumulator() for _, _, week_label in weekly_ranges}
-    
-    # Process repository one commit at a time
     logger.info("Traversing repository to collect metrics...")
+
     try:
-        # Count total commits for progress reporting
         total_commits = 0
         repository = Repository(**repo_args)
         for _ in repository.traverse_commits():
             total_commits += 1
         
-        # If no commits, return empty metrics
         if total_commits == 0:
             logger.info("No commits found in the repository for the given time period.")
             return {}
-        
-        # Reset repository for processing
+            
         repository = Repository(**repo_args)
         
-        # Process each commit
         processed_commits = 0
         with tqdm(total=total_commits, desc="Processing commits for metrics", unit="commit") as pbar:
             for commit in repository.traverse_commits():
-                # Check for memory pressure periodically
+
                 if processed_commits % 100 == 0 and check_memory_pressure(memory_limit):
                     logger.warning(f"Memory pressure during metrics calculation at {processed_commits}/{total_commits}, waiting...")
-                    # Wait until memory drops below threshold - 5%
+
                     while get_memory_usage() > memory_limit - 5:
                         import time
                         time.sleep(2)
                         gc.collect()
                 
-                # Determine week if calculating weekly metrics
                 week_label = None
                 if calculate_weekly:
                     commit_date = commit.author_date
+                    if commit_date.tzinfo:
+                        commit_date_naive = commit_date.replace(tzinfo=None)
+                    else:
+                        commit_date_naive = commit_date
+                    
                     for start_date, end_date, label in weekly_ranges:
-                        if start_date <= commit_date <= end_date:
+                        if start_date <= commit_date_naive <= end_date:
                             week_label = label
                             break
                 
@@ -545,11 +522,8 @@ def calculate_process_metrics_stream(repo_url, repo_path, since=None, to=None, c
                 # Process each modified file
                 for modified_file in commit.modified_files:
                     filename = modified_file.filename
-                    
-                    # Update overall metrics
                     overall_accumulator.update_from_modified_file(filename, modified_file, author_name)
-                    
-                    # Update weekly metrics if needed
+
                     if calculate_weekly and week_label:
                         weekly_accumulators[week_label].update_from_modified_file(filename, modified_file, author_name)
                 
@@ -559,33 +533,26 @@ def calculate_process_metrics_stream(repo_url, repo_path, since=None, to=None, c
                 
                 pbar.update(1)
                 
-                # Free up memory periodically
                 if processed_commits % 1000 == 0:
                     gc.collect()
     except Exception as e:
         logger.debug(f"Error traversing repository: {str(e)}")
         traceback.print_exc()
-        # Return partial results if we have any
         if not overall_accumulator.file_changes:
             return {}
     
     # Convert collected data to metrics format
     if not calculate_weekly:
-        # Calculate overall metrics
         return _convert_accumulator_to_metrics(overall_accumulator)
     else:
-        # Calculate weekly metrics
         weekly_metrics = {}
-        
-        # Process each week
         logger.debug(f"Calculating metrics for {len(weekly_accumulators)} weeks...")
+
         for week_label, accumulator in weekly_accumulators.items():
             weekly_metrics[week_label] = _convert_accumulator_to_metrics(accumulator)
-        
         return weekly_metrics
 
 def _convert_accumulator_to_metrics(accumulator):
-    """Helper function to convert an accumulator to metrics format."""
     metrics_result = {}
     
     # Change Set metrics
