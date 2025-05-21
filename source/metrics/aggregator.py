@@ -18,14 +18,15 @@ from .productivity import (
 from .quality import (
     EnhancedCodeChurn,
     BugsMetric,
-    CodeMovementMetric
+    CodeMovementMetric,
+    QualityCornerstonesMetric
 )
 
 from ..utils import get_repo_date_range
 
 logger = get_logger(__name__)
 
-def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly=True, memory_limit=85):
+def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly=True, memory_limit=95):
     """
     Calculate process metrics using the class-based approach.
     """
@@ -64,7 +65,8 @@ def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly
         "quality": {
             "code_churn": EnhancedCodeChurn(),
             "bugs": BugsMetric(),
-            "code_movement": CodeMovementMetric()
+            "code_movement": CodeMovementMetric(),
+            "test_doc_pct": QualityCornerstonesMetric()
         }
     }
     
@@ -83,7 +85,8 @@ def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly
                 "quality": {
                     "code_churn": EnhancedCodeChurn(),
                     "bugs": BugsMetric(),
-                    "code_movement": CodeMovementMetric()
+                    "code_movement": CodeMovementMetric(),
+                    "test_doc_pct": QualityCornerstonesMetric()
                 }
             }
     
@@ -175,7 +178,6 @@ def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly
         return weekly_results
 
 def merge_metrics_results(all_chunk_results):
-    # Updated to handle the new nested structure
     merged_metrics = {}
     metrics_by_week = {}
     
@@ -218,14 +220,21 @@ def merge_metrics_results(all_chunk_results):
                     "hunks_count": HunksMetric,
                     "lines_count": LinesMetric,
                     "bugs": BugsMetric,
-                    "code_movement": CodeMovementMetric
+                    "code_movement": CodeMovementMetric,
+                    "test_doc_pct": QualityCornerstonesMetric  # Pass class, not instance
                 }
                 
                 if metric_type in metric_class_map:
-                    if metric_type == "contributors_experience":
-                        # Special case for contributors experience
-                        merged_metrics[week][category][metric_type] = ContributorsMetric.merge_experience_metrics(metrics_list)
-                    else:
-                        merged_metrics[week][category][metric_type] = metric_class_map[metric_type].merge_metrics(metrics_list)
+                    try:
+                        if metric_type == "contributors_experience":
+                            # Special case for contributors experience
+                            merged_metrics[week][category][metric_type] = ContributorsMetric.merge_experience_metrics(metrics_list)
+                        else:
+                            merged_metrics[week][category][metric_type] = metric_class_map[metric_type].merge_metrics(metrics_list)
+                    except Exception as e:
+                        logger.error(f"Error merging metric type {metric_type} for week {week}, category {category}: {str(e)}")
+                        logger.debug(traceback.format_exc())
+                        # Store empty/default for this metric to avoid crashing
+                        merged_metrics[week][category][metric_type] = metric_class_map[metric_type].merge_metrics([])
     
     return merged_metrics
