@@ -1,5 +1,4 @@
 from .change_set import ChangeSetMetric
-from .code_churn import EnhancedCodeChurn
 from .commits import CommitsMetric
 from .contributors import ContributorsMetric
 from .hunks import HunksMetric
@@ -12,7 +11,6 @@ __all__ = [
     
     # Metric classes
     'ChangeSetMetric',
-    'EnhancedCodeChurn',
     'CommitsMetric',
     'ContributorsMetric',
     'HunksMetric',

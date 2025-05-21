@@ -4,7 +4,7 @@ from collections import defaultdict
 import statistics
 from pydriller import ModificationType
 import re
-from .base import BaseMetric
+from ..productivity.base import BaseMetric
 
 logger = get_logger(__name__)
 

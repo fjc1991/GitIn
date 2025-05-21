@@ -196,9 +196,9 @@ def analyze_all_projects(folder_filter=None, csv_path=USERS, start_year=None,
     
     total_time = time.time() - start_time
     logger.info("\n" + "="*80)
-    logger.info("🎉 ANALYSIS COMPLETE!")
-    logger.info(f"✅ Successfully processed {total_users} users")
-    logger.info(f"⏱️  Total processing time: {total_time:.2f}s")
+    logger.info("ANALYSIS COMPLETE!")
+    logger.info(f"Successfully processed {total_users} users")
+    logger.info(f"Total processing time: {total_time:.2f}s")
     logger.info("="*80)
     
     # Final cleanup of all temporary files

@@ -1,5 +1,6 @@
 from ...logger import get_logger
 from .base import BaseMetric
+from pydriller import ModificationType
 
 logger = get_logger(__name__)
 
@@ -7,52 +8,50 @@ class ContributorsMetric(BaseMetric):
     def __init__(self):
         super().__init__()
         self.contributors_by_file = {}
-        self.contributors_commit_count = {}
-        self.commits_by_file = {}
+        self.lines_by_author = {}
+        self.renamed_files = {}
     
     def process_commit(self, commit):
-        """Process a single commit and update metrics"""
-        author_name = commit.author.name
+        author_email = commit.author.email.strip()
         
         for modified_file in commit.modified_files:
-            self.process_modified_file(modified_file.filename, modified_file, author_name, commit.committer_date)
+            self.process_modified_file(modified_file, author_email, commit.committer_date)
             
         return self
     
-    def process_modified_file(self, filename, modified_file, author_name, commit_date):
+    def process_modified_file(self, modified_file, author_email, commit_date):
         """Process a single modified file and update metrics"""
-        # Update contributors by file
-        if filename not in self.contributors_by_file:
-            self.contributors_by_file[filename] = set()
-        self.contributors_by_file[filename].add(author_name)
+        filepath = self.renamed_files.get(modified_file.new_path, modified_file.new_path)
         
-        # Update contributor commit counts
-        if filename not in self.contributors_commit_count:
-            self.contributors_commit_count[filename] = {}
-        if author_name not in self.contributors_commit_count[filename]:
-            self.contributors_commit_count[filename][author_name] = 0
-        self.contributors_commit_count[filename][author_name] += 1
+        if modified_file.change_type == ModificationType.RENAME:
+            self.renamed_files[modified_file.old_path] = filepath
+
+        lines_authored = modified_file.added_lines + modified_file.deleted_lines
+
+        if filepath not in self.contributors_by_file:
+            self.contributors_by_file[filepath] = set()
+        self.contributors_by_file[filepath].add(author_email)
         
-        # Update commits by file for threshold calculations
-        if filename not in self.commits_by_file:
-            self.commits_by_file[filename] = 0
-        self.commits_by_file[filename] += 1
+        # Fix the KeyError by properly initializing the nested dictionary
+        if filepath not in self.lines_by_author:
+            self.lines_by_author[filepath] = {}
+        if author_email not in self.lines_by_author[filepath]:
+            self.lines_by_author[filepath][author_email] = 0
+        self.lines_by_author[filepath][author_email] += lines_authored
         
         return self
     
     def get_metrics(self):
-        """Get the calculated metrics"""
-        # Calculate total contributor count per file
-        contributors_count = {filename: len(authors) for filename, authors in self.contributors_by_file.items()}
-        
-        # Calculate minor contributors (using 20% threshold)
+        contributors_count = {}
         minor_contributors = {}
-        for filename, author_commits in self.contributors_commit_count.items():
-            if filename in self.commits_by_file and self.commits_by_file[filename] > 0:
-                total_commits = self.commits_by_file[filename]
-                threshold = max(1, total_commits * 0.2)
-                minor_count = sum(1 for commits in author_commits.values() if commits < threshold)
-                minor_contributors[filename] = minor_count
+
+        for filepath, contributions in list(self.lines_by_author.items()):
+            total = sum(contributions.values())
+            if total == 0:
+                continue
+            
+            contributors_count[filepath] = len(contributions)
+            minor_contributors[filepath] = sum(1 for v in contributions.values() if v/total < 0.05)
         
         return {
             "total": contributors_count,
@@ -60,12 +59,10 @@ class ContributorsMetric(BaseMetric):
         }
     
     def get_experience_metrics(self):
-        """Get contributors experience metrics"""
         return {filename: len(authors) for filename, authors in self.contributors_by_file.items()}
     
     @staticmethod
     def merge_metrics(metrics_list):
-        """Merge multiple metrics results into one"""
         if not metrics_list:
             return {
                 "total": {},
@@ -81,7 +78,6 @@ class ContributorsMetric(BaseMetric):
             for filename, count in total_metrics.items():
                 if filename not in merged_total:
                     merged_total[filename] = 0
-                # Take the maximum count as approximation when merging
                 merged_total[filename] = max(merged_total[filename], count)
         
         # Merge minor contributors
@@ -90,7 +86,6 @@ class ContributorsMetric(BaseMetric):
             for filename, count in minor_metrics.items():
                 if filename not in merged_minor:
                     merged_minor[filename] = 0
-                # Sum minor contributors to approximate when merging
                 merged_minor[filename] += count
         
         return {
@@ -100,7 +95,6 @@ class ContributorsMetric(BaseMetric):
     
     @staticmethod
     def merge_experience_metrics(metrics_list):
-        """Merge contributors experience metrics"""
         if not metrics_list:
             return {}
         

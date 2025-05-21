@@ -1,5 +1,6 @@
 from ...logger import get_logger
 from .base import BaseMetric
+from pydriller import ModificationType
 
 logger = get_logger(__name__)
 
@@ -7,18 +8,22 @@ class CommitsMetric(BaseMetric):
     def __init__(self):
         super().__init__()
         self.commits_by_file = {}
+        self.renamed_files = {}  # Track renamed files
     
     def process_commit(self, commit):
-        """Process a single commit and update metrics"""
         for modified_file in commit.modified_files:
-            self.process_modified_file(modified_file.filename, modified_file, commit.author.name, commit.committer_date)
+            self.process_modified_file(modified_file, commit.author.name, commit.committer_date)
         return self
     
-    def process_modified_file(self, filename, modified_file, author_name, commit_date):
-        """Process a single modified file and update metrics"""
-        if filename not in self.commits_by_file:
-            self.commits_by_file[filename] = 0
-        self.commits_by_file[filename] += 1
+    def process_modified_file(self, modified_file, author_name, commit_date):
+        filepath = self.renamed_files.get(modified_file.new_path, modified_file.new_path)
+        
+        if modified_file.change_type == ModificationType.RENAME:
+            self.renamed_files[modified_file.old_path] = filepath
+        
+        if filepath not in self.commits_by_file:
+            self.commits_by_file[filepath] = 0
+        self.commits_by_file[filepath] += 1
         return self
     
     def get_metrics(self):

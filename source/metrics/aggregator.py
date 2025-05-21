@@ -7,13 +7,18 @@ from pydriller import Repository
 from ..logger import get_logger
 from ..memory_scheduler import check_memory_pressure, wait_for_memory_availability
 from .utils import generate_weekly_ranges
-from .types import (
+# Updated imports with new folder structure
+from .productivity import (
     ChangeSetMetric,
-    EnhancedCodeChurn,
     CommitsMetric,
     ContributorsMetric,
     HunksMetric,
     LinesMetric
+)
+from .quality import (
+    EnhancedCodeChurn,
+    BugsMetric,
+    CodeMovementMetric
 )
 
 from ..utils import get_repo_date_range
@@ -47,14 +52,20 @@ def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly
     if to is not None:
         repo_args['to'] = to
     
-    # Initialize all metric calculators
+    # Initialize all metric calculators, organized by category
     overall_metrics = {
-        "change_set": ChangeSetMetric(),
-        "code_churn": EnhancedCodeChurn(),
-        "commits_count": CommitsMetric(),
-        "contributors": ContributorsMetric(),
-        "hunks_count": HunksMetric(),
-        "lines_count": LinesMetric()
+        "productivity": {
+            "change_set": ChangeSetMetric(),
+            "commits_count": CommitsMetric(),
+            "contributors": ContributorsMetric(),
+            "hunks_count": HunksMetric(),
+            "lines_count": LinesMetric()
+        },
+        "quality": {
+            "code_churn": EnhancedCodeChurn(),
+            "bugs": BugsMetric(),
+            "code_movement": CodeMovementMetric()
+        }
     }
     
     weekly_metrics = {}
@@ -62,12 +73,18 @@ def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly
         weekly_ranges = generate_weekly_ranges(since, to)
         for _, _, week_label in weekly_ranges:
             weekly_metrics[week_label] = {
-                "change_set": ChangeSetMetric(),
-                "code_churn": EnhancedCodeChurn(),
-                "commits_count": CommitsMetric(),
-                "contributors": ContributorsMetric(),
-                "hunks_count": HunksMetric(),
-                "lines_count": LinesMetric()
+                "productivity": {
+                    "change_set": ChangeSetMetric(),
+                    "commits_count": CommitsMetric(),
+                    "contributors": ContributorsMetric(),
+                    "hunks_count": HunksMetric(),
+                    "lines_count": LinesMetric()
+                },
+                "quality": {
+                    "code_churn": EnhancedCodeChurn(),
+                    "bugs": BugsMetric(),
+                    "code_movement": CodeMovementMetric()
+                }
             }
     
     logger.info("Traversing repository to collect metrics...")
@@ -104,13 +121,15 @@ def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly
                             week_label = label
                             break
                 
-                # Process this commit with all metric calculators
-                for metric_calculator in overall_metrics.values():
-                    metric_calculator.process_commit(commit)
+                # Process this commit with all metric calculators (updated for nested structure)
+                for category in overall_metrics:
+                    for metric_calculator in overall_metrics[category].values():
+                        metric_calculator.process_commit(commit)
                 
                 if calculate_weekly and week_label:
-                    for metric_calculator in weekly_metrics[week_label].values():
-                        metric_calculator.process_commit(commit)
+                    for category in weekly_metrics[week_label]:
+                        for metric_calculator in weekly_metrics[week_label][category].values():
+                            metric_calculator.process_commit(commit)
                 
                 processed_commits += 1
                 if processed_commits % 100 == 0 or processed_commits == total_commits:
@@ -125,29 +144,38 @@ def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly
         logger.debug(f"Error traversing repository: {str(e)}")
         traceback.print_exc()
     
-    # Collect metrics from calculators
+    # Collect metrics from calculators with new structure
     result = {}
     if not calculate_weekly:
-        for metric_name, calculator in overall_metrics.items():
-            if metric_name == "contributors":
-                result["contributors_count"] = calculator.get_metrics()
-                result["contributors_experience"] = calculator.get_experience_metrics()
-            else:
-                result[metric_name] = calculator.get_metrics()
+        for category, metrics in overall_metrics.items():
+            if category not in result:
+                result[category] = {}
+                
+            for metric_name, calculator in metrics.items():
+                if metric_name == "contributors":
+                    result[category]["contributors_count"] = calculator.get_metrics()
+                    result[category]["contributors_experience"] = calculator.get_experience_metrics()
+                else:
+                    result[category][metric_name] = calculator.get_metrics()
         return result
     else:
         weekly_results = {}
-        for week_label, calculators in weekly_metrics.items():
+        for week_label, categories in weekly_metrics.items():
             weekly_results[week_label] = {}
-            for metric_name, calculator in calculators.items():
-                if metric_name == "contributors":
-                    weekly_results[week_label]["contributors_count"] = calculator.get_metrics()
-                    weekly_results[week_label]["contributors_experience"] = calculator.get_experience_metrics()
-                else:
-                    weekly_results[week_label][metric_name] = calculator.get_metrics()
+            
+            for category, metrics in categories.items():
+                weekly_results[week_label][category] = {}
+                
+                for metric_name, calculator in metrics.items():
+                    if metric_name == "contributors":
+                        weekly_results[week_label][category]["contributors_count"] = calculator.get_metrics()
+                        weekly_results[week_label][category]["contributors_experience"] = calculator.get_experience_metrics()
+                    else:
+                        weekly_results[week_label][category][metric_name] = calculator.get_metrics()
         return weekly_results
 
 def merge_metrics_results(all_chunk_results):
+    # Updated to handle the new nested structure
     merged_metrics = {}
     metrics_by_week = {}
     
@@ -161,32 +189,43 @@ def merge_metrics_results(all_chunk_results):
                 if week not in metrics_by_week:
                     metrics_by_week[week] = {}
                 
-                # Collect metrics by type for each week
-                for metric_type, metric_value in week_metrics.items():
-                    if metric_type not in metrics_by_week[week]:
-                        metrics_by_week[week][metric_type] = []
+                # Handle new nested categories
+                for category, metrics in week_metrics.items():
+                    if category not in metrics_by_week[week]:
+                        metrics_by_week[week][category] = {}
                     
-                    metrics_by_week[week][metric_type].append(metric_value)
+                    # Collect metrics by type for each week and category
+                    for metric_type, metric_value in metrics.items():
+                        if metric_type not in metrics_by_week[week][category]:
+                            metrics_by_week[week][category][metric_type] = []
+                        
+                        metrics_by_week[week][category][metric_type].append(metric_value)
     
-    for week, week_data in metrics_by_week.items():
+    for week, categories in metrics_by_week.items():
         merged_metrics[week] = {}
         
-        for metric_type, metrics_list in week_data.items():
-            metric_class_map = {
-                "change_set": ChangeSetMetric,
-                "code_churn": EnhancedCodeChurn,
-                "commits_count": CommitsMetric,
-                "contributors_count": ContributorsMetric,
-                "contributors_experience": ContributorsMetric,
-                "hunks_count": HunksMetric,
-                "lines_count": LinesMetric
-            }
+        for category, metrics in categories.items():
+            merged_metrics[week][category] = {}
             
-            if metric_type in metric_class_map:
-                if metric_type == "contributors_experience":
-                    # Special case for contributors experience
-                    merged_metrics[week][metric_type] = ContributorsMetric.merge_experience_metrics(metrics_list)
-                else:
-                    merged_metrics[week][metric_type] = metric_class_map[metric_type].merge_metrics(metrics_list)
+            for metric_type, metrics_list in metrics.items():
+                # Map metric types to their classes
+                metric_class_map = {
+                    "change_set": ChangeSetMetric,
+                    "code_churn": EnhancedCodeChurn,
+                    "commits_count": CommitsMetric,
+                    "contributors_count": ContributorsMetric,
+                    "contributors_experience": ContributorsMetric,
+                    "hunks_count": HunksMetric,
+                    "lines_count": LinesMetric,
+                    "bugs": BugsMetric,
+                    "code_movement": CodeMovementMetric
+                }
+                
+                if metric_type in metric_class_map:
+                    if metric_type == "contributors_experience":
+                        # Special case for contributors experience
+                        merged_metrics[week][category][metric_type] = ContributorsMetric.merge_experience_metrics(metrics_list)
+                    else:
+                        merged_metrics[week][category][metric_type] = metric_class_map[metric_type].merge_metrics(metrics_list)
     
     return merged_metrics
