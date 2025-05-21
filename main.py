@@ -18,6 +18,7 @@ from tqdm import tqdm
 logger = get_logger(__name__)
 sys.setrecursionlimit(100000)
 COMPLETED_USERS_FILE = os.path.join(MASTER_OUTPUT_DIR, 'completed_users.json')
+USERS = 'github_repos_test.csv'
 
 def load_completed_users():
     """Load the list of completed users."""
@@ -40,24 +41,11 @@ def save_completed_user(username):
         except Exception as e:
             logger.error(f"Error saving to completed users file: {str(e)}")
 
-def analyze_all_projects(folder_filter=None, csv_path='github_repos.csv', start_year=None, 
+def analyze_all_projects(folder_filter=None, csv_path=USERS, start_year=None, 
                          start_month=None, end_year=None, end_month=None, limit=None, 
                          workers=4, use_parallel=True, split_large_repos=True, 
                          file_filter_fn=should_analyze_file, skip_completed=True):
-    """
-    Analyze all projects from the CSV file, organized by username.
     
-    Args:
-        folder_filter (str): Filter to use for username (e.g., "A" for usernames starting with A)
-        csv_path (str): Path to the CSV file containing GitHub repository information
-        start_year, start_month, end_year, end_month: Date range for analysis
-        limit (int): Limit analysis to first N usernames
-        workers (int): Number of worker processes
-        use_parallel (bool): Whether to use parallel processing
-        split_large_repos (bool): Whether to split large repositories
-        file_filter_fn: Function to filter files for analysis
-        skip_completed (bool): Whether to skip completed usernames
-    """
     start_time = time.time()
     
     logger.info(f"Python recursion limit set to: {sys.getrecursionlimit()}")
@@ -225,7 +213,7 @@ if __name__ == "__main__":
     # Set up command line argument parsing
     parser = argparse.ArgumentParser(description='Analyze GitHub user repositories')
     parser.add_argument('--folder', type=str, help='Only analyze usernames starting with this letter/character')
-    parser.add_argument('--csv', type=str, default='github_repos.csv', help='Path to CSV file with repositories')
+    parser.add_argument('--csv', type=str, default=USERS, help='Path to CSV file with repositories')
     parser.add_argument('--start-year', type=int, help='Start year for analysis')
     parser.add_argument('--start-month', type=int, help='Start month for analysis (1-12)')
     parser.add_argument('--end-year', type=int, help='End year for analysis')

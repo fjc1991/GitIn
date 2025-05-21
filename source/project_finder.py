@@ -18,35 +18,68 @@ def find_all_projects(folder_filter=None, csv_path='github_repos.csv'):
     projects_by_username = {}
     
     try:
-        # Read the CSV file
-        with open(csv_path, 'r', encoding='utf-8') as csvfile:
+        # Open with utf-8-sig encoding to handle BOM character
+        with open(csv_path, 'r', encoding='utf-8-sig') as csvfile:
             reader = csv.DictReader(csvfile)
             
-            for row in reader:
-                username = row.get('username')
-                repo_name = row.get('repo_name')
-                url = row.get('url')
+            if '\ufeffusername' in reader.fieldnames:
+                fieldname_mapping = {name: name.replace('\ufeff', '') for name in reader.fieldnames}
                 
-                if not username or not repo_name or not url:
-                    logger.warning(f"Skipping incomplete row: {row}")
-                    continue
+                for row in reader:
+                    fixed_row = {}
+                    for key, value in row.items():
+                        fixed_row[fieldname_mapping.get(key, key)] = value
+                    
+                    username = fixed_row.get('username')
+                    repo_name = fixed_row.get('repo_name')
+                    url = fixed_row.get('url')
+                    
+                    if not username or not repo_name or not url:
+                        logger.warning(f"Skipping incomplete row: {fixed_row}")
+                        continue
+                    
+                    if folder_filter and not username.lower().startswith(folder_filter.lower()):
+                        continue
+                    
+                    if username not in projects_by_username:
+                        projects_by_username[username] = {
+                            'ecosystem': 'github',
+                            'repositories': []
+                        }
                 
-                if folder_filter and not username.lower().startswith(folder_filter.lower()):
-                    continue
-                
-                if username not in projects_by_username:
-                    projects_by_username[username] = {
+                    projects_by_username[username]['repositories'].append({
+                        'repo_url': url,
                         'ecosystem': 'github',
-                        'repositories': []
-                    }
-            
-                projects_by_username[username]['repositories'].append({
-                    'repo_url': url,
-                    'ecosystem': 'github',
-                    'repo_category': 'user',
-                    'repo_name': repo_name,
-                    'username': username
-                })
+                        'repo_category': 'user',
+                        'repo_name': repo_name,
+                        'username': username
+                    })
+            else:
+                for row in reader:
+                    username = row.get('username')
+                    repo_name = row.get('repo_name')
+                    url = row.get('url')
+                    
+                    if not username or not repo_name or not url:
+                        logger.warning(f"Skipping incomplete row: {row}")
+                        continue
+                    
+                    if folder_filter and not username.lower().startswith(folder_filter.lower()):
+                        continue
+                    
+                    if username not in projects_by_username:
+                        projects_by_username[username] = {
+                            'ecosystem': 'github',
+                            'repositories': []
+                        }
+                
+                    projects_by_username[username]['repositories'].append({
+                        'repo_url': url,
+                        'ecosystem': 'github',
+                        'repo_category': 'user',
+                        'repo_name': repo_name,
+                        'username': username
+                    })
         
         total_repos = sum(len(project['repositories']) for project in projects_by_username.values())
         logger.info(f"Found {len(projects_by_username)} usernames with a total of {total_repos} repositories")

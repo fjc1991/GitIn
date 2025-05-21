@@ -1,0 +1,23 @@
+2025-05-21 08:48:04,294 - __main__ - INFO - Setting Python recursion limit to: 20000
+2025-05-21 08:48:04,294 - __main__ - INFO - Python recursion limit set to: 20000
+2025-05-21 08:48:04,294 - __main__ - INFO - Loaded cache with 0 entries
+2025-05-21 08:48:04,297 - source.project_finder - INFO - Found 1 usernames with a total of 3 repositories
+2025-05-21 08:48:04,297 - __main__ - INFO - Found 1 users to analyze.
+2025-05-21 08:48:04,298 - __main__ - INFO - Using 15 worker processes with parallel=True, split_large_repos=True
+2025-05-21 08:48:04,301 - __main__ - INFO - Starting analysis of user: 050644zf (1/1)
+2025-05-21 08:48:04,302 - source.file_filters - DEBUG - Checking file: https://github.com/050644zf/050644zf.github.io
+2025-05-21 08:48:04,302 - source.file_filters - DEBUG - File passed filters: https://github.com/050644zf/050644zf.github.io
+2025-05-21 08:48:04,302 - source.file_filters - DEBUG - Checking file: https://github.com/050644zf/ArknightsStoryJson
+2025-05-21 08:48:04,302 - source.file_filters - DEBUG - File passed filters: https://github.com/050644zf/ArknightsStoryJson
+2025-05-21 08:48:04,302 - source.file_filters - DEBUG - Checking file: https://github.com/050644zf/ArknightsStoryTextReader
+2025-05-21 08:48:04,302 - source.file_filters - DEBUG - File passed filters: https://github.com/050644zf/ArknightsStoryTextReader
+2025-05-21 08:48:04,303 - __main__ - INFO - Analyzing 050644zf with 3 repositories
+2025-05-21 08:48:04,303 - source.analysis - DEBUG - Using override output directory: H:\Py\GitIn\output\data\050644zf
+2025-05-21 08:48:05,372 - source.analysis - DEBUG - Processing 050644zf.github.io...
+2025-05-21 08:48:05,372 - source.analysis - DEBUG - Starting process_single_repo for 050644zf.github.io
+2025-05-21 08:48:15,811 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-21 08:48:18,928 - source.memory_scheduler - DEBUG - Memory check: Current usage 36.6%, Limit 85%
+2025-05-21 08:48:27,496 - source.metrics.aggregator - DEBUG - Processed 14/14 commits
+2025-05-21 08:48:27,635 - source.analysis - DEBUG - Finished process_single_repo for 050644zf.github.io
+2025-05-21 08:48:27,659 - source.analysis - DEBUG - Processing ArknightsStoryJson...
+2025-05-21 08:48:27,659 - source.analysis - DEBUG - Starting process_single_repo for ArknightsStoryJson

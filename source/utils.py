@@ -9,19 +9,14 @@ from functools import lru_cache
 from tqdm import tqdm
 from pydriller import Repository
 
-# Set up logger for this module
 logger = logging.getLogger(__name__)
 
-# Define base output directory
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "output")
-
-# Output directory structure
 MASTER_OUTPUT_DIR = os.path.join(OUTPUT_DIR, "data")
 LOGS_DIR = os.path.join(OUTPUT_DIR, "logs")
 MASTER_TEMP_DIR = os.path.join(OUTPUT_DIR, "temp")
 CACHE_DIR = os.path.join(OUTPUT_DIR, "cache")
 
-# Create directories if they don't exist
 for directory in [OUTPUT_DIR, MASTER_OUTPUT_DIR, LOGS_DIR, MASTER_TEMP_DIR, CACHE_DIR]:
     os.makedirs(directory, exist_ok=True)
 
@@ -30,25 +25,25 @@ LEGACY_PROJECTS_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.absp
 
 # Function to ensure directory exists
 def ensure_dir(directory):
+    """Ensure a directory exists, creating it if necessary."""
     if not os.path.exists(directory):
         os.makedirs(directory)
+        logger.debug(f"Created directory: {directory}")
+    return directory
 
 # Ensure base directories exist
 ensure_dir(MASTER_OUTPUT_DIR)
 ensure_dir(MASTER_TEMP_DIR)
 
 # Cache for processed files
-CACHE_DIR = os.path.join(MASTER_OUTPUT_DIR, '.cache')
-ensure_dir(CACHE_DIR)
+CACHE_DIR = ensure_dir(os.path.join(MASTER_OUTPUT_DIR, 'cache'))
 
 def get_repo_path(repo):
     """Extract repository path from repository object or string."""
     if isinstance(repo, dict):
-        # Try to get 'url' first, then 'repo_url', then fallback to 'path' or string representation
         return repo.get('url', repo.get('repo_url', repo.get('path', str(repo))))
     return str(repo)
 
-# Remove the lru_cache from this function as we can't cache dictionary inputs directly
 def get_file_hash(repo):
     """Hash calculation for repository or path."""
     repo_path = get_repo_path(repo)
@@ -56,7 +51,6 @@ def get_file_hash(repo):
     logger.debug(f"Hashing repo path: {repo_path} -> {hash_value}")
     return hash_value
 
-# Add a path-specific version that can use caching
 @lru_cache(maxsize=1000)
 def get_path_hash(path_str):
     """Cache-enabled hash calculation for string paths only."""
@@ -66,30 +60,28 @@ def load_file_cache():
     """Load the cache of processed files."""
     cache_file = os.path.join(CACHE_DIR, 'processed_files.json')
     if os.path.exists(cache_file):
-        with open(cache_file, 'r') as f:
-            try:
-                cache_data = json.load(f)
-                # Ensure backward compatibility with old cache format
-                if isinstance(cache_data, dict):
-                    return cache_data
-                else:
-                    # Convert old format to new format
-                    logger.warning("Converting old cache format to new format")
-                    new_cache = {}
-                    for item in cache_data:
-                        if isinstance(item, str):
-                            new_cache[item] = True
-                    return new_cache
-            except Exception as e:
-                logger.error(f"Error loading cache file: {str(e)}")
-                return {}
+        try:
+            with open(cache_file, 'r') as f:
+                cache = json.load(f)
+                logger.debug(f"Loaded file cache with {len(cache)} entries")
+                return cache
+        except Exception as e:
+            logger.error(f"Error loading file cache: {str(e)}")
+    logger.debug("No existing file cache found or cache could not be loaded")
     return {}
 
 def save_file_cache(cache):
     """Save the cache of processed files."""
+    if not cache:
+        logger.warning("Attempted to save empty cache - this may indicate an issue")
+        
     cache_file = os.path.join(CACHE_DIR, 'processed_files.json')
-    with open(cache_file, 'w') as f:
-        json.dump(cache, f)
+    try:
+        with open(cache_file, 'w') as f:
+            json.dump(cache, f)
+        logger.debug(f"Saved file cache with {len(cache)} entries")
+    except Exception as e:
+        logger.error(f"Error saving file cache: {str(e)}")
 
 # Global process pool for reuse
 _process_pool = None
@@ -400,3 +392,24 @@ def extract_org_from_url(repo_url):
         logger.debug(f"Error extracting organization from {repo_url}: {str(e)}")
     
     return None
+
+def clean_csv_bom(csv_path):
+    import csv
+    
+    with open(csv_path, 'r', encoding='utf-8') as file:
+        reader = csv.DictReader(file)
+        
+        # Clean field names if BOM is present
+        fieldnames = [name.replace('\ufeff', '') for name in reader.fieldnames]
+        
+        # Read all rows with corrected field names
+        cleaned_rows = []
+        for row in reader:
+            cleaned_row = {}
+            for i, old_key in enumerate(reader.fieldnames):
+                # Map the old key to the cleaned field name
+                cleaned_key = fieldnames[i]
+                cleaned_row[cleaned_key] = row[old_key]
+            cleaned_rows.append(cleaned_row)
+            
+    return cleaned_rows, fieldnames

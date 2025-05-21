@@ -1,0 +1,15 @@
+2025-05-21 08:48:05,372 - source.repo_processing - DEBUG - Processing 050644zf.github.io from 050644zf
+2025-05-21 08:48:05,372 - source.repo_processing - DEBUG - Using direct implementation for 050644zf.github.io
+2025-05-21 08:48:05,373 - source.repo_processing - DEBUG - Determining date range for full history analysis of 050644zf.github.io
+2025-05-21 08:48:06,987 - source.repo_processing - DEBUG - Extracted date range: 2021-09-25 23:01:09+08:00 to 2021-10-09 23:35:25+08:00
+2025-05-21 08:48:06,987 - source.repo_processing - DEBUG - Estimating repository size for https://github.com/050644zf/050644zf.github.io...
+2025-05-21 08:48:07,085 - source.repo_processing - DEBUG - Repository size estimate: 16+ commits. Split recommendation: False
+2025-05-21 08:48:07,090 - source.repo_processing - DEBUG - Processing 050644zf.github.io as a single unit...
+2025-05-21 08:48:27,548 - source.repo_processing - DEBUG - Direct processing complete for 050644zf.github.io!
+2025-05-21 08:48:27,659 - source.repo_processing - DEBUG - Processing ArknightsStoryJson from 050644zf
+2025-05-21 08:48:27,660 - source.repo_processing - DEBUG - Using direct implementation for ArknightsStoryJson
+2025-05-21 08:48:27,660 - source.repo_processing - DEBUG - Determining date range for full history analysis of ArknightsStoryJson
+2025-05-21 08:49:55,007 - source.repo_processing - DEBUG - Extracted date range: 2021-09-22 00:33:35+08:00 to 2025-05-19 01:29:29+00:00
+2025-05-21 08:49:55,007 - source.repo_processing - DEBUG - Estimating repository size for https://github.com/050644zf/ArknightsStoryJson...
+2025-05-21 08:49:55,137 - source.repo_processing - DEBUG - Repository size estimate: 100+ commits. Split recommendation: False
+2025-05-21 08:49:55,141 - source.repo_processing - DEBUG - Processing ArknightsStoryJson as a single unit...
