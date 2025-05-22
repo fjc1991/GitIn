@@ -19,7 +19,8 @@ from .quality import (
     EnhancedCodeChurn,
     BugsMetric,
     CodeMovementMetric,
-    QualityCornerstonesMetric
+    QualityCornerstonesMetric,
+    MeaningfulCodeMetric
 )
 
 from ..utils import get_repo_date_range
@@ -66,7 +67,8 @@ def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly
             "code_churn": EnhancedCodeChurn(),
             "bugs": BugsMetric(),
             "code_movement": CodeMovementMetric(),
-            "test_doc_pct": QualityCornerstonesMetric()
+            "test_doc_pct": QualityCornerstonesMetric(),
+            "meaningful_code": MeaningfulCodeMetric()
         }
     }
     
@@ -86,7 +88,8 @@ def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly
                     "code_churn": EnhancedCodeChurn(),
                     "bugs": BugsMetric(),
                     "code_movement": CodeMovementMetric(),
-                    "test_doc_pct": QualityCornerstonesMetric()
+                    "test_doc_pct": QualityCornerstonesMetric(),
+                    "meaningful_code": MeaningfulCodeMetric()
                 }
             }
     
@@ -221,7 +224,8 @@ def merge_metrics_results(all_chunk_results):
                     "lines_count": LinesMetric,
                     "bugs": BugsMetric,
                     "code_movement": CodeMovementMetric,
-                    "test_doc_pct": QualityCornerstonesMetric  # Pass class, not instance
+                    "test_doc_pct": QualityCornerstonesMetric,  # Pass class, not instance
+                    "meaningful_code": MeaningfulCodeMetric
                 }
                 
                 if metric_type in metric_class_map:

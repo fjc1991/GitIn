@@ -1,0 +1,912 @@
+2025-05-22 21:31:27,087 - __main__ - INFO - Setting Python recursion limit to: 20000
+2025-05-22 21:31:27,087 - __main__ - INFO - Python recursion limit set to: 20000
+2025-05-22 21:31:27,087 - __main__ - INFO - Loaded cache with 0 entries
+2025-05-22 21:31:27,088 - source.project_finder - INFO - Found 2 usernames with a total of 27 repositories
+2025-05-22 21:31:27,088 - __main__ - INFO - Found 2 users to analyze.
+2025-05-22 21:31:27,088 - __main__ - INFO - Using 9 worker processes with parallel=True, split_large_repos=True
+2025-05-22 21:31:27,093 - __main__ - INFO - Starting analysis of user: 003random (1/2)
+2025-05-22 21:31:27,093 - source.file_filters - DEBUG - Checking file: https://github.com/003random/003random.github.io
+2025-05-22 21:31:27,093 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/003random.github.io
+2025-05-22 21:31:27,093 - source.file_filters - DEBUG - Checking file: https://github.com/003random/003random
+2025-05-22 21:31:27,093 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/003random
+2025-05-22 21:31:27,093 - source.file_filters - DEBUG - Checking file: https://github.com/003random/003Recon
+2025-05-22 21:31:27,093 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/003Recon
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - Checking file: https://github.com/003random/BonTemps
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/BonTemps
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - Checking file: https://github.com/003random/csp
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/csp
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - Checking file: https://github.com/003random/diff_test
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/diff_test
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - Checking file: https://github.com/003random/getJS
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/getJS
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - Checking file: https://github.com/003random/heroku-test
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/heroku-test
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - Checking file: https://github.com/003random/ICU
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/ICU
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - Checking file: https://github.com/003random/JavaProgrammingClass
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/JavaProgrammingClass
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - Checking file: https://github.com/003random/loki
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/loki
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - Checking file: https://github.com/003random/netlify
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/netlify
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - Checking file: https://github.com/003random/online
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/online
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - Checking file: https://github.com/003random/PyScripts
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/PyScripts
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - Checking file: https://github.com/003random/sdto-test-gh.github.io
+2025-05-22 21:31:27,094 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/sdto-test-gh.github.io
+2025-05-22 21:31:27,094 - __main__ - INFO - Analyzing 003random with 15 repositories
+2025-05-22 21:31:27,094 - source.analysis - DEBUG - Using override output directory: /Volumes/nVME1T/Py/GitIn/output/data/003random
+2025-05-22 21:31:28,325 - source.analysis - DEBUG - Processing 003random.github.io...
+2025-05-22 21:31:28,325 - source.analysis - DEBUG - Starting process_single_repo for 003random.github.io
+2025-05-22 21:31:30,291 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:31:33,094 - source.memory_scheduler - DEBUG - Memory check: Current usage 66.7%, Limit 85%
+2025-05-22 21:31:33,614 - source.metrics.aggregator - DEBUG - Processed 2/2 commits
+2025-05-22 21:31:33,623 - source.analysis - DEBUG - Finished process_single_repo for 003random.github.io
+2025-05-22 21:31:33,626 - source.analysis - DEBUG - Processing csp...
+2025-05-22 21:31:33,626 - source.analysis - DEBUG - Starting process_single_repo for csp
+2025-05-22 21:31:35,746 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:31:37,052 - source.metrics.aggregator - INFO - No commits found in the repository for the given time period.
+2025-05-22 21:31:37,055 - source.analysis - DEBUG - Finished process_single_repo for csp
+2025-05-22 21:31:37,059 - source.analysis - DEBUG - Processing BonTemps...
+2025-05-22 21:31:37,059 - source.analysis - DEBUG - Starting process_single_repo for BonTemps
+2025-05-22 21:34:36,784 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:36:09,420 - source.metrics.aggregator - DEBUG - Error traversing repository: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v -- https://github.com/003random/BonTemps /var/folders/_n/_94ggbld07v13kl1b_0m4cw00000gn/T/tmpqllu7h4l/BonTemps
+  stderr: 'Cloning into '/var/folders/_n/_94ggbld07v13kl1b_0m4cw00000gn/T/tmpqllu7h4l/BonTemps'...
+POST git-upload-pack (191 bytes)
+POST git-upload-pack (233 bytes)
+error: RPC failed; curl 18 Transferred a partial file
+error: 5654 bytes of body are still expected
+fetch-pack: unexpected disconnect while reading sideband packet
+fatal: early EOF
+fatal: fetch-pack: invalid index-pack output
+'
+2025-05-22 21:36:09,746 - source.analysis - DEBUG - Finished process_single_repo for BonTemps
+2025-05-22 21:36:09,759 - source.analysis - DEBUG - Processing getJS...
+2025-05-22 21:36:09,759 - source.analysis - DEBUG - Starting process_single_repo for getJS
+2025-05-22 21:36:19,048 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:36:21,729 - source.memory_scheduler - DEBUG - Memory check: Current usage 69.9%, Limit 85%
+2025-05-22 21:36:33,355 - source.metrics.aggregator - DEBUG - Processed 45/45 commits
+2025-05-22 21:36:33,387 - source.analysis - DEBUG - Finished process_single_repo for getJS
+2025-05-22 21:36:33,399 - source.analysis - DEBUG - Processing heroku-test...
+2025-05-22 21:36:33,399 - source.analysis - DEBUG - Starting process_single_repo for heroku-test
+2025-05-22 21:36:34,718 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:36:36,747 - source.metrics.aggregator - INFO - No commits found in the repository for the given time period.
+2025-05-22 21:36:36,749 - source.analysis - DEBUG - Finished process_single_repo for heroku-test
+2025-05-22 21:36:36,763 - source.analysis - DEBUG - Processing 003Recon...
+2025-05-22 21:36:36,763 - source.analysis - DEBUG - Starting process_single_repo for 003Recon
+2025-05-22 21:36:50,819 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:36:53,221 - source.memory_scheduler - DEBUG - Memory check: Current usage 69.3%, Limit 85%
+2025-05-22 21:36:53,384 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit 1c598de4bb5d8c470220c1659bf4edf68b231d0a (before decoding). Treating as empty.
+2025-05-22 21:36:53,412 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit 1c598de4bb5d8c470220c1659bf4edf68b231d0a (before decoding). Treating as empty.
+2025-05-22 21:36:53,427 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit 1c598de4bb5d8c470220c1659bf4edf68b231d0a. Treating as empty.
+2025-05-22 21:36:53,614 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit 1c598de4bb5d8c470220c1659bf4edf68b231d0a (before decoding). Treating as empty.
+2025-05-22 21:36:53,645 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit 1c598de4bb5d8c470220c1659bf4edf68b231d0a (before decoding). Treating as empty.
+2025-05-22 21:36:53,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit 1c598de4bb5d8c470220c1659bf4edf68b231d0a. Treating as empty.
+2025-05-22 21:36:53,809 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit f071eb2154384b95202476535c01a990ea5373c6 (before decoding). Treating as empty.
+2025-05-22 21:36:53,838 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit f071eb2154384b95202476535c01a990ea5373c6 (before decoding). Treating as empty.
+2025-05-22 21:36:53,852 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for crlf.sh in commit f071eb2154384b95202476535c01a990ea5373c6. Treating as empty.
+2025-05-22 21:36:53,984 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit f071eb2154384b95202476535c01a990ea5373c6 (before decoding). Treating as empty.
+2025-05-22 21:36:54,008 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit f071eb2154384b95202476535c01a990ea5373c6 (before decoding). Treating as empty.
+2025-05-22 21:36:54,020 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for crlf.sh in commit f071eb2154384b95202476535c01a990ea5373c6. Treating as empty.
+2025-05-22 21:36:54,145 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit b9099eba0350d31455c72d8b6ec8bbac02875049 (before decoding). Treating as empty.
+2025-05-22 21:36:54,187 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit b9099eba0350d31455c72d8b6ec8bbac02875049 (before decoding). Treating as empty.
+2025-05-22 21:36:54,205 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for error_page_info_check.py in commit b9099eba0350d31455c72d8b6ec8bbac02875049. Treating as empty.
+2025-05-22 21:36:54,349 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit b9099eba0350d31455c72d8b6ec8bbac02875049 (before decoding). Treating as empty.
+2025-05-22 21:36:54,377 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit b9099eba0350d31455c72d8b6ec8bbac02875049 (before decoding). Treating as empty.
+2025-05-22 21:36:54,391 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for error_page_info_check.py in commit b9099eba0350d31455c72d8b6ec8bbac02875049. Treating as empty.
+2025-05-22 21:36:54,522 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit 755882af23dd464234528c3ec3b4a6fae6c5927c (before decoding). Treating as empty.
+2025-05-22 21:36:54,548 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit 755882af23dd464234528c3ec3b4a6fae6c5927c (before decoding). Treating as empty.
+2025-05-22 21:36:54,560 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for header_scan.py in commit 755882af23dd464234528c3ec3b4a6fae6c5927c. Treating as empty.
+2025-05-22 21:36:54,684 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit 755882af23dd464234528c3ec3b4a6fae6c5927c (before decoding). Treating as empty.
+2025-05-22 21:36:54,708 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit 755882af23dd464234528c3ec3b4a6fae6c5927c (before decoding). Treating as empty.
+2025-05-22 21:36:54,720 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for header_scan.py in commit 755882af23dd464234528c3ec3b4a6fae6c5927c. Treating as empty.
+2025-05-22 21:36:54,843 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit e0e9ec821d4836e0d688de1e0cb4998dfe1b4645 (before decoding). Treating as empty.
+2025-05-22 21:36:54,867 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit e0e9ec821d4836e0d688de1e0cb4998dfe1b4645 (before decoding). Treating as empty.
+2025-05-22 21:36:54,880 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_extractor.py in commit e0e9ec821d4836e0d688de1e0cb4998dfe1b4645. Treating as empty.
+2025-05-22 21:36:55,003 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit e0e9ec821d4836e0d688de1e0cb4998dfe1b4645 (before decoding). Treating as empty.
+2025-05-22 21:36:55,028 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit e0e9ec821d4836e0d688de1e0cb4998dfe1b4645 (before decoding). Treating as empty.
+2025-05-22 21:36:55,045 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_extractor.py in commit e0e9ec821d4836e0d688de1e0cb4998dfe1b4645. Treating as empty.
+2025-05-22 21:36:55,170 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit 5a963995525410243e1156a608e2ba9166b04a73 (before decoding). Treating as empty.
+2025-05-22 21:36:55,196 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit 5a963995525410243e1156a608e2ba9166b04a73 (before decoding). Treating as empty.
+2025-05-22 21:36:55,209 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit 5a963995525410243e1156a608e2ba9166b04a73. Treating as empty.
+2025-05-22 21:36:55,332 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit 5a963995525410243e1156a608e2ba9166b04a73 (before decoding). Treating as empty.
+2025-05-22 21:36:55,356 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit 5a963995525410243e1156a608e2ba9166b04a73 (before decoding). Treating as empty.
+2025-05-22 21:36:55,369 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit 5a963995525410243e1156a608e2ba9166b04a73. Treating as empty.
+2025-05-22 21:36:55,491 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit 208a703f1613123d6880c9df27c932740f1dda82 (before decoding). Treating as empty.
+2025-05-22 21:36:55,517 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit 208a703f1613123d6880c9df27c932740f1dda82 (before decoding). Treating as empty.
+2025-05-22 21:36:55,530 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for nmap_scan.sh in commit 208a703f1613123d6880c9df27c932740f1dda82. Treating as empty.
+2025-05-22 21:36:55,655 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit 208a703f1613123d6880c9df27c932740f1dda82 (before decoding). Treating as empty.
+2025-05-22 21:36:55,680 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit 208a703f1613123d6880c9df27c932740f1dda82 (before decoding). Treating as empty.
+2025-05-22 21:36:55,692 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for nmap_scan.sh in commit 208a703f1613123d6880c9df27c932740f1dda82. Treating as empty.
+2025-05-22 21:36:55,863 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit 8717e3ad3f300f3011248a09d12c024129498f2a (before decoding). Treating as empty.
+2025-05-22 21:36:55,895 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit 8717e3ad3f300f3011248a09d12c024129498f2a (before decoding). Treating as empty.
+2025-05-22 21:36:55,909 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for online.py in commit 8717e3ad3f300f3011248a09d12c024129498f2a. Treating as empty.
+2025-05-22 21:36:56,049 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit 8717e3ad3f300f3011248a09d12c024129498f2a (before decoding). Treating as empty.
+2025-05-22 21:36:56,077 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit 8717e3ad3f300f3011248a09d12c024129498f2a (before decoding). Treating as empty.
+2025-05-22 21:36:56,090 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for online.py in commit 8717e3ad3f300f3011248a09d12c024129498f2a. Treating as empty.
+2025-05-22 21:36:56,220 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for open_redirect.py in commit 7da1931baef3717fb44c713c5288842f4c3bbae7 (before decoding). Treating as empty.
+2025-05-22 21:36:56,246 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for open_redirect.py in commit 7da1931baef3717fb44c713c5288842f4c3bbae7 (before decoding). Treating as empty.
+2025-05-22 21:36:56,259 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for open_redirect.py in commit 7da1931baef3717fb44c713c5288842f4c3bbae7. Treating as empty.
+2025-05-22 21:36:56,382 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for open_redirect.py in commit 7da1931baef3717fb44c713c5288842f4c3bbae7 (before decoding). Treating as empty.
+2025-05-22 21:36:56,407 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for open_redirect.py in commit 7da1931baef3717fb44c713c5288842f4c3bbae7 (before decoding). Treating as empty.
+2025-05-22 21:36:56,419 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for open_redirect.py in commit 7da1931baef3717fb44c713c5288842f4c3bbae7. Treating as empty.
+2025-05-22 21:36:56,542 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for start_recon.sh in commit 1b3e7583bf5f685a57a97ba03688a610805d6fad (before decoding). Treating as empty.
+2025-05-22 21:36:56,569 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for start_recon.sh in commit 1b3e7583bf5f685a57a97ba03688a610805d6fad (before decoding). Treating as empty.
+2025-05-22 21:36:56,582 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for start_recon.sh in commit 1b3e7583bf5f685a57a97ba03688a610805d6fad. Treating as empty.
+2025-05-22 21:36:56,703 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for start_recon.sh in commit 1b3e7583bf5f685a57a97ba03688a610805d6fad (before decoding). Treating as empty.
+2025-05-22 21:36:56,728 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for start_recon.sh in commit 1b3e7583bf5f685a57a97ba03688a610805d6fad (before decoding). Treating as empty.
+2025-05-22 21:36:56,740 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for start_recon.sh in commit 1b3e7583bf5f685a57a97ba03688a610805d6fad. Treating as empty.
+2025-05-22 21:36:56,870 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit 429d90406eff0aba8408aa784a67921802deea57 (before decoding). Treating as empty.
+2025-05-22 21:36:56,897 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit 429d90406eff0aba8408aa784a67921802deea57 (before decoding). Treating as empty.
+2025-05-22 21:36:56,911 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for subdomain_takeover_scan.py in commit 429d90406eff0aba8408aa784a67921802deea57. Treating as empty.
+2025-05-22 21:36:57,042 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit 429d90406eff0aba8408aa784a67921802deea57 (before decoding). Treating as empty.
+2025-05-22 21:36:57,066 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit 429d90406eff0aba8408aa784a67921802deea57 (before decoding). Treating as empty.
+2025-05-22 21:36:57,080 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for subdomain_takeover_scan.py in commit 429d90406eff0aba8408aa784a67921802deea57. Treating as empty.
+2025-05-22 21:36:57,208 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit c0bcf0d3e78fb95c82cb8638dfe2cf8fddbf2234 (before decoding). Treating as empty.
+2025-05-22 21:36:57,232 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit c0bcf0d3e78fb95c82cb8638dfe2cf8fddbf2234 (before decoding). Treating as empty.
+2025-05-22 21:36:57,244 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wordpress_check.py in commit c0bcf0d3e78fb95c82cb8638dfe2cf8fddbf2234. Treating as empty.
+2025-05-22 21:36:57,379 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit c0bcf0d3e78fb95c82cb8638dfe2cf8fddbf2234 (before decoding). Treating as empty.
+2025-05-22 21:36:57,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit c0bcf0d3e78fb95c82cb8638dfe2cf8fddbf2234 (before decoding). Treating as empty.
+2025-05-22 21:36:57,420 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wordpress_check.py in commit c0bcf0d3e78fb95c82cb8638dfe2cf8fddbf2234. Treating as empty.
+2025-05-22 21:36:57,549 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit 05fe11025eec60ba0d773c9ae18cfeb6eab106f2 (before decoding). Treating as empty.
+2025-05-22 21:36:57,574 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit 05fe11025eec60ba0d773c9ae18cfeb6eab106f2 (before decoding). Treating as empty.
+2025-05-22 21:36:57,587 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wpscan_domains.sh in commit 05fe11025eec60ba0d773c9ae18cfeb6eab106f2. Treating as empty.
+2025-05-22 21:36:57,717 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit 05fe11025eec60ba0d773c9ae18cfeb6eab106f2 (before decoding). Treating as empty.
+2025-05-22 21:36:57,745 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit 05fe11025eec60ba0d773c9ae18cfeb6eab106f2 (before decoding). Treating as empty.
+2025-05-22 21:36:57,758 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wpscan_domains.sh in commit 05fe11025eec60ba0d773c9ae18cfeb6eab106f2. Treating as empty.
+2025-05-22 21:37:12,506 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for .gitignore in commit 14d630d04423684ddd90a68890f719564cad6b77 (before decoding). Treating as empty.
+2025-05-22 21:37:12,538 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for .gitignore in commit 14d630d04423684ddd90a68890f719564cad6b77 (before decoding). Treating as empty.
+2025-05-22 21:37:12,552 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for .gitignore in commit 14d630d04423684ddd90a68890f719564cad6b77. Treating as empty.
+2025-05-22 21:37:12,693 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for .gitignore in commit 14d630d04423684ddd90a68890f719564cad6b77 (before decoding). Treating as empty.
+2025-05-22 21:37:12,719 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for .gitignore in commit 14d630d04423684ddd90a68890f719564cad6b77 (before decoding). Treating as empty.
+2025-05-22 21:37:12,734 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for .gitignore in commit 14d630d04423684ddd90a68890f719564cad6b77. Treating as empty.
+2025-05-22 21:37:13,702 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for recon.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,702 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,702 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,702 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,702 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,702 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,702 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,702 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,702 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,702 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,702 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,702 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,732 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for recon.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,732 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,732 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,732 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,732 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,732 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,732 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,732 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,732 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,732 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,732 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,732 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,751 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for recon.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,751 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,751 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for crlf.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,751 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for error_page_info_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,751 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for header_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,751 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_extractor.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,751 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,751 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for nmap_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,751 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for online.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,751 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for subdomain_takeover_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,751 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wordpress_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,751 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wpscan_domains.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,902 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for recon.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,902 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,902 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,902 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,902 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,903 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,903 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,903 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,903 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,903 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,903 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,903 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,934 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for recon.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,934 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,934 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,934 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,934 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,934 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,934 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,934 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,934 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,935 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,935 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,935 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-22 21:37:13,951 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for recon.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,951 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,951 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for crlf.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,951 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for error_page_info_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,951 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for header_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,951 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_extractor.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,951 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,951 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for nmap_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,951 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for online.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,951 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for subdomain_takeover_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,951 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wordpress_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:13,951 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wpscan_domains.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-22 21:37:16,054 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_and_links_extractor.py in commit 96a3778b817d1ab2bed403b66892f54c674b90df (before decoding). Treating as empty.
+2025-05-22 21:37:16,079 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_and_links_extractor.py in commit 96a3778b817d1ab2bed403b66892f54c674b90df (before decoding). Treating as empty.
+2025-05-22 21:37:16,092 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_and_links_extractor.py in commit 96a3778b817d1ab2bed403b66892f54c674b90df. Treating as empty.
+2025-05-22 21:37:16,216 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_and_links_extractor.py in commit 96a3778b817d1ab2bed403b66892f54c674b90df (before decoding). Treating as empty.
+2025-05-22 21:37:16,241 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_and_links_extractor.py in commit 96a3778b817d1ab2bed403b66892f54c674b90df (before decoding). Treating as empty.
+2025-05-22 21:37:16,254 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_and_links_extractor.py in commit 96a3778b817d1ab2bed403b66892f54c674b90df. Treating as empty.
+2025-05-22 21:37:16,926 - source.metrics.aggregator - DEBUG - Processed 76/76 commits
+2025-05-22 21:37:16,939 - source.analysis - DEBUG - Finished process_single_repo for 003Recon
+2025-05-22 21:37:16,951 - source.analysis - DEBUG - Processing ICU...
+2025-05-22 21:37:16,951 - source.analysis - DEBUG - Starting process_single_repo for ICU
+2025-05-22 21:37:26,249 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:37:28,626 - source.memory_scheduler - DEBUG - Memory check: Current usage 68.9%, Limit 85%
+2025-05-22 21:37:29,101 - source.metrics.quality.code_movement - WARNING - Could not retrieve source code for tools/dependencies/sublister in commit fd519918f2192de40d7437064df736dc6aa4a108: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-22 21:37:29,117 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit fd519918f2192de40d7437064df736dc6aa4a108): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-22 21:37:29,146 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit fd519918f2192de40d7437064df736dc6aa4a108): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-22 21:37:29,166 - source.metrics.quality.meaningful_code - ERROR - Error retrieving source code for sublister: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-22 21:37:29,293 - source.metrics.quality.code_movement - WARNING - Could not retrieve source code for tools/dependencies/sublister in commit fd519918f2192de40d7437064df736dc6aa4a108: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-22 21:37:29,308 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit fd519918f2192de40d7437064df736dc6aa4a108): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-22 21:37:29,338 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit fd519918f2192de40d7437064df736dc6aa4a108): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-22 21:37:29,357 - source.metrics.quality.meaningful_code - ERROR - Error retrieving source code for sublister: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-22 21:37:30,170 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for get_subdomains.py in commit ffb978474e7f44bb54142491bc5c6e2927c1dc26 (before decoding). Treating as empty.
+2025-05-22 21:37:30,172 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for sublister in commit ffb978474e7f44bb54142491bc5c6e2927c1dc26 (before decoding). Treating as empty.
+2025-05-22 21:37:30,203 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for get_subdomains.py in commit ffb978474e7f44bb54142491bc5c6e2927c1dc26 (before decoding). Treating as empty.
+2025-05-22 21:37:30,205 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for sublister in commit ffb978474e7f44bb54142491bc5c6e2927c1dc26 (before decoding). Treating as empty.
+2025-05-22 21:37:30,221 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for get_subdomains.py in commit ffb978474e7f44bb54142491bc5c6e2927c1dc26. Treating as empty.
+2025-05-22 21:37:30,227 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for sublister in commit ffb978474e7f44bb54142491bc5c6e2927c1dc26. Treating as empty.
+2025-05-22 21:37:30,687 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit 4e349b9e5b6a8abcb82c506e06e500e9fcfa9afe (before decoding). Treating as empty.
+2025-05-22 21:37:30,712 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit 4e349b9e5b6a8abcb82c506e06e500e9fcfa9afe (before decoding). Treating as empty.
+2025-05-22 21:37:30,849 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit 4e349b9e5b6a8abcb82c506e06e500e9fcfa9afe (before decoding). Treating as empty.
+2025-05-22 21:37:30,875 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit 4e349b9e5b6a8abcb82c506e06e500e9fcfa9afe (before decoding). Treating as empty.
+2025-05-22 21:37:31,008 - source.metrics.quality.code_movement - WARNING - Could not retrieve source code for tools/dependencies/sublister in commit 17348d82ac736f16eb4ee99de6ed73e58ccc25a9: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-22 21:37:31,022 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit 17348d82ac736f16eb4ee99de6ed73e58ccc25a9): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-22 21:37:31,049 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit 17348d82ac736f16eb4ee99de6ed73e58ccc25a9): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-22 21:37:31,064 - source.metrics.quality.meaningful_code - ERROR - Error retrieving source code for sublister: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-22 21:37:31,184 - source.metrics.quality.code_movement - WARNING - Could not retrieve source code for tools/dependencies/sublister in commit 17348d82ac736f16eb4ee99de6ed73e58ccc25a9: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-22 21:37:31,198 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit 17348d82ac736f16eb4ee99de6ed73e58ccc25a9): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-22 21:37:31,225 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit 17348d82ac736f16eb4ee99de6ed73e58ccc25a9): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-22 21:37:31,240 - source.metrics.quality.meaningful_code - ERROR - Error retrieving source code for sublister: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-22 21:37:31,376 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.py in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,376 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,376 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,376 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for sublister in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,403 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.py in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,404 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,404 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,404 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for sublister in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,418 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for credentials.py in commit d8169a58af67587614b720b126560c1fd5bc0598. Treating as empty.
+2025-05-22 21:37:31,418 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for credentials.pyc in commit d8169a58af67587614b720b126560c1fd5bc0598. Treating as empty.
+2025-05-22 21:37:31,420 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for sublister in commit d8169a58af67587614b720b126560c1fd5bc0598. Treating as empty.
+2025-05-22 21:37:31,556 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.py in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,556 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,556 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,556 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for sublister in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,583 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.py in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,583 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,583 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,583 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for sublister in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-22 21:37:31,597 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for credentials.py in commit d8169a58af67587614b720b126560c1fd5bc0598. Treating as empty.
+2025-05-22 21:37:31,597 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for credentials.pyc in commit d8169a58af67587614b720b126560c1fd5bc0598. Treating as empty.
+2025-05-22 21:37:31,599 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for sublister in commit d8169a58af67587614b720b126560c1fd5bc0598. Treating as empty.
+2025-05-22 21:37:37,582 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit b3c2fb358208e96e4f8991f8d136806835b58cd8 (before decoding). Treating as empty.
+2025-05-22 21:37:37,607 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit b3c2fb358208e96e4f8991f8d136806835b58cd8 (before decoding). Treating as empty.
+2025-05-22 21:37:37,620 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for credentials.pyc in commit b3c2fb358208e96e4f8991f8d136806835b58cd8. Treating as empty.
+2025-05-22 21:37:37,746 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit b3c2fb358208e96e4f8991f8d136806835b58cd8 (before decoding). Treating as empty.
+2025-05-22 21:37:37,771 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit b3c2fb358208e96e4f8991f8d136806835b58cd8 (before decoding). Treating as empty.
+2025-05-22 21:37:37,784 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for credentials.pyc in commit b3c2fb358208e96e4f8991f8d136806835b58cd8. Treating as empty.
+2025-05-22 21:37:40,894 - source.metrics.aggregator - DEBUG - Processed 42/42 commits
+2025-05-22 21:37:40,908 - source.analysis - DEBUG - Finished process_single_repo for ICU
+2025-05-22 21:37:40,922 - source.analysis - DEBUG - Processing JavaProgrammingClass...
+2025-05-22 21:37:40,922 - source.analysis - DEBUG - Starting process_single_repo for JavaProgrammingClass
+2025-05-22 21:37:42,694 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:37:45,022 - source.memory_scheduler - DEBUG - Memory check: Current usage 68.8%, Limit 85%
+2025-05-22 21:37:45,184 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for misc.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-22 21:37:45,184 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for workspace.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-22 21:37:45,214 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for misc.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-22 21:37:45,214 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for workspace.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-22 21:37:45,233 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for misc.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd. Treating as empty.
+2025-05-22 21:37:45,233 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for workspace.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd. Treating as empty.
+2025-05-22 21:37:45,387 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for misc.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-22 21:37:45,387 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for workspace.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-22 21:37:45,418 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for misc.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-22 21:37:45,418 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for workspace.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-22 21:37:45,436 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for misc.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd. Treating as empty.
+2025-05-22 21:37:45,436 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for workspace.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd. Treating as empty.
+2025-05-22 21:37:45,441 - source.metrics.aggregator - DEBUG - Processed 1/1 commits
+2025-05-22 21:37:45,459 - source.analysis - DEBUG - Finished process_single_repo for JavaProgrammingClass
+2025-05-22 21:37:45,473 - source.analysis - DEBUG - Processing online...
+2025-05-22 21:37:45,473 - source.analysis - DEBUG - Starting process_single_repo for online
+2025-05-22 21:37:47,513 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:37:49,593 - source.memory_scheduler - DEBUG - Memory check: Current usage 68.9%, Limit 85%
+2025-05-22 21:37:50,264 - source.metrics.aggregator - DEBUG - Processed 3/3 commits
+2025-05-22 21:37:50,274 - source.analysis - DEBUG - Finished process_single_repo for online
+2025-05-22 21:37:50,287 - source.analysis - DEBUG - Processing netlify...
+2025-05-22 21:37:50,288 - source.analysis - DEBUG - Starting process_single_repo for netlify
+2025-05-22 21:37:51,716 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:37:52,927 - source.metrics.aggregator - INFO - No commits found in the repository for the given time period.
+2025-05-22 21:37:52,933 - source.analysis - DEBUG - Finished process_single_repo for netlify
+2025-05-22 21:37:52,954 - source.analysis - DEBUG - Processing sdto-test-gh.github.io...
+2025-05-22 21:37:52,954 - source.analysis - DEBUG - Starting process_single_repo for sdto-test-gh.github.io
+2025-05-22 21:37:56,373 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:37:57,432 - source.metrics.aggregator - INFO - No commits found in the repository for the given time period.
+2025-05-22 21:37:57,435 - source.analysis - DEBUG - Finished process_single_repo for sdto-test-gh.github.io
+2025-05-22 21:37:57,451 - source.analysis - DEBUG - Processing 003random...
+2025-05-22 21:37:57,451 - source.analysis - DEBUG - Starting process_single_repo for 003random
+2025-05-22 21:37:58,942 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:37:59,988 - source.metrics.aggregator - INFO - No commits found in the repository for the given time period.
+2025-05-22 21:37:59,991 - source.analysis - DEBUG - Finished process_single_repo for 003random
+2025-05-22 21:38:00,008 - source.analysis - DEBUG - Processing PyScripts...
+2025-05-22 21:38:00,008 - source.analysis - DEBUG - Starting process_single_repo for PyScripts
+2025-05-22 21:38:02,882 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:38:03,983 - source.metrics.aggregator - INFO - No commits found in the repository for the given time period.
+2025-05-22 21:38:03,986 - source.analysis - DEBUG - Finished process_single_repo for PyScripts
+2025-05-22 21:38:04,001 - source.analysis - DEBUG - Processing diff_test...
+2025-05-22 21:38:04,001 - source.analysis - DEBUG - Starting process_single_repo for diff_test
+2025-05-22 21:38:05,425 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:38:06,466 - source.metrics.aggregator - INFO - No commits found in the repository for the given time period.
+2025-05-22 21:38:06,469 - source.analysis - DEBUG - Finished process_single_repo for diff_test
+2025-05-22 21:38:06,491 - source.analysis - DEBUG - Processing loki...
+2025-05-22 21:38:06,491 - source.analysis - DEBUG - Starting process_single_repo for loki
+2025-05-22 21:38:09,303 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:38:11,484 - source.memory_scheduler - DEBUG - Memory check: Current usage 68.9%, Limit 85%
+2025-05-22 21:38:14,873 - source.metrics.aggregator - DEBUG - Processed 11/11 commits
+2025-05-22 21:38:14,880 - source.analysis - DEBUG - Finished process_single_repo for loki
+2025-05-22 21:38:14,955 - source.analysis - DEBUG - Combined analysis complete for 003random all repositories!
+2025-05-22 21:38:14,955 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_003random.github.io_full_history_analysis.json']
+2025-05-22 21:38:14,955 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_003random_full_history_analysis.json']
+2025-05-22 21:38:14,955 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_003Recon_full_history_analysis.json']
+2025-05-22 21:38:14,955 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_BonTemps_full_history_analysis.json']
+2025-05-22 21:38:14,956 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_csp_full_history_analysis.json']
+2025-05-22 21:38:14,956 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_diff_test_full_history_analysis.json']
+2025-05-22 21:38:14,956 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_getJS_full_history_analysis.json']
+2025-05-22 21:38:14,956 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_heroku-test_full_history_analysis.json']
+2025-05-22 21:38:14,956 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_ICU_full_history_analysis.json']
+2025-05-22 21:38:14,956 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_JavaProgrammingClass_full_history_analysis.json']
+2025-05-22 21:38:14,956 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_loki_full_history_analysis.json']
+2025-05-22 21:38:14,956 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_netlify_full_history_analysis.json']
+2025-05-22 21:38:14,956 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_online_full_history_analysis.json']
+2025-05-22 21:38:14,956 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_PyScripts_full_history_analysis.json']
+2025-05-22 21:38:14,956 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_sdto-test-gh.github.io_full_history_analysis.json']
+2025-05-22 21:38:14,968 - __main__ - INFO - User 003random successfully completed
+2025-05-22 21:38:14,968 - __main__ - DEBUG - Marking as processed: https://github.com/003random/003random.github.io [hash: 51f088368cbb00714d950c55fca7a04c]
+2025-05-22 21:38:14,968 - __main__ - DEBUG - Marking as processed: https://github.com/003random/003random [hash: 2ee6b6342ac647c4719d15ec2a79559f]
+2025-05-22 21:38:14,968 - __main__ - DEBUG - Marking as processed: https://github.com/003random/003Recon [hash: 8e38d33545f9f76b3b56ef7b24ace1d8]
+2025-05-22 21:38:14,968 - __main__ - DEBUG - Marking as processed: https://github.com/003random/BonTemps [hash: 41ffee464be721089df801a0083e829c]
+2025-05-22 21:38:14,968 - __main__ - DEBUG - Marking as processed: https://github.com/003random/csp [hash: d11dfb39cc81c80f63800eb4675bb76f]
+2025-05-22 21:38:14,968 - __main__ - DEBUG - Marking as processed: https://github.com/003random/diff_test [hash: 76f86d85d40905ff3768230ba5e59a5f]
+2025-05-22 21:38:14,968 - __main__ - DEBUG - Marking as processed: https://github.com/003random/getJS [hash: 1630884f66dd5a1efaa3ffe011dd64be]
+2025-05-22 21:38:14,968 - __main__ - DEBUG - Marking as processed: https://github.com/003random/heroku-test [hash: bd936d9f3041266ed7cf465f162ac3ba]
+2025-05-22 21:38:14,968 - __main__ - DEBUG - Marking as processed: https://github.com/003random/ICU [hash: ca3dea57fb1ee0d09bd46e58e00784a9]
+2025-05-22 21:38:14,968 - __main__ - DEBUG - Marking as processed: https://github.com/003random/JavaProgrammingClass [hash: 2cba159d78f4b9aa4e1e12ba869da460]
+2025-05-22 21:38:14,968 - __main__ - DEBUG - Marking as processed: https://github.com/003random/loki [hash: c44c4af3d9a16b90e9c168530167a68a]
+2025-05-22 21:38:14,968 - __main__ - DEBUG - Marking as processed: https://github.com/003random/netlify [hash: e7bdc4e8b8a0bd552e06ebc96e0384aa]
+2025-05-22 21:38:14,968 - __main__ - DEBUG - Marking as processed: https://github.com/003random/online [hash: 1101aa115d99ec8bafcf1ee6d8061688]
+2025-05-22 21:38:14,968 - __main__ - DEBUG - Marking as processed: https://github.com/003random/PyScripts [hash: fc65d62372bab039b5310338767f8950]
+2025-05-22 21:38:14,968 - __main__ - DEBUG - Marking as processed: https://github.com/003random/sdto-test-gh.github.io [hash: 7554ed99b96fbea0b2ba5429970f4036]
+2025-05-22 21:38:14,969 - __main__ - INFO - Processing time for 003random: 407.88s
+2025-05-22 21:38:14,969 - __main__ - INFO - Starting analysis of user: 00JCIV00 (2/2)
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - Checking file: https://github.com/00JCIV00/aoc_2023_zig
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - File passed filters: https://github.com/00JCIV00/aoc_2023_zig
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - Checking file: https://github.com/00JCIV00/AoC_Kotlin
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - File passed filters: https://github.com/00JCIV00/AoC_Kotlin
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - Checking file: https://github.com/00JCIV00/ao_plugin_ex
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - File passed filters: https://github.com/00JCIV00/ao_plugin_ex
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - Checking file: https://github.com/00JCIV00/cova
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - File passed filters: https://github.com/00JCIV00/cova
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - Checking file: https://github.com/00JCIV00/Easy-CES-Installs
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - File passed filters: https://github.com/00JCIV00/Easy-CES-Installs
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - Checking file: https://github.com/00JCIV00/gps-append-tool
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - File passed filters: https://github.com/00JCIV00/gps-append-tool
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - Checking file: https://github.com/00JCIV00/mod-shell
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - File passed filters: https://github.com/00JCIV00/mod-shell
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - Checking file: https://github.com/00JCIV00/ncurses_zig_tutorial
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - File passed filters: https://github.com/00JCIV00/ncurses_zig_tutorial
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - Checking file: https://github.com/00JCIV00/packt-lib
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - File passed filters: https://github.com/00JCIV00/packt-lib
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - Checking file: https://github.com/00JCIV00/savage_kompliments
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - File passed filters: https://github.com/00JCIV00/savage_kompliments
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - Checking file: https://github.com/00JCIV00/ziglearn
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - File passed filters: https://github.com/00JCIV00/ziglearn
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - Checking file: https://github.com/00JCIV00/zing
+2025-05-22 21:38:14,969 - source.file_filters - DEBUG - File passed filters: https://github.com/00JCIV00/zing
+2025-05-22 21:38:14,969 - __main__ - INFO - Analyzing 00JCIV00 with 12 repositories
+2025-05-22 21:38:14,969 - source.analysis - DEBUG - Using override output directory: /Volumes/nVME1T/Py/GitIn/output/data/00JCIV00
+2025-05-22 21:38:15,785 - source.analysis - DEBUG - Processing ao_plugin_ex...
+2025-05-22 21:38:15,786 - source.analysis - DEBUG - Starting process_single_repo for ao_plugin_ex
+2025-05-22 21:38:17,134 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:38:18,190 - source.metrics.aggregator - INFO - No commits found in the repository for the given time period.
+2025-05-22 21:38:18,194 - source.analysis - DEBUG - Finished process_single_repo for ao_plugin_ex
+2025-05-22 21:38:18,199 - source.analysis - DEBUG - Processing AoC_Kotlin...
+2025-05-22 21:38:18,199 - source.analysis - DEBUG - Starting process_single_repo for AoC_Kotlin
+2025-05-22 21:38:22,220 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:38:24,629 - source.memory_scheduler - DEBUG - Memory check: Current usage 68.4%, Limit 85%
+2025-05-22 21:38:29,737 - source.metrics.aggregator - DEBUG - Processed 15/15 commits
+2025-05-22 21:38:29,756 - source.analysis - DEBUG - Finished process_single_repo for AoC_Kotlin
+2025-05-22 21:38:29,760 - source.analysis - DEBUG - Processing gps-append-tool...
+2025-05-22 21:38:29,760 - source.analysis - DEBUG - Starting process_single_repo for gps-append-tool
+2025-05-22 21:38:33,695 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:38:36,280 - source.memory_scheduler - DEBUG - Memory check: Current usage 68.6%, Limit 85%
+2025-05-22 21:38:40,590 - source.metrics.aggregator - DEBUG - Processed 14/14 commits
+2025-05-22 21:38:40,601 - source.analysis - DEBUG - Finished process_single_repo for gps-append-tool
+2025-05-22 21:38:40,605 - source.analysis - DEBUG - Processing ncurses_zig_tutorial...
+2025-05-22 21:38:40,605 - source.analysis - DEBUG - Starting process_single_repo for ncurses_zig_tutorial
+2025-05-22 21:38:42,651 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 21:38:44,724 - source.memory_scheduler - DEBUG - Memory check: Current usage 68.3%, Limit 85%
+2025-05-22 21:38:45,845 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for pong.zig in commit 4e69a079d1a8b5765fa4628aa9bdece46081c707 (before decoding). Treating as empty.
+2025-05-22 21:38:45,872 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for pong.zig in commit 4e69a079d1a8b5765fa4628aa9bdece46081c707 (before decoding). Treating as empty.
+2025-05-22 21:38:45,885 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for pong.zig in commit 4e69a079d1a8b5765fa4628aa9bdece46081c707. Treating as empty.
+2025-05-22 21:38:46,015 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for pong.zig in commit 4e69a079d1a8b5765fa4628aa9bdece46081c707 (before decoding). Treating as empty.
+2025-05-22 21:38:46,041 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for pong.zig in commit 4e69a079d1a8b5765fa4628aa9bdece46081c707 (before decoding). Treating as empty.
+2025-05-22 21:38:46,058 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for pong.zig in commit 4e69a079d1a8b5765fa4628aa9bdece46081c707. Treating as empty.
+2025-05-22 21:38:46,059 - source.metrics.aggregator - DEBUG - Processed 4/4 commits
+2025-05-22 21:38:46,065 - source.analysis - DEBUG - Finished process_single_repo for ncurses_zig_tutorial
+2025-05-22 21:38:46,070 - source.analysis - DEBUG - Processing cova...
+2025-05-22 21:38:46,070 - source.analysis - DEBUG - Starting process_single_repo for cova
+2025-05-22 22:13:57,441 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 22:16:09,494 - source.metrics.aggregator - DEBUG - Error traversing repository: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v -- https://github.com/00JCIV00/cova /var/folders/_n/_94ggbld07v13kl1b_0m4cw00000gn/T/tmp4znwkc8m/cova
+  stderr: 'Cloning into '/var/folders/_n/_94ggbld07v13kl1b_0m4cw00000gn/T/tmp4znwkc8m/cova'...
+POST git-upload-pack (191 bytes)
+POST git-upload-pack (833 bytes)
+error: RPC failed; curl 18 Transferred a partial file
+error: 6105 bytes of body are still expected
+fetch-pack: unexpected disconnect while reading sideband packet
+fatal: early EOF
+fatal: fetch-pack: invalid index-pack output
+'
+2025-05-22 22:16:16,998 - source.analysis - DEBUG - Finished process_single_repo for cova
+2025-05-22 22:16:17,140 - source.analysis - DEBUG - Processing aoc_2023_zig...
+2025-05-22 22:16:17,140 - source.analysis - DEBUG - Starting process_single_repo for aoc_2023_zig
+2025-05-22 22:16:19,780 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 22:16:22,116 - source.memory_scheduler - DEBUG - Memory check: Current usage 76.2%, Limit 85%
+2025-05-22 22:16:23,289 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for demo02.txt in commit e43202727332eb5818269cf08b9fb7e52e50c5ff (before decoding). Treating as empty.
+2025-05-22 22:16:23,326 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for demo02.txt in commit e43202727332eb5818269cf08b9fb7e52e50c5ff (before decoding). Treating as empty.
+2025-05-22 22:16:23,530 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for demo02.txt in commit e43202727332eb5818269cf08b9fb7e52e50c5ff (before decoding). Treating as empty.
+2025-05-22 22:16:23,567 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for demo02.txt in commit e43202727332eb5818269cf08b9fb7e52e50c5ff (before decoding). Treating as empty.
+2025-05-22 22:16:23,810 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for day01.vim in commit f2663613e06ddbb52bdc3e5f3d6e00d563d2030e (before decoding). Treating as empty.
+2025-05-22 22:16:23,810 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for demo02.txt in commit f2663613e06ddbb52bdc3e5f3d6e00d563d2030e (before decoding). Treating as empty.
+2025-05-22 22:16:23,849 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for day01.vim in commit f2663613e06ddbb52bdc3e5f3d6e00d563d2030e (before decoding). Treating as empty.
+2025-05-22 22:16:23,849 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for demo02.txt in commit f2663613e06ddbb52bdc3e5f3d6e00d563d2030e (before decoding). Treating as empty.
+2025-05-22 22:16:23,869 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for day01.vim in commit f2663613e06ddbb52bdc3e5f3d6e00d563d2030e. Treating as empty.
+2025-05-22 22:16:24,068 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for day01.vim in commit f2663613e06ddbb52bdc3e5f3d6e00d563d2030e (before decoding). Treating as empty.
+2025-05-22 22:16:24,068 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for demo02.txt in commit f2663613e06ddbb52bdc3e5f3d6e00d563d2030e (before decoding). Treating as empty.
+2025-05-22 22:16:24,107 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for day01.vim in commit f2663613e06ddbb52bdc3e5f3d6e00d563d2030e (before decoding). Treating as empty.
+2025-05-22 22:16:24,108 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for demo02.txt in commit f2663613e06ddbb52bdc3e5f3d6e00d563d2030e (before decoding). Treating as empty.
+2025-05-22 22:16:24,127 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for day01.vim in commit f2663613e06ddbb52bdc3e5f3d6e00d563d2030e. Treating as empty.
+2025-05-22 22:16:24,127 - source.metrics.aggregator - DEBUG - Processed 4/4 commits
+2025-05-22 22:16:24,137 - source.analysis - DEBUG - Finished process_single_repo for aoc_2023_zig
+2025-05-22 22:16:24,271 - source.analysis - DEBUG - Processing mod-shell...
+2025-05-22 22:16:24,271 - source.analysis - DEBUG - Starting process_single_repo for mod-shell
+2025-05-22 22:16:27,812 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 22:16:29,986 - source.memory_scheduler - DEBUG - Memory check: Current usage 76.4%, Limit 85%
+2025-05-22 22:16:33,372 - source.metrics.aggregator - DEBUG - Processed 8/8 commits
+2025-05-22 22:16:33,378 - source.analysis - DEBUG - Finished process_single_repo for mod-shell
+2025-05-22 22:16:33,514 - source.analysis - DEBUG - Processing zing...
+2025-05-22 22:16:33,514 - source.analysis - DEBUG - Starting process_single_repo for zing
+2025-05-22 22:17:01,005 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 22:17:04,561 - source.memory_scheduler - DEBUG - Memory check: Current usage 76.8%, Limit 85%
+2025-05-22 22:17:08,515 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit cd3a3261b092ec5f5d0e1ea83e3ece66d8bceccd (before decoding). Treating as empty.
+2025-05-22 22:17:08,672 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit cd3a3261b092ec5f5d0e1ea83e3ece66d8bceccd (before decoding). Treating as empty.
+2025-05-22 22:17:08,794 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for timestamp in commit cd3a3261b092ec5f5d0e1ea83e3ece66d8bceccd. Treating as empty.
+2025-05-22 22:17:10,110 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit cd3a3261b092ec5f5d0e1ea83e3ece66d8bceccd (before decoding). Treating as empty.
+2025-05-22 22:17:10,261 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit cd3a3261b092ec5f5d0e1ea83e3ece66d8bceccd (before decoding). Treating as empty.
+2025-05-22 22:17:10,378 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for timestamp in commit cd3a3261b092ec5f5d0e1ea83e3ece66d8bceccd. Treating as empty.
+2025-05-22 22:17:12,823 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 015bb8fc90318744bb0acf2fe64bccd1.txt in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,823 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 84f69cdd5b3e4bcd173b6abd8fb72d24.txt in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,824 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,824 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,824 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for dependencies.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,824 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,824 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build.o in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,824 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,824 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for test in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,824 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for test.o in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,824 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 494a2a50f721de290a3468d5c21f523c in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,824 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 509c93c3c63bd243928ced40fe60b1d5 in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,893 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 015bb8fc90318744bb0acf2fe64bccd1.txt in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,893 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 84f69cdd5b3e4bcd173b6abd8fb72d24.txt in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,893 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,893 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,893 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for dependencies.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,893 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,893 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build.o in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,893 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,893 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for test in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,893 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for test.o in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,893 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 494a2a50f721de290a3468d5c21f523c in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,893 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 509c93c3c63bd243928ced40fe60b1d5 in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:12,927 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for timestamp in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:12,927 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for builtin.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:12,927 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for dependencies.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:12,927 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for build in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:12,927 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for build.o in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:12,927 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for builtin.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:12,927 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for test in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:12,927 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for test.o in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:12,927 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 494a2a50f721de290a3468d5c21f523c in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:12,927 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 509c93c3c63bd243928ced40fe60b1d5 in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:13,268 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 015bb8fc90318744bb0acf2fe64bccd1.txt in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,268 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 84f69cdd5b3e4bcd173b6abd8fb72d24.txt in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,268 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,268 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,268 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for dependencies.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,268 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,268 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build.o in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,268 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,268 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for test in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,268 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for test.o in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,268 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 494a2a50f721de290a3468d5c21f523c in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,268 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 509c93c3c63bd243928ced40fe60b1d5 in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,336 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 015bb8fc90318744bb0acf2fe64bccd1.txt in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,336 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 84f69cdd5b3e4bcd173b6abd8fb72d24.txt in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,336 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,336 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,336 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for dependencies.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,336 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,336 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build.o in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,336 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,336 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for test in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,336 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for test.o in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,337 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 494a2a50f721de290a3468d5c21f523c in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,337 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 509c93c3c63bd243928ced40fe60b1d5 in commit 8115d296a477064cf45bffe55a23f7fed9f72e27 (before decoding). Treating as empty.
+2025-05-22 22:17:13,371 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for timestamp in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:13,371 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for builtin.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:13,371 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for dependencies.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:13,371 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for build in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:13,371 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for build.o in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:13,371 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for builtin.zig in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:13,371 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for test in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:13,371 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for test.o in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:13,371 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 494a2a50f721de290a3468d5c21f523c in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:13,371 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 509c93c3c63bd243928ced40fe60b1d5 in commit 8115d296a477064cf45bffe55a23f7fed9f72e27. Treating as empty.
+2025-05-22 22:17:14,107 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for PacketBitFieldGroup.zig in commit 26b038691acfacd85108ae81d158a68b6c5325fc (before decoding). Treating as empty.
+2025-05-22 22:17:14,146 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for PacketBitFieldGroup.zig in commit 26b038691acfacd85108ae81d158a68b6c5325fc (before decoding). Treating as empty.
+2025-05-22 22:17:14,166 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for PacketBitFieldGroup.zig in commit 26b038691acfacd85108ae81d158a68b6c5325fc. Treating as empty.
+2025-05-22 22:17:14,422 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for PacketBitFieldGroup.zig in commit 26b038691acfacd85108ae81d158a68b6c5325fc (before decoding). Treating as empty.
+2025-05-22 22:17:14,499 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for PacketBitFieldGroup.zig in commit 26b038691acfacd85108ae81d158a68b6c5325fc (before decoding). Treating as empty.
+2025-05-22 22:17:14,521 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for PacketBitFieldGroup.zig in commit 26b038691acfacd85108ae81d158a68b6c5325fc. Treating as empty.
+2025-05-22 22:17:30,209 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for zinglib.zig in commit 2e2cc6289edf84edc9ffca8e306688f8fe7dd0fc (before decoding). Treating as empty.
+2025-05-22 22:17:30,256 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for zinglib.zig in commit 2e2cc6289edf84edc9ffca8e306688f8fe7dd0fc (before decoding). Treating as empty.
+2025-05-22 22:17:30,286 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for zinglib.zig in commit 2e2cc6289edf84edc9ffca8e306688f8fe7dd0fc. Treating as empty.
+2025-05-22 22:17:30,528 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for zinglib.zig in commit 2e2cc6289edf84edc9ffca8e306688f8fe7dd0fc (before decoding). Treating as empty.
+2025-05-22 22:17:30,574 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for zinglib.zig in commit 2e2cc6289edf84edc9ffca8e306688f8fe7dd0fc (before decoding). Treating as empty.
+2025-05-22 22:17:30,605 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for zinglib.zig in commit 2e2cc6289edf84edc9ffca8e306688f8fe7dd0fc. Treating as empty.
+2025-05-22 22:17:50,845 - source.metrics.aggregator - DEBUG - Processed 87/87 commits
+2025-05-22 22:17:50,907 - source.analysis - DEBUG - Finished process_single_repo for zing
+2025-05-22 22:17:51,062 - source.analysis - DEBUG - Processing Easy-CES-Installs...
+2025-05-22 22:17:51,062 - source.analysis - DEBUG - Starting process_single_repo for Easy-CES-Installs
+2025-05-22 22:17:54,431 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 22:17:56,533 - source.memory_scheduler - DEBUG - Memory check: Current usage 74.6%, Limit 85%
+2025-05-22 22:17:59,942 - source.metrics.aggregator - DEBUG - Processed 7/7 commits
+2025-05-22 22:17:59,948 - source.analysis - DEBUG - Finished process_single_repo for Easy-CES-Installs
+2025-05-22 22:18:00,085 - source.analysis - DEBUG - Processing ziglearn...
+2025-05-22 22:18:00,085 - source.analysis - DEBUG - Starting process_single_repo for ziglearn
+2025-05-22 22:18:11,155 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 22:18:14,648 - source.memory_scheduler - DEBUG - Memory check: Current usage 74.4%, Limit 85%
+2025-05-22 22:18:19,272 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 30296fe24f07769ffdad5627d1bc5c96dd41bb91 (before decoding). Treating as empty.
+2025-05-22 22:18:19,435 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 30296fe24f07769ffdad5627d1bc5c96dd41bb91 (before decoding). Treating as empty.
+2025-05-22 22:18:19,563 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for timestamp in commit 30296fe24f07769ffdad5627d1bc5c96dd41bb91. Treating as empty.
+2025-05-22 22:18:20,914 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 30296fe24f07769ffdad5627d1bc5c96dd41bb91 (before decoding). Treating as empty.
+2025-05-22 22:18:21,075 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 30296fe24f07769ffdad5627d1bc5c96dd41bb91 (before decoding). Treating as empty.
+2025-05-22 22:18:21,201 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for timestamp in commit 30296fe24f07769ffdad5627d1bc5c96dd41bb91. Treating as empty.
+2025-05-22 22:18:22,550 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 958d53801993b13762ac3c3fd96fc1ef4fcb1e10 (before decoding). Treating as empty.
+2025-05-22 22:18:22,749 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 958d53801993b13762ac3c3fd96fc1ef4fcb1e10 (before decoding). Treating as empty.
+2025-05-22 22:18:22,879 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for timestamp in commit 958d53801993b13762ac3c3fd96fc1ef4fcb1e10. Treating as empty.
+2025-05-22 22:18:24,238 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 958d53801993b13762ac3c3fd96fc1ef4fcb1e10 (before decoding). Treating as empty.
+2025-05-22 22:18:24,403 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 958d53801993b13762ac3c3fd96fc1ef4fcb1e10 (before decoding). Treating as empty.
+2025-05-22 22:18:24,531 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for timestamp in commit 958d53801993b13762ac3c3fd96fc1ef4fcb1e10. Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_learn.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for main.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 2ae9e98ab669807e275b1ae20bfb9797.txt in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 7ef929cafc118ba2a39bae04a8bd2db1.txt in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_and_build in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_and_build.o in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for dependencies.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build.o in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 494a2a50f721de290a3468d5c21f523c in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 74147b4f3145c4e8dacb4e3a303eb089 in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,861 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_and_build in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,933 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,933 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_learn.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,933 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for main.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,933 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 2ae9e98ab669807e275b1ae20bfb9797.txt in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,933 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 7ef929cafc118ba2a39bae04a8bd2db1.txt in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,933 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,933 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,933 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,933 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_and_build in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,933 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_and_build.o in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,933 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for dependencies.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,933 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,933 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build.o in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,933 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 494a2a50f721de290a3468d5c21f523c in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,934 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 74147b4f3145c4e8dacb4e3a303eb089 in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,934 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_and_build in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:25,970 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for build.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:25,970 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cli_learn.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:25,970 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for main.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:25,970 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for timestamp in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:25,970 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for builtin.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:25,970 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for builtin.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:25,970 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cli_and_build in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:25,970 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cli_and_build.o in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:25,970 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for dependencies.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:25,970 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for build in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:25,970 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for build.o in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:25,970 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 494a2a50f721de290a3468d5c21f523c in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:25,970 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 74147b4f3145c4e8dacb4e3a303eb089 in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:25,970 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cli_and_build in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:26,333 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,333 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_learn.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,333 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for main.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,333 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 2ae9e98ab669807e275b1ae20bfb9797.txt in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,333 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 7ef929cafc118ba2a39bae04a8bd2db1.txt in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,333 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,333 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,333 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,333 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_and_build in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,333 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_and_build.o in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,334 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for dependencies.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,334 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,334 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build.o in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,334 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 494a2a50f721de290a3468d5c21f523c in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,334 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 74147b4f3145c4e8dacb4e3a303eb089 in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,334 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_and_build in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_learn.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for main.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 2ae9e98ab669807e275b1ae20bfb9797.txt in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 7ef929cafc118ba2a39bae04a8bd2db1.txt in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for timestamp in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for builtin.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_and_build in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_and_build.o in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for dependencies.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for build.o in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 494a2a50f721de290a3468d5c21f523c in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 74147b4f3145c4e8dacb4e3a303eb089 in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,406 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cli_and_build in commit 57f8e53a626053de9bed39b8d859e06478d28edc (before decoding). Treating as empty.
+2025-05-22 22:18:26,442 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for build.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:26,442 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cli_learn.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:26,442 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for main.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:26,442 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for timestamp in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:26,442 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for builtin.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:26,442 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for builtin.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:26,442 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cli_and_build in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:26,442 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cli_and_build.o in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:26,442 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for dependencies.zig in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:26,442 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for build in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:26,442 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for build.o in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:26,442 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 494a2a50f721de290a3468d5c21f523c in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:26,443 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 74147b4f3145c4e8dacb4e3a303eb089 in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:26,443 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cli_and_build in commit 57f8e53a626053de9bed39b8d859e06478d28edc. Treating as empty.
+2025-05-22 22:18:26,648 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for helloworld.zig in commit 0c9f088b847e78504315ae392377fc37502a4c7f (before decoding). Treating as empty.
+2025-05-22 22:18:26,689 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for helloworld.zig in commit 0c9f088b847e78504315ae392377fc37502a4c7f (before decoding). Treating as empty.
+2025-05-22 22:18:26,709 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for helloworld.zig in commit 0c9f088b847e78504315ae392377fc37502a4c7f. Treating as empty.
+2025-05-22 22:18:26,912 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for helloworld.zig in commit 0c9f088b847e78504315ae392377fc37502a4c7f (before decoding). Treating as empty.
+2025-05-22 22:18:26,953 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for helloworld.zig in commit 0c9f088b847e78504315ae392377fc37502a4c7f (before decoding). Treating as empty.
+2025-05-22 22:18:26,973 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for helloworld.zig in commit 0c9f088b847e78504315ae392377fc37502a4c7f. Treating as empty.
+2025-05-22 22:18:27,177 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for random_learn.zig in commit 0c301d6b34269b2cfd95fee7b33530801e0901f6 (before decoding). Treating as empty.
+2025-05-22 22:18:27,218 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for random_learn.zig in commit 0c301d6b34269b2cfd95fee7b33530801e0901f6 (before decoding). Treating as empty.
+2025-05-22 22:18:27,238 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for random_learn.zig in commit 0c301d6b34269b2cfd95fee7b33530801e0901f6. Treating as empty.
+2025-05-22 22:18:27,443 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for random_learn.zig in commit 0c301d6b34269b2cfd95fee7b33530801e0901f6 (before decoding). Treating as empty.
+2025-05-22 22:18:27,485 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for random_learn.zig in commit 0c301d6b34269b2cfd95fee7b33530801e0901f6 (before decoding). Treating as empty.
+2025-05-22 22:18:27,505 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for random_learn.zig in commit 0c301d6b34269b2cfd95fee7b33530801e0901f6. Treating as empty.
+2025-05-22 22:18:27,709 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for stdio_learn.zig in commit c09521ee2aef15514f8e09a075a6fdf0e645900d (before decoding). Treating as empty.
+2025-05-22 22:18:27,750 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for stdio_learn.zig in commit c09521ee2aef15514f8e09a075a6fdf0e645900d (before decoding). Treating as empty.
+2025-05-22 22:18:27,770 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for stdio_learn.zig in commit c09521ee2aef15514f8e09a075a6fdf0e645900d. Treating as empty.
+2025-05-22 22:18:27,975 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for stdio_learn.zig in commit c09521ee2aef15514f8e09a075a6fdf0e645900d (before decoding). Treating as empty.
+2025-05-22 22:18:28,016 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for stdio_learn.zig in commit c09521ee2aef15514f8e09a075a6fdf0e645900d (before decoding). Treating as empty.
+2025-05-22 22:18:28,037 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for stdio_learn.zig in commit c09521ee2aef15514f8e09a075a6fdf0e645900d. Treating as empty.
+2025-05-22 22:18:28,241 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for struct_learn.zig in commit 8a1652ed27912d10e912cd7a31404c574014a0e7 (before decoding). Treating as empty.
+2025-05-22 22:18:28,281 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for struct_learn.zig in commit 8a1652ed27912d10e912cd7a31404c574014a0e7 (before decoding). Treating as empty.
+2025-05-22 22:18:28,302 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for struct_learn.zig in commit 8a1652ed27912d10e912cd7a31404c574014a0e7. Treating as empty.
+2025-05-22 22:18:28,507 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for struct_learn.zig in commit 8a1652ed27912d10e912cd7a31404c574014a0e7 (before decoding). Treating as empty.
+2025-05-22 22:18:28,547 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for struct_learn.zig in commit 8a1652ed27912d10e912cd7a31404c574014a0e7 (before decoding). Treating as empty.
+2025-05-22 22:18:28,568 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for struct_learn.zig in commit 8a1652ed27912d10e912cd7a31404c574014a0e7. Treating as empty.
+2025-05-22 22:18:28,773 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for zigzagzoe.zig in commit 3beea41ba35a0570dc88712ec921e9725813e845 (before decoding). Treating as empty.
+2025-05-22 22:18:28,813 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for zigzagzoe.zig in commit 3beea41ba35a0570dc88712ec921e9725813e845 (before decoding). Treating as empty.
+2025-05-22 22:18:28,834 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for zigzagzoe.zig in commit 3beea41ba35a0570dc88712ec921e9725813e845. Treating as empty.
+2025-05-22 22:18:29,039 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for zigzagzoe.zig in commit 3beea41ba35a0570dc88712ec921e9725813e845 (before decoding). Treating as empty.
+2025-05-22 22:18:29,080 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for zigzagzoe.zig in commit 3beea41ba35a0570dc88712ec921e9725813e845 (before decoding). Treating as empty.
+2025-05-22 22:18:29,101 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for zigzagzoe.zig in commit 3beea41ba35a0570dc88712ec921e9725813e845. Treating as empty.
+2025-05-22 22:18:36,600 - source.metrics.aggregator - DEBUG - Processed 29/29 commits
+2025-05-22 22:18:36,658 - source.analysis - DEBUG - Finished process_single_repo for ziglearn
+2025-05-22 22:18:36,795 - source.analysis - DEBUG - Processing savage_kompliments...
+2025-05-22 22:18:36,795 - source.analysis - DEBUG - Starting process_single_repo for savage_kompliments
+2025-05-22 22:18:40,439 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 22:18:43,143 - source.memory_scheduler - DEBUG - Memory check: Current usage 74.1%, Limit 85%
+2025-05-22 22:18:43,960 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for UserIOHelpers.kt in commit 79d03be9aa482e33460032744e0f03d28904c747 (before decoding). Treating as empty.
+2025-05-22 22:18:44,004 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for UserIOHelpers.kt in commit 79d03be9aa482e33460032744e0f03d28904c747 (before decoding). Treating as empty.
+2025-05-22 22:18:44,026 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for UserIOHelpers.kt in commit 79d03be9aa482e33460032744e0f03d28904c747. Treating as empty.
+2025-05-22 22:18:44,240 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for UserIOHelpers.kt in commit 79d03be9aa482e33460032744e0f03d28904c747 (before decoding). Treating as empty.
+2025-05-22 22:18:44,283 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for UserIOHelpers.kt in commit 79d03be9aa482e33460032744e0f03d28904c747 (before decoding). Treating as empty.
+2025-05-22 22:18:44,305 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for UserIOHelpers.kt in commit 79d03be9aa482e33460032744e0f03d28904c747. Treating as empty.
+2025-05-22 22:18:44,306 - source.metrics.aggregator - DEBUG - Processed 2/2 commits
+2025-05-22 22:18:44,332 - source.analysis - DEBUG - Finished process_single_repo for savage_kompliments
+2025-05-22 22:18:44,471 - source.analysis - DEBUG - Processing packt-lib...
+2025-05-22 22:18:44,471 - source.analysis - DEBUG - Starting process_single_repo for packt-lib
+2025-05-22 22:18:48,893 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-22 22:18:51,092 - source.memory_scheduler - DEBUG - Memory check: Current usage 74.1%, Limit 85%
+2025-05-22 22:18:52,485 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for UDPPacket.kt in commit 38ad65e342b14bdec7fd72dba1cad0429b2fddd2 (before decoding). Treating as empty.
+2025-05-22 22:18:52,529 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for UDPPacket.kt in commit 38ad65e342b14bdec7fd72dba1cad0429b2fddd2 (before decoding). Treating as empty.
+2025-05-22 22:18:52,555 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for UDPPacket.kt in commit 38ad65e342b14bdec7fd72dba1cad0429b2fddd2. Treating as empty.
+2025-05-22 22:18:52,773 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for UDPPacket.kt in commit 38ad65e342b14bdec7fd72dba1cad0429b2fddd2 (before decoding). Treating as empty.
+2025-05-22 22:18:52,817 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for UDPPacket.kt in commit 38ad65e342b14bdec7fd72dba1cad0429b2fddd2 (before decoding). Treating as empty.
+2025-05-22 22:18:52,842 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for UDPPacket.kt in commit 38ad65e342b14bdec7fd72dba1cad0429b2fddd2. Treating as empty.
+2025-05-22 22:18:53,060 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Project_Default.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,060 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for kotlinc.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,060 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for KotlinJavaRuntime.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,060 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Maven__org_jetbrains_kotlin_kotlin_reflect_1_8_10.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,060 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for misc.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,060 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for modules.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,060 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for vcs.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,060 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for workspace.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,103 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Project_Default.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,103 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for kotlinc.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,103 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for KotlinJavaRuntime.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,103 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Maven__org_jetbrains_kotlin_kotlin_reflect_1_8_10.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,103 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for misc.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,103 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for modules.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,103 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for vcs.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,103 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for workspace.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,125 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Project_Default.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,125 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for kotlinc.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,125 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for KotlinJavaRuntime.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,125 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Maven__org_jetbrains_kotlin_kotlin_reflect_1_8_10.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,125 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for misc.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,125 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for modules.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,125 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for vcs.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,125 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for workspace.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,341 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Project_Default.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,341 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for kotlinc.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,341 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for KotlinJavaRuntime.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,341 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Maven__org_jetbrains_kotlin_kotlin_reflect_1_8_10.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,341 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for misc.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,341 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for modules.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,341 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for vcs.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,341 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for workspace.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,384 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Project_Default.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,384 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for kotlinc.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,384 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for KotlinJavaRuntime.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,384 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Maven__org_jetbrains_kotlin_kotlin_reflect_1_8_10.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,384 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for misc.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,384 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for modules.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,384 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for vcs.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,384 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for workspace.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292 (before decoding). Treating as empty.
+2025-05-22 22:18:53,405 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Project_Default.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,405 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for kotlinc.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,405 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for KotlinJavaRuntime.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,405 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Maven__org_jetbrains_kotlin_kotlin_reflect_1_8_10.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,405 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for misc.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,405 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for modules.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,405 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for vcs.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,405 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for workspace.xml in commit 3ea7a6ad8682cca1bebe29684952055c1c1ab292. Treating as empty.
+2025-05-22 22:18:53,609 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for .gitignore in commit a0e810753e81ca656075db41ec7555401901072c (before decoding). Treating as empty.
+2025-05-22 22:18:53,649 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for .gitignore in commit a0e810753e81ca656075db41ec7555401901072c (before decoding). Treating as empty.
+2025-05-22 22:18:53,669 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for .gitignore in commit a0e810753e81ca656075db41ec7555401901072c. Treating as empty.
+2025-05-22 22:18:53,872 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for .gitignore in commit a0e810753e81ca656075db41ec7555401901072c (before decoding). Treating as empty.
+2025-05-22 22:18:53,912 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for .gitignore in commit a0e810753e81ca656075db41ec7555401901072c (before decoding). Treating as empty.
+2025-05-22 22:18:53,933 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for .gitignore in commit a0e810753e81ca656075db41ec7555401901072c. Treating as empty.
+2025-05-22 22:18:54,134 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for packt-lib.iml in commit 153255583a004a3b38c40de477953bae4bc35b96 (before decoding). Treating as empty.
+2025-05-22 22:18:54,175 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for packt-lib.iml in commit 153255583a004a3b38c40de477953bae4bc35b96 (before decoding). Treating as empty.
+2025-05-22 22:18:54,195 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for packt-lib.iml in commit 153255583a004a3b38c40de477953bae4bc35b96. Treating as empty.
+2025-05-22 22:18:54,397 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for packt-lib.iml in commit 153255583a004a3b38c40de477953bae4bc35b96 (before decoding). Treating as empty.
+2025-05-22 22:18:54,437 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for packt-lib.iml in commit 153255583a004a3b38c40de477953bae4bc35b96 (before decoding). Treating as empty.
+2025-05-22 22:18:54,457 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for packt-lib.iml in commit 153255583a004a3b38c40de477953bae4bc35b96. Treating as empty.
+2025-05-22 22:18:54,693 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce (before decoding). Treating as empty.
+2025-05-22 22:18:54,694 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce (before decoding). Treating as empty.
+2025-05-22 22:18:54,694 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce (before decoding). Treating as empty.
+2025-05-22 22:18:54,744 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce (before decoding). Treating as empty.
+2025-05-22 22:18:54,744 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce (before decoding). Treating as empty.
+2025-05-22 22:18:54,745 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce (before decoding). Treating as empty.
+2025-05-22 22:18:54,773 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce. Treating as empty.
+2025-05-22 22:18:54,774 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce. Treating as empty.
+2025-05-22 22:18:54,776 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce. Treating as empty.
+2025-05-22 22:18:55,019 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce (before decoding). Treating as empty.
+2025-05-22 22:18:55,020 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce (before decoding). Treating as empty.
+2025-05-22 22:18:55,020 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce (before decoding). Treating as empty.
+2025-05-22 22:18:55,070 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce (before decoding). Treating as empty.
+2025-05-22 22:18:55,071 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce (before decoding). Treating as empty.
+2025-05-22 22:18:55,071 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce (before decoding). Treating as empty.
+2025-05-22 22:18:55,099 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce. Treating as empty.
+2025-05-22 22:18:55,101 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce. Treating as empty.
+2025-05-22 22:18:55,102 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for gc.properties in commit 4afe134f0271a6355cdc8391f98e7371d11a5fce. Treating as empty.
+2025-05-22 22:18:55,330 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for BitField.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,330 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for BitFieldGroup.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,330 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Main.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,330 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for BasePacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,330 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for ICMPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,330 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for TCPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,330 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for UDPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,330 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for PacktUtils.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,374 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for BitField.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,374 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for BitFieldGroup.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,374 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Main.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,374 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for BasePacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,374 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for ICMPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,374 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for TCPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,374 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for UDPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,374 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for PacktUtils.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,396 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for BitField.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:55,396 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for BitFieldGroup.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:55,396 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Main.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:55,396 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for BasePacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:55,396 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for ICMPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:55,396 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for TCPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:55,396 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for UDPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:55,396 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for PacktUtils.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:55,632 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for BitField.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,632 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for BitFieldGroup.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,632 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Main.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,632 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for BasePacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for ICMPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for TCPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for UDPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for PacktUtils.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,677 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for BitField.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,677 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for BitFieldGroup.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,677 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Main.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,677 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for BasePacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,677 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for ICMPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,677 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for TCPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,678 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for UDPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,678 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for PacktUtils.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6 (before decoding). Treating as empty.
+2025-05-22 22:18:55,700 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for BitField.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:55,700 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for BitFieldGroup.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:55,700 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Main.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:55,700 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for BasePacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:55,700 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for ICMPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:55,700 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for TCPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:55,700 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for UDPPacket.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:55,700 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for PacktUtils.kt in commit 47c3f511d8adccd0303844c7fd75c373abf26bf6. Treating as empty.
+2025-05-22 22:18:56,824 - source.metrics.aggregator - DEBUG - Processed 10/10 commits
+2025-05-22 22:18:56,838 - source.analysis - DEBUG - Finished process_single_repo for packt-lib
+2025-05-22 22:18:57,009 - source.analysis - DEBUG - Combined analysis complete for 00JCIV00 all repositories!
+2025-05-22 22:18:57,010 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/00JCIV00/00JCIV00_aoc_2023_zig_full_history_analysis.json']
+2025-05-22 22:18:57,010 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/00JCIV00/00JCIV00_AoC_Kotlin_full_history_analysis.json']
+2025-05-22 22:18:57,010 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/00JCIV00/00JCIV00_ao_plugin_ex_full_history_analysis.json']
+2025-05-22 22:18:57,010 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/00JCIV00/00JCIV00_cova_full_history_analysis.json']
+2025-05-22 22:18:57,010 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/00JCIV00/00JCIV00_Easy-CES-Installs_full_history_analysis.json']
+2025-05-22 22:18:57,010 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/00JCIV00/00JCIV00_gps-append-tool_full_history_analysis.json']
+2025-05-22 22:18:57,010 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/00JCIV00/00JCIV00_mod-shell_full_history_analysis.json']
+2025-05-22 22:18:57,010 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/00JCIV00/00JCIV00_ncurses_zig_tutorial_full_history_analysis.json']
+2025-05-22 22:18:57,010 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/00JCIV00/00JCIV00_packt-lib_full_history_analysis.json']
+2025-05-22 22:18:57,010 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/00JCIV00/00JCIV00_savage_kompliments_full_history_analysis.json']
+2025-05-22 22:18:57,010 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/00JCIV00/00JCIV00_ziglearn_full_history_analysis.json']
+2025-05-22 22:18:57,010 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/00JCIV00/00JCIV00_zing_full_history_analysis.json']
+2025-05-22 22:18:57,228 - __main__ - INFO - User 00JCIV00 successfully completed
+2025-05-22 22:18:57,228 - __main__ - DEBUG - Marking as processed: https://github.com/00JCIV00/aoc_2023_zig [hash: dfcfad462333bc83bd0124e731eba5fd]
+2025-05-22 22:18:57,228 - __main__ - DEBUG - Marking as processed: https://github.com/00JCIV00/AoC_Kotlin [hash: 5c589dd2376cbf3a182f2482d548e213]
+2025-05-22 22:18:57,228 - __main__ - DEBUG - Marking as processed: https://github.com/00JCIV00/ao_plugin_ex [hash: b9deaeb66b72498811d063c79e878d2c]
+2025-05-22 22:18:57,228 - __main__ - DEBUG - Marking as processed: https://github.com/00JCIV00/cova [hash: 6ea6946c0d8662c9d35644f417915fff]
+2025-05-22 22:18:57,228 - __main__ - DEBUG - Marking as processed: https://github.com/00JCIV00/Easy-CES-Installs [hash: c2adfc17aa41d1afefc31c0be9fdf9c5]
+2025-05-22 22:18:57,228 - __main__ - DEBUG - Marking as processed: https://github.com/00JCIV00/gps-append-tool [hash: c92876df8276bd50201e106b084aec8f]
+2025-05-22 22:18:57,228 - __main__ - DEBUG - Marking as processed: https://github.com/00JCIV00/mod-shell [hash: da5412757033a68867e1ac6ca8342677]
+2025-05-22 22:18:57,228 - __main__ - DEBUG - Marking as processed: https://github.com/00JCIV00/ncurses_zig_tutorial [hash: 3c2127b498f9a0d4f1373f2ac4b6c400]
+2025-05-22 22:18:57,228 - __main__ - DEBUG - Marking as processed: https://github.com/00JCIV00/packt-lib [hash: bc2a7cdd4340a4865de8b4bf939a2d85]
+2025-05-22 22:18:57,228 - __main__ - DEBUG - Marking as processed: https://github.com/00JCIV00/savage_kompliments [hash: 94828075c968cb6e96cfd14e358d41a9]
+2025-05-22 22:18:57,228 - __main__ - DEBUG - Marking as processed: https://github.com/00JCIV00/ziglearn [hash: 84cf55bcf82ca3c3ad50ded8be8551eb]
+2025-05-22 22:18:57,228 - __main__ - DEBUG - Marking as processed: https://github.com/00JCIV00/zing [hash: f53270d4f7d76ee30f67e7571cdadd95]
+2025-05-22 22:18:57,228 - __main__ - INFO - Processing time for 00JCIV00: 2442.26s
+2025-05-22 22:18:57,228 - __main__ - INFO - 
+================================================================================
+2025-05-22 22:18:57,228 - __main__ - INFO - ANALYSIS COMPLETE!
+2025-05-22 22:18:57,228 - __main__ - INFO - Successfully processed 2 users
+2025-05-22 22:18:57,228 - __main__ - INFO - Total processing time: 2850.14s
+2025-05-22 22:18:57,228 - __main__ - INFO - ================================================================================
+2025-05-22 22:18:57,228 - __main__ - INFO - Performing final cleanup of temporary directories...
+2025-05-22 22:18:57,228 - __main__ - INFO - Temporary directories cleanup completed.

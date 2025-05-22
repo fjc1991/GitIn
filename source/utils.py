@@ -2,8 +2,7 @@ import os
 import hashlib
 import json
 import shutil
-import datetime
-from datetime import timedelta
+from datetime import datetime, timedelta
 import logging
 from functools import lru_cache
 from tqdm import tqdm
@@ -413,3 +412,44 @@ def clean_csv_bom(csv_path):
             cleaned_rows.append(cleaned_row)
             
     return cleaned_rows, fieldnames
+
+class MetricsAccumulator:
+    """
+    A utility class for accumulating and combining metrics from multiple repositories or time periods.
+    """
+    
+    def __init__(self):
+        self.metrics = {}
+        self.repo_names = set()
+    
+    def add_metrics(self, repo_name, metrics_type, metrics):
+        """Add metrics for a specific repository and metrics type."""
+        if metrics_type not in self.metrics:
+            self.metrics[metrics_type] = {}
+        
+        self.metrics[metrics_type][repo_name] = metrics
+        self.repo_names.add(repo_name)
+    
+    def get_combined_metrics(self, metrics_type, merge_func):
+        """
+        Combine metrics of a specific type across all repositories.
+        
+        Args:
+            metrics_type: The type of metrics to combine
+            merge_func: Function that knows how to merge the specific metrics type
+        
+        Returns:
+            Combined metrics for the specified type
+        """
+        if metrics_type not in self.metrics:
+            return None
+        
+        metrics_list = list(self.metrics[metrics_type].values())
+        return merge_func(metrics_list)
+    
+    def get_repo_metrics(self, repo_name, metrics_type):
+        """Get metrics for a specific repository and metrics type."""
+        if metrics_type not in self.metrics or repo_name not in self.metrics[metrics_type]:
+            return None
+        
+        return self.metrics[metrics_type][repo_name]
