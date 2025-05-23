@@ -1,3 +1,4 @@
+# source/metrics/aggregator.py
 import traceback
 import os
 from tqdm import tqdm
@@ -23,6 +24,15 @@ from .quality import (
     MeaningfulCodeMetric
 )
 
+# Import new velocity metrics
+from .velocity import (
+    DiffDeltaMetric,
+    CodeProvenanceMetric,
+    DeveloperHoursMetric,
+    CodeDomainMetric,
+    DeveloperStatsAggregator
+)
+
 from ..utils import get_repo_date_range
 
 logger = get_logger(__name__)
@@ -30,6 +40,7 @@ logger = get_logger(__name__)
 def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly=True, memory_limit=95):
     """
     Calculate process metrics using the class-based approach.
+    Now includes velocity metrics per developer.
     """
     if calculate_weekly and (since is None or to is None):
         logger.info("No date range provided. Determining repository date range for weekly metrics...")
@@ -69,10 +80,23 @@ def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly
             "code_movement": CodeMovementMetric(),
             "test_doc_pct": QualityCornerstonesMetric(),
             "meaningful_code": MeaningfulCodeMetric()
+        },
+        "velocity": {
+            "diff_delta": DiffDeltaMetric(),
+            "code_provenance": CodeProvenanceMetric(),
+            "developer_hours": DeveloperHoursMetric(),
+            "code_domain": CodeDomainMetric()
         }
     }
     
     weekly_metrics = {}
+    velocity_by_developer = {
+        "diff_delta": {},
+        "code_provenance": {},
+        "developer_hours": {},
+        "code_domain": {}
+    }
+    
     if calculate_weekly:
         weekly_ranges = generate_weekly_ranges(since, to)
         for _, _, week_label in weekly_ranges:
@@ -90,6 +114,12 @@ def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly
                     "code_movement": CodeMovementMetric(),
                     "test_doc_pct": QualityCornerstonesMetric(),
                     "meaningful_code": MeaningfulCodeMetric()
+                },
+                "velocity": {
+                    "diff_delta": DiffDeltaMetric(),
+                    "code_provenance": CodeProvenanceMetric(),
+                    "developer_hours": DeveloperHoursMetric(),
+                    "code_domain": CodeDomainMetric()
                 }
             }
     
@@ -152,17 +182,27 @@ def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly
     
     # Collect metrics from calculators with new structure
     result = {}
+    
     if not calculate_weekly:
+        # Return format compatible with existing code
         for category, metrics in overall_metrics.items():
-            if category not in result:
-                result[category] = {}
+            if category == "velocity":
+                # Add velocity metrics to a separate section
+                if "developer_velocity" not in result:
+                    result["developer_velocity"] = {}
                 
-            for metric_name, calculator in metrics.items():
-                if metric_name == "contributors":
-                    result[category]["contributors_count"] = calculator.get_metrics()
-                    result[category]["contributors_experience"] = calculator.get_experience_metrics()
-                else:
-                    result[category][metric_name] = calculator.get_metrics()
+                for metric_name, calculator in metrics.items():
+                    result["developer_velocity"][metric_name] = calculator.get_metrics()
+            else:
+                if category not in result:
+                    result[category] = {}
+                    
+                for metric_name, calculator in metrics.items():
+                    if metric_name == "contributors":
+                        result[category]["contributors_count"] = calculator.get_metrics()
+                        result[category]["contributors_experience"] = calculator.get_experience_metrics()
+                    else:
+                        result[category][metric_name] = calculator.get_metrics()
         return result
     else:
         weekly_results = {}
@@ -170,27 +210,75 @@ def calculate_metrics(repo_url, repo_path, since=None, to=None, calculate_weekly
             weekly_results[week_label] = {}
             
             for category, metrics in categories.items():
-                weekly_results[week_label][category] = {}
-                
-                for metric_name, calculator in metrics.items():
-                    if metric_name == "contributors":
-                        weekly_results[week_label][category]["contributors_count"] = calculator.get_metrics()
-                        weekly_results[week_label][category]["contributors_experience"] = calculator.get_experience_metrics()
-                    else:
-                        weekly_results[week_label][category][metric_name] = calculator.get_metrics()
+                if category == "velocity":
+                    # Collect velocity metrics separately
+                    for metric_name, calculator in metrics.items():
+                        metric_data = calculator.get_metrics()
+                        # Store for aggregation later
+                        for dev, dev_data in metric_data.items():
+                            if dev not in velocity_by_developer[metric_name]:
+                                velocity_by_developer[metric_name][dev] = {}
+                            # Merge weekly data
+                            if 'weekly_velocity' in dev_data:
+                                for week, week_data in dev_data['weekly_velocity'].items():
+                                    velocity_by_developer[metric_name][dev][week] = week_data
+                            elif 'weekly_provenance' in dev_data:
+                                for week, week_data in dev_data['weekly_provenance'].items():
+                                    velocity_by_developer[metric_name][dev][week] = week_data
+                            elif 'weekly_hours' in dev_data:
+                                for week, week_data in dev_data['weekly_hours'].items():
+                                    velocity_by_developer[metric_name][dev][week] = week_data
+                            elif 'weekly_domains' in dev_data:
+                                for week, week_data in dev_data['weekly_domains'].items():
+                                    velocity_by_developer[metric_name][dev][week] = week_data
+                else:
+                    weekly_results[week_label][category] = {}
+                    
+                    for metric_name, calculator in metrics.items():
+                        if metric_name == "contributors":
+                            weekly_results[week_label][category]["contributors_count"] = calculator.get_metrics()
+                            weekly_results[week_label][category]["contributors_experience"] = calculator.get_experience_metrics()
+                        else:
+                            weekly_results[week_label][category][metric_name] = calculator.get_metrics()
+        
+        # Add developer velocity metrics
+        weekly_results["developer_velocity"] = velocity_by_developer
+        
+        # Also create aggregated developer stats
+        if velocity_by_developer:
+            stats_aggregator = DeveloperStatsAggregator()
+            developer_stats = stats_aggregator.aggregate_metrics({"velocity": velocity_by_developer})
+            weekly_results["developer_stats"] = developer_stats
+        
         return weekly_results
 
 def merge_metrics_results(all_chunk_results):
     merged_metrics = {}
     metrics_by_week = {}
+    velocity_metrics = {
+        "diff_delta": [],
+        "code_provenance": [],
+        "developer_hours": [],
+        "code_domain": []
+    }
     
     for chunk_result in all_chunk_results:
         if 'metrics' not in chunk_result or not chunk_result['metrics'] or 'error' in chunk_result.get('metrics', {}):
             continue
-            
+        
+        # Check if this is the new format with developer_velocity
+        if 'developer_velocity' in chunk_result['metrics']:
+            # Collect velocity metrics for merging
+            for metric_type in velocity_metrics:
+                if metric_type in chunk_result['metrics']['developer_velocity']:
+                    velocity_metrics[metric_type].append(chunk_result['metrics']['developer_velocity'][metric_type])
+        
         # Process weekly metrics
         if isinstance(chunk_result['metrics'], dict):
             for week, week_metrics in chunk_result['metrics'].items():
+                if week == 'developer_velocity' or week == 'developer_stats':
+                    continue  # Skip these special keys
+                    
                 if week not in metrics_by_week:
                     metrics_by_week[week] = {}
                 
@@ -224,7 +312,7 @@ def merge_metrics_results(all_chunk_results):
                     "lines_count": LinesMetric,
                     "bugs": BugsMetric,
                     "code_movement": CodeMovementMetric,
-                    "test_doc_pct": QualityCornerstonesMetric,  # Pass class, not instance
+                    "test_doc_pct": QualityCornerstonesMetric,
                     "meaningful_code": MeaningfulCodeMetric
                 }
                 
@@ -240,5 +328,23 @@ def merge_metrics_results(all_chunk_results):
                         logger.debug(traceback.format_exc())
                         # Store empty/default for this metric to avoid crashing
                         merged_metrics[week][category][metric_type] = metric_class_map[metric_type].merge_metrics([])
+    
+    # Merge velocity metrics if present
+    if any(velocity_metrics.values()):
+        merged_metrics["developer_velocity"] = {}
+        
+        if velocity_metrics["diff_delta"]:
+            merged_metrics["developer_velocity"]["diff_delta"] = DiffDeltaMetric.merge_metrics(velocity_metrics["diff_delta"])
+        if velocity_metrics["code_provenance"]:
+            merged_metrics["developer_velocity"]["code_provenance"] = CodeProvenanceMetric.merge_metrics(velocity_metrics["code_provenance"])
+        if velocity_metrics["developer_hours"]:
+            merged_metrics["developer_velocity"]["developer_hours"] = DeveloperHoursMetric.merge_metrics(velocity_metrics["developer_hours"])
+        if velocity_metrics["code_domain"]:
+            merged_metrics["developer_velocity"]["code_domain"] = CodeDomainMetric.merge_metrics(velocity_metrics["code_domain"])
+        
+        # Aggregate developer stats if velocity metrics exist
+        if merged_metrics["developer_velocity"]:
+            stats_aggregator = DeveloperStatsAggregator()
+            merged_metrics["developer_stats"] = stats_aggregator.aggregate_metrics({"velocity": merged_metrics["developer_velocity"]})
     
     return merged_metrics
