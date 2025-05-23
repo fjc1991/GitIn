@@ -14,15 +14,13 @@ OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file
 MASTER_OUTPUT_DIR = os.path.join(OUTPUT_DIR, "data")
 LOGS_DIR = os.path.join(OUTPUT_DIR, "logs")
 MASTER_TEMP_DIR = os.path.join(OUTPUT_DIR, "temp")
-CACHE_DIR = os.path.join(OUTPUT_DIR, "cache")
 
-for directory in [OUTPUT_DIR, MASTER_OUTPUT_DIR, LOGS_DIR, MASTER_TEMP_DIR, CACHE_DIR]:
+for directory in [OUTPUT_DIR, MASTER_OUTPUT_DIR, LOGS_DIR, MASTER_TEMP_DIR]:
     os.makedirs(directory, exist_ok=True)
 
 # Legacy path for backward compatibility
 LEGACY_PROJECTS_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "projects")
 
-# Function to ensure directory exists
 def ensure_dir(directory):
     """Ensure a directory exists, creating it if necessary."""
     if not os.path.exists(directory):
@@ -34,53 +32,16 @@ def ensure_dir(directory):
 ensure_dir(MASTER_OUTPUT_DIR)
 ensure_dir(MASTER_TEMP_DIR)
 
-# Cache for processed files
-CACHE_DIR = ensure_dir(os.path.join(MASTER_OUTPUT_DIR, 'cache'))
-
 def get_repo_path(repo):
     """Extract repository path from repository object or string."""
     if isinstance(repo, dict):
         return repo.get('url', repo.get('repo_url', repo.get('path', str(repo))))
     return str(repo)
 
-def get_file_hash(repo):
-    """Hash calculation for repository or path."""
-    repo_path = get_repo_path(repo)
-    hash_value = hashlib.md5(repo_path.encode('utf-8')).hexdigest()
-    logger.debug(f"Hashing repo path: {repo_path} -> {hash_value}")
-    return hash_value
-
 @lru_cache(maxsize=1000)
 def get_path_hash(path_str):
     """Cache-enabled hash calculation for string paths only."""
     return hashlib.md5(path_str.encode('utf-8')).hexdigest()
-
-def load_file_cache():
-    """Load the cache of processed files."""
-    cache_file = os.path.join(CACHE_DIR, 'processed_files.json')
-    if os.path.exists(cache_file):
-        try:
-            with open(cache_file, 'r') as f:
-                cache = json.load(f)
-                logger.debug(f"Loaded file cache with {len(cache)} entries")
-                return cache
-        except Exception as e:
-            logger.error(f"Error loading file cache: {str(e)}")
-    logger.debug("No existing file cache found or cache could not be loaded")
-    return {}
-
-def save_file_cache(cache):
-    """Save the cache of processed files."""
-    if not cache:
-        logger.warning("Attempted to save empty cache - this may indicate an issue")
-        
-    cache_file = os.path.join(CACHE_DIR, 'processed_files.json')
-    try:
-        with open(cache_file, 'w') as f:
-            json.dump(cache, f)
-        logger.debug(f"Saved file cache with {len(cache)} entries")
-    except Exception as e:
-        logger.error(f"Error saving file cache: {str(e)}")
 
 # Global process pool for reuse
 _process_pool = None
@@ -258,7 +219,7 @@ def extract_commit_info(commit):
                         filename = mod_file.filename
                         
                         # Check for Solidity JS compiler files specifically
-                        if filename.startswith('soljson-v') and filename.endsWith('.js'):
+                        if filename.startswith('soljson-v') and filename.endswith('.js'):
                             logger.debug(f"Skipping potentially problematic file: {filename}")
                             file_pbar.update(1)
                             continue
@@ -285,7 +246,7 @@ def extract_commit_info(commit):
                     # Skip problematic files to prevent recursion errors
                     filename = mod_file.filename
                     # Check for Solidity JS compiler files specifically
-                    if filename.startswith('soljson-v') and filename.endsWith('.js'):
+                    if filename.startswith('soljson-v') and filename.endswith('.js'):
                         logger.debug(f"Skipping potentially problematic file: {filename}")
                         continue
                         

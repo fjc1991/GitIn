@@ -1,5 +1,5 @@
 from ...logger import get_logger
-from ..productivity.base import BaseMetric
+from ..base import BaseMetric
 from pydriller import ModificationType
 import re
 

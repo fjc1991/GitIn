@@ -2,21 +2,28 @@
 
 ## Complete Metrics
 1. Productivity folder
-    - Change set analysis
-    - Commits analysis
-    - Contributors analysis
-    - Hunk analysis
-    - Code lines analysis
+    - [x] Change set analysis
+    - [x] Commits analysis
+    - [x] Contributors analysis
+    - [x] Hunk analysis
+    - [x] Code lines analysis
 
 2. Quality
-    - Churn analysis
-    - Code movement analysis
-    - Bugs analysis
-    - Test/Documentation analysis
-    - Meaningful code analysis > https://www.gitclear.com/help/meaningful_code_line_change_definition
+    - [x] Churn analysis
+    - [x] Code movement analysis
+    - [x] Bugs analysis
+    - [x] Test/Documentation analysis
+    - [x] Meaningful code analysis > https://www.gitclear.com/help/meaningful_code_line_change_definition
 
-## To Do List
-- [ ] Diff Delta Analysis
-- [ ] AI Detection in Code
+## Work-in-progress
+3. Timings
+    - [ ] Diff Delta
+    - [ ] Hourly stats
+    - [ ] Code Provenance
+    - [ ] Code domain focus
+    - [ ] Timing patterns (comprehensive_time_analysis.py)
+
+## Working Progress
+4. AI Detection
     - [ ] List of commercial tool > https://github.com/ai-detected/ai-content-detectors
     - [ ] Code movement analysis > copy/paste of code

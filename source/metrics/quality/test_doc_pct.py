@@ -1,5 +1,5 @@
 from ...logger import get_logger
-from ..productivity.base import BaseMetric
+from ..base import BaseMetric
 import re
 from collections import defaultdict
 
@@ -61,7 +61,7 @@ class QualityCornerstonesMetric(BaseMetric):
                     try:
                         source_code = source_code_content.decode('utf-8', errors='replace')
                     except Exception as decode_err:
-                        logger.error(f"Unexpected error retrieving source code for {filename} (commit {commit_hash}): {str(e)}. Treating as empty.")
+                        logger.error(f"Unexpected error retrieving source code for {filename} (commit {commit_hash}): {str(decode_err)}. Treating as empty.")
                         source_code = ""
                 else:
                     source_code = str(source_code_content)

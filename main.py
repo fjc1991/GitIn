@@ -1,15 +1,13 @@
-# 
-import os
-import argparse
-import traceback
-from datetime import datetime
 import multiprocessing
 import sys
 import time
 import json
+import os
+import traceback
+import argparse
 
 from source.logger import get_logger
-from source.utils import ensure_dir, cleanup_temp_dirs, MASTER_OUTPUT_DIR, CACHE_DIR, get_file_hash, load_file_cache, save_file_cache, get_repo_path
+from source.utils import ensure_dir, cleanup_temp_dirs, MASTER_OUTPUT_DIR, get_repo_path
 from source.project_finder import find_all_projects
 from source.analysis import analyze_organization_repos_enhanced
 from source.file_filters import should_analyze_file
@@ -50,9 +48,7 @@ def analyze_all_projects(folder_filter=None, csv_path=USERS, start_year=None,
     
     logger.info(f"Python recursion limit set to: {sys.getrecursionlimit()}")
 
-    file_cache = {} if not skip_completed else load_file_cache()
     completed_users = [] if not skip_completed else load_completed_users()
-    logger.info(f"Loaded cache with {len(file_cache)} entries")
     projects_by_username = find_all_projects(folder_filter, csv_path)
     
     if not projects_by_username:
@@ -96,32 +92,19 @@ def analyze_all_projects(folder_filter=None, csv_path=USERS, start_year=None,
             user_progress.set_description(f"Processing {username} ({i+1}/{total_users})")
             logger.info(f"Starting analysis of user: {username} ({i+1}/{total_users})")
             filtered_repos = []
-            processed_repo_hashes = []
-            skipped_repos = []
             
             for repo in repositories:
                 repo_path = get_repo_path(repo)
                 if not file_filter_fn(repo_path):
                     logger.info(f"Skipping filtered repository: {repo_path}")
                     continue
-
-                repo_hash = get_file_hash(repo_path)
-                if repo_hash in file_cache:
-                    logger.info(f"Skipping previously processed repository: {repo_path} [hash: {repo_hash}]")
-                    skipped_repos.append((repo_path, repo_hash))
-                    continue
                     
                 filtered_repos.append(repo)
-                processed_repo_hashes.append((repo_path, repo_hash))
             
             repositories = filtered_repos
             repo_count = len(repositories)
             
             logger.info(f"Analyzing {username} with {repo_count} repositories")
-            if skipped_repos:
-                logger.info(f"Skipped {len(skipped_repos)} repositories due to cache")
-                for idx, (path, hash_val) in enumerate(skipped_repos[:5]):
-                    logger.info(f"  Skipped {idx+1}: {path} [hash: {hash_val}]")
             
             # Each user gets its own try-except block to isolate failures
             try:
@@ -143,13 +126,6 @@ def analyze_all_projects(folder_filter=None, csv_path=USERS, start_year=None,
                 
                 save_completed_user(username)
                 logger.info(f"User {username} successfully completed")
-                
-                # Only mark repositories as processed after successful analysis
-                for repo_path, repo_hash in processed_repo_hashes:
-                    file_cache[repo_hash] = repo_path
-                    logger.debug(f"Marking as processed: {repo_path} [hash: {repo_hash}]")
-
-                save_file_cache(file_cache)
                 
             except Exception as e:
                 logger.error(f"Failed to analyze {username}: {str(e)}")
@@ -207,14 +183,6 @@ if __name__ == "__main__":
     
     if args.cleanup_temp:
         cleanup_temp_dirs()
-    
-    if args.force_reprocess:
-        try:
-            logger.info("Clearing file cache for force reprocessing")
-            if os.path.exists(os.path.join(CACHE_DIR, 'processed_files.json')):
-                os.remove(os.path.join(CACHE_DIR, 'processed_files.json'))
-        except Exception as e:
-            logger.warning(f"Error clearing file cache: {str(e)}")
     
     analyze_all_projects(
         folder_filter=args.folder,

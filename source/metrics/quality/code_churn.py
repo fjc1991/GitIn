@@ -4,7 +4,7 @@ from collections import defaultdict
 import statistics
 from pydriller import ModificationType
 import re
-from ..productivity.base import BaseMetric
+from ..base import BaseMetric
 
 logger = get_logger(__name__)
 
@@ -483,8 +483,9 @@ class EnhancedCodeChurn(BaseMetric):
                 author_metrics[author]["commit_count"] += 1
         
         for author, metrics in self.true_churn_metrics["per_author"].items():
-            author_metrics[author]["true_churn"]["contribution"] = metrics["contribution"]
-            author_metrics[author]["true_churn"]["churn"] = metrics["churn"]
+            if author in author_metrics:
+                author_metrics[author]["true_churn"]["contribution"] = metrics["contribution"]
+                author_metrics[author]["true_churn"]["churn"] = metrics["churn"]
         
         return dict(author_metrics)
 

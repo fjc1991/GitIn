@@ -1,0 +1,22 @@
+{
+  "project_name": "003random",
+  "repository_url": "https://github.com/003random/heroku-test",
+  "repository_name": "heroku-test",
+  "ecosystem": "github",
+  "repo_category": "all",
+  "analysis_period": {
+    "start_date": "2020-08-26",
+    "end_date": "2020-08-26",
+    "full_history": false
+  },
+  "commits": [
+    {"hash": "43c587f26857b8a36b6832acf62c5a9c6b9f991b", "msg": "Add files via upload", "author": {"name": "003random", "email": "003random@protonmail.com"}, "committer": {"name": "GitHub", "email": "noreply@github.com"}, "author_date": "2020-08-26 19:21:10+02:00", "author_timezone": -7200, "committer_date": "2020-08-26 19:21:10+02:00", "committer_timezone": -7200, "branches": "{'master'}", "in_main_branch": true, "merge": false, "parents": [], "project_name": "heroku-test", "project_path": "/Volumes/nVME1T/Py/GitIn/output/temp/003random_all_20250523_172558/eed50a14/eed50a14/eed50a14/heroku-test", "deletions": 0, "insertions": 1, "lines": 1, "files": 1, "modified_files": [{"old_path": null, "new_path": "index.html", "filename": "index.html", "change_type": "ModificationType.ADD", "change_type_name": "ADD", "diff": "@@ -0,0 +1 @@\n+this is my personal website bla bla. hi\n\\ No newline at end of file\n", "diff_parsed": {"added": [[1, "this is my personal website bla bla. hi"]], "deleted": []}, "added_lines": 1, "deleted_lines": 0, "source_code": "this is my personal website bla bla. hi", "source_code_before": null, "methods": [], "methods_before": [], "changed_methods": [], "nloc": null, "complexity": null, "token_count": null}], "dmm_unit_size": null, "dmm_unit_complexity": null, "dmm_unit_interfacing": null}
+  ],
+  "process_metrics": {},
+  "metrics_type": "weekly",
+  "processing": {
+    "total_commits": 1,
+    "total_lines_added": 1,
+    "total_lines_removed": 0
+  }
+}

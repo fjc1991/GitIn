@@ -1,0 +1,6750 @@
+{
+  "project_name": "003random",
+  "repository_url": "https://github.com/003random/online",
+  "repository_name": "online",
+  "ecosystem": "github",
+  "repo_category": "all",
+  "analysis_period": {
+    "start_date": "2018-12-18",
+    "end_date": "2019-12-23",
+    "full_history": false
+  },
+  "commits": [
+    {"hash": "2f1087401bf4d538422f432a512416686b2c3b70", "msg": "init", "author": {"name": "003random", "email": "003random@protonmail.com"}, "committer": {"name": "003random", "email": "003random@protonmail.com"}, "author_date": "2018-12-18 23:29:37+01:00", "author_timezone": -3600, "committer_date": "2018-12-18 23:29:37+01:00", "committer_timezone": -3600, "branches": "{'master'}", "in_main_branch": true, "merge": false, "parents": [], "project_name": "online", "project_path": "/Volumes/nVME1T/Py/GitIn/output/temp/003random_all_20250523_172558/7f461654/7f461654/7f461654/online", "deletions": 0, "insertions": 49, "lines": 49, "files": 2, "modified_files": [{"old_path": null, "new_path": "main.go", "filename": "main.go", "change_type": "ModificationType.ADD", "change_type_name": "ADD", "diff": "@@ -0,0 +1,43 @@\n+package main\n+\n+import (\n+\t\"fmt\"\n+\t\"os\"\n+\t\"net/http\"\n+\t\"bufio\"\n+\t\"time\"\n+\t\"crypto/tls\"\n+)\n+\n+func main() {\n+\tvar urls []string\n+\n+\tstat, err := os.Stdin.Stat()\n+\tif err != nil {\n+\t\tfmt.Fprintf(os.Stderr, \"[!] Usage: cat urls.txt | online\", err)\n+\t\tos.Exit(3)\n+\t}\n+\n+\tif (stat.Mode() & os.ModeCharDevice) == 0 {\n+\t\tscanner := bufio.NewScanner(os.Stdin)\n+\t\tfor scanner.Scan() {\n+\t\t\turls = append(urls, scanner.Text())\n+\t\t}\n+\t\tif err := scanner.Err(); err != nil {\n+\t\t\tfmt.Fprintf(os.Stderr, \"[!] Usage: cat urls.txt | online\", err)\n+\t\t\tos.Exit(3)\n+\t\t}\n+\t}\n+\n+\tfor _, url := range urls {\n+\t\thttp.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}\n+\t\ttimeout := time.Duration(1 * time.Second)\n+\t\tclient := http.Client{\n+\t\t\tTimeout: timeout,\n+\t\t}\n+\t\t_, err := client.Get(url)\n+\t\tif err == nil {\n+    \t\t\tfmt.Println(url)\n+\t\t}\n+\t}\n+}\n", "diff_parsed": {"added": [[1, "package main"], [2, ""], [3, "import ("], [4, "\t\"fmt\""], [5, "\t\"os\""], [6, "\t\"net/http\""], [7, "\t\"bufio\""], [8, "\t\"time\""], [9, "\t\"crypto/tls\""], [10, ")"], [11, ""], [12, "func main() {"], [13, "\tvar urls []string"], [14, ""], [15, "\tstat, err := os.Stdin.Stat()"], [16, "\tif err != nil {"], [17, "\t\tfmt.Fprintf(os.Stderr, \"[!] Usage: cat urls.txt | online\", err)"], [18, "\t\tos.Exit(3)"], [19, "\t}"], [20, ""], [21, "\tif (stat.Mode() & os.ModeCharDevice) == 0 {"], [22, "\t\tscanner := bufio.NewScanner(os.Stdin)"], [23, "\t\tfor scanner.Scan() {"], [24, "\t\t\turls = append(urls, scanner.Text())"], [25, "\t\t}"], [26, "\t\tif err := scanner.Err(); err != nil {"], [27, "\t\t\tfmt.Fprintf(os.Stderr, \"[!] Usage: cat urls.txt | online\", err)"], [28, "\t\t\tos.Exit(3)"], [29, "\t\t}"], [30, "\t}"], [31, ""], [32, "\tfor _, url := range urls {"], [33, "\t\thttp.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}"], [34, "\t\ttimeout := time.Duration(1 * time.Second)"], [35, "\t\tclient := http.Client{"], [36, "\t\t\tTimeout: timeout,"], [37, "\t\t}"], [38, "\t\t_, err := client.Get(url)"], [39, "\t\tif err == nil {"], [40, "    \t\t\tfmt.Println(url)"], [41, "\t\t}"], [42, "\t}"], [43, "}"]], "deleted": []}, "added_lines": 43, "deleted_lines": 0, "source_code": "package main\n\nimport (\n\t\"fmt\"\n\t\"os\"\n\t\"net/http\"\n\t\"bufio\"\n\t\"time\"\n\t\"crypto/tls\"\n)\n\nfunc main() {\n\tvar urls []string\n\n\tstat, err := os.Stdin.Stat()\n\tif err != nil {\n\t\tfmt.Fprintf(os.Stderr, \"[!] Usage: cat urls.txt | online\", err)\n\t\tos.Exit(3)\n\t}\n\n\tif (stat.Mode() & os.ModeCharDevice) == 0 {\n\t\tscanner := bufio.NewScanner(os.Stdin)\n\t\tfor scanner.Scan() {\n\t\t\turls = append(urls, scanner.Text())\n\t\t}\n\t\tif err := scanner.Err(); err != nil {\n\t\t\tfmt.Fprintf(os.Stderr, \"[!] Usage: cat urls.txt | online\", err)\n\t\t\tos.Exit(3)\n\t\t}\n\t}\n\n\tfor _, url := range urls {\n\t\thttp.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}\n\t\ttimeout := time.Duration(1 * time.Second)\n\t\tclient := http.Client{\n\t\t\tTimeout: timeout,\n\t\t}\n\t\t_, err := client.Get(url)\n\t\tif err == nil {\n    \t\t\tfmt.Println(url)\n\t\t}\n\t}\n}\n", "source_code_before": null, "methods": [{"name": "main", "start_line": 12, "end_line": 43}], "methods_before": [], "changed_methods": [{"name": "main", "start_line": 12, "end_line": 43}], "nloc": 38, "complexity": 7, "token_count": 211}, {"old_path": null, "new_path": "urls.txt", "filename": "urls.txt", "change_type": "ModificationType.ADD", "change_type_name": "ADD", "diff": "@@ -0,0 +1,6 @@\n+prod.nwb.swisscom.ch:10001\n+poc-server.com:80\n+prod.nwb.swisscom.ch:10000\n+poc-server.com:443\n+prod.nwb.swisscom.ch:80\n+prod.nwb.swisscom.ch:443\n", "diff_parsed": {"added": [[1, "prod.nwb.swisscom.ch:10001"], [2, "poc-server.com:80"], [3, "prod.nwb.swisscom.ch:10000"], [4, "poc-server.com:443"], [5, "prod.nwb.swisscom.ch:80"], [6, "prod.nwb.swisscom.ch:443"]], "deleted": []}, "added_lines": 6, "deleted_lines": 0, "source_code": "prod.nwb.swisscom.ch:10001\npoc-server.com:80\nprod.nwb.swisscom.ch:10000\npoc-server.com:443\nprod.nwb.swisscom.ch:80\nprod.nwb.swisscom.ch:443\n", "source_code_before": null, "methods": [], "methods_before": [], "changed_methods": [], "nloc": null, "complexity": null, "token_count": null}], "dmm_unit_size": 0.0, "dmm_unit_complexity": 0.0, "dmm_unit_interfacing": 1.0},
+    {"hash": "13eb6c0ac138f1e127411d6c1c5d8583413c1dc0", "msg": "Create README.md", "author": {"name": "003random", "email": "003random@protonmail.com"}, "committer": {"name": "GitHub", "email": "noreply@github.com"}, "author_date": "2018-12-18 23:38:10+01:00", "author_timezone": -3600, "committer_date": "2018-12-18 23:38:10+01:00", "committer_timezone": -3600, "branches": "{'master'}", "in_main_branch": true, "merge": false, "parents": ["2f1087401bf4d538422f432a512416686b2c3b70"], "project_name": "online", "project_path": "/Volumes/nVME1T/Py/GitIn/output/temp/003random_all_20250523_172558/7f461654/7f461654/7f461654/online", "deletions": 0, "insertions": 2, "lines": 2, "files": 1, "modified_files": [{"old_path": null, "new_path": "README.md", "filename": "README.md", "change_type": "ModificationType.ADD", "change_type_name": "ADD", "diff": "@@ -0,0 +1,2 @@\n+# online\n+cat urls.txt | online\n", "diff_parsed": {"added": [[1, "# online"], [2, "cat urls.txt | online"]], "deleted": []}, "added_lines": 2, "deleted_lines": 0, "source_code": "# online\ncat urls.txt | online\n", "source_code_before": null, "methods": [], "methods_before": [], "changed_methods": [], "nloc": null, "complexity": null, "token_count": null}], "dmm_unit_size": null, "dmm_unit_complexity": null, "dmm_unit_interfacing": null},
+    {"hash": "089fecb134d73047c9d8225f1266a5fb226bb9c3", "msg": "Update urls.txt", "author": {"name": "003random", "email": "003random@protonmail.com"}, "committer": {"name": "GitHub", "email": "noreply@github.com"}, "author_date": "2018-12-18 23:38:48+01:00", "author_timezone": -3600, "committer_date": "2018-12-18 23:38:48+01:00", "committer_timezone": -3600, "branches": "{'master'}", "in_main_branch": true, "merge": false, "parents": ["13eb6c0ac138f1e127411d6c1c5d8583413c1dc0"], "project_name": "online", "project_path": "/Volumes/nVME1T/Py/GitIn/output/temp/003random_all_20250523_172558/7f461654/7f461654/7f461654/online", "deletions": 6, "insertions": 2, "lines": 8, "files": 1, "modified_files": [{"old_path": "urls.txt", "new_path": "urls.txt", "filename": "urls.txt", "change_type": "ModificationType.MODIFY", "change_type_name": "MODIFY", "diff": "@@ -1,6 +1,2 @@\n-prod.nwb.swisscom.ch:10001\n-poc-server.com:80\n-prod.nwb.swisscom.ch:10000\n-poc-server.com:443\n-prod.nwb.swisscom.ch:80\n-prod.nwb.swisscom.ch:443\n+https://poc-server.com:443\n+https://poc-server.com/blog\n", "diff_parsed": {"added": [[1, "https://poc-server.com:443"], [2, "https://poc-server.com/blog"]], "deleted": [[1, "prod.nwb.swisscom.ch:10001"], [2, "poc-server.com:80"], [3, "prod.nwb.swisscom.ch:10000"], [4, "poc-server.com:443"], [5, "prod.nwb.swisscom.ch:80"], [6, "prod.nwb.swisscom.ch:443"]]}, "added_lines": 2, "deleted_lines": 6, "source_code": "https://poc-server.com:443\nhttps://poc-server.com/blog\n", "source_code_before": "prod.nwb.swisscom.ch:10001\npoc-server.com:80\nprod.nwb.swisscom.ch:10000\npoc-server.com:443\nprod.nwb.swisscom.ch:80\nprod.nwb.swisscom.ch:443\n", "methods": [], "methods_before": [], "changed_methods": [], "nloc": null, "complexity": null, "token_count": null}], "dmm_unit_size": null, "dmm_unit_complexity": null, "dmm_unit_interfacing": null},
+    {"hash": "7e94122ab1c8720adeda95d6b7e68951d161da8f", "msg": "Add GoRoutines & Sync for speed", "author": {"name": "Corben Leo", "email": "corben@lynxsecurity.io"}, "committer": {"name": "Corben Leo", "email": "corben@lynxsecurity.io"}, "author_date": "2019-02-10 22:03:24-06:00", "author_timezone": 21600, "committer_date": "2019-02-10 22:03:24-06:00", "committer_timezone": 21600, "branches": "{'master'}", "in_main_branch": true, "merge": false, "parents": ["089fecb134d73047c9d8225f1266a5fb226bb9c3"], "project_name": "online", "project_path": "/Volumes/nVME1T/Py/GitIn/output/temp/003random_all_20250523_172558/7f461654/7f461654/7f461654/online", "deletions": 12, "insertions": 21, "lines": 33, "files": 1, "modified_files": [{"old_path": "main.go", "new_path": "main.go", "filename": "main.go", "change_type": "ModificationType.MODIFY", "change_type_name": "MODIFY", "diff": "@@ -1,15 +1,17 @@\n package main\n \n import (\n+\t\"bufio\"\n+\t\"crypto/tls\"\n \t\"fmt\"\n-\t\"os\"\n \t\"net/http\"\n-\t\"bufio\"\n+\t\"os\"\n+\t\"sync\"\n \t\"time\"\n-\t\"crypto/tls\"\n )\n \n func main() {\n+\tvar wait sync.WaitGroup\n \tvar urls []string\n \n \tstat, err := os.Stdin.Stat()\n@@ -29,15 +31,22 @@ func main() {\n \t\t}\n \t}\n \n+\twait.Add(len(urls))\n+\n \tfor _, url := range urls {\n-\t\thttp.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}\n-\t\ttimeout := time.Duration(1 * time.Second)\n-\t\tclient := http.Client{\n-\t\t\tTimeout: timeout,\n-\t\t}\n-\t\t_, err := client.Get(url)\n-\t\tif err == nil {\n-    \t\t\tfmt.Println(url)\n-\t\t}\n+\t\tgo getHost(url, &wait)\n+\t}\n+\twait.Wait()\n+}\n+func getHost(url string, wait *sync.WaitGroup) {\n+\thttp.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}\n+\ttimeout := time.Duration(2 * time.Second)\n+\tclient := http.Client{\n+\t\tTimeout: timeout,\n+\t}\n+\t_, err := client.Get(url)\n+\tif err == nil {\n+\t\tfmt.Println(url)\n \t}\n+\twait.Done()\n }\n", "diff_parsed": {"added": [[4, "\t\"bufio\""], [5, "\t\"crypto/tls\""], [8, "\t\"os\""], [9, "\t\"sync\""], [14, "\tvar wait sync.WaitGroup"], [34, "\twait.Add(len(urls))"], [35, ""], [37, "\t\tgo getHost(url, &wait)"], [38, "\t}"], [39, "\twait.Wait()"], [40, "}"], [41, "func getHost(url string, wait *sync.WaitGroup) {"], [42, "\thttp.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}"], [43, "\ttimeout := time.Duration(2 * time.Second)"], [44, "\tclient := http.Client{"], [45, "\t\tTimeout: timeout,"], [46, "\t}"], [47, "\t_, err := client.Get(url)"], [48, "\tif err == nil {"], [49, "\t\tfmt.Println(url)"], [51, "\twait.Done()"]], "deleted": [[5, "\t\"os\""], [7, "\t\"bufio\""], [9, "\t\"crypto/tls\""], [33, "\t\thttp.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}"], [34, "\t\ttimeout := time.Duration(1 * time.Second)"], [35, "\t\tclient := http.Client{"], [36, "\t\t\tTimeout: timeout,"], [37, "\t\t}"], [38, "\t\t_, err := client.Get(url)"], [39, "\t\tif err == nil {"], [40, "    \t\t\tfmt.Println(url)"], [41, "\t\t}"]]}, "added_lines": 21, "deleted_lines": 12, "source_code": "package main\n\nimport (\n\t\"bufio\"\n\t\"crypto/tls\"\n\t\"fmt\"\n\t\"net/http\"\n\t\"os\"\n\t\"sync\"\n\t\"time\"\n)\n\nfunc main() {\n\tvar wait sync.WaitGroup\n\tvar urls []string\n\n\tstat, err := os.Stdin.Stat()\n\tif err != nil {\n\t\tfmt.Fprintf(os.Stderr, \"[!] Usage: cat urls.txt | online\", err)\n\t\tos.Exit(3)\n\t}\n\n\tif (stat.Mode() & os.ModeCharDevice) == 0 {\n\t\tscanner := bufio.NewScanner(os.Stdin)\n\t\tfor scanner.Scan() {\n\t\t\turls = append(urls, scanner.Text())\n\t\t}\n\t\tif err := scanner.Err(); err != nil {\n\t\t\tfmt.Fprintf(os.Stderr, \"[!] Usage: cat urls.txt | online\", err)\n\t\t\tos.Exit(3)\n\t\t}\n\t}\n\n\twait.Add(len(urls))\n\n\tfor _, url := range urls {\n\t\tgo getHost(url, &wait)\n\t}\n\twait.Wait()\n}\nfunc getHost(url string, wait *sync.WaitGroup) {\n\thttp.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}\n\ttimeout := time.Duration(2 * time.Second)\n\tclient := http.Client{\n\t\tTimeout: timeout,\n\t}\n\t_, err := client.Get(url)\n\tif err == nil {\n\t\tfmt.Println(url)\n\t}\n\twait.Done()\n}\n", "source_code_before": "package main\n\nimport (\n\t\"fmt\"\n\t\"os\"\n\t\"net/http\"\n\t\"bufio\"\n\t\"time\"\n\t\"crypto/tls\"\n)\n\nfunc main() {\n\tvar urls []string\n\n\tstat, err := os.Stdin.Stat()\n\tif err != nil {\n\t\tfmt.Fprintf(os.Stderr, \"[!] Usage: cat urls.txt | online\", err)\n\t\tos.Exit(3)\n\t}\n\n\tif (stat.Mode() & os.ModeCharDevice) == 0 {\n\t\tscanner := bufio.NewScanner(os.Stdin)\n\t\tfor scanner.Scan() {\n\t\t\turls = append(urls, scanner.Text())\n\t\t}\n\t\tif err := scanner.Err(); err != nil {\n\t\t\tfmt.Fprintf(os.Stderr, \"[!] Usage: cat urls.txt | online\", err)\n\t\t\tos.Exit(3)\n\t\t}\n\t}\n\n\tfor _, url := range urls {\n\t\thttp.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}\n\t\ttimeout := time.Duration(1 * time.Second)\n\t\tclient := http.Client{\n\t\t\tTimeout: timeout,\n\t\t}\n\t\t_, err := client.Get(url)\n\t\tif err == nil {\n    \t\t\tfmt.Println(url)\n\t\t}\n\t}\n}\n", "methods": [{"name": "main", "start_line": 13, "end_line": 40}, {"name": "getHost", "start_line": 41, "end_line": 52}], "methods_before": [{"name": "main", "start_line": 12, "end_line": 43}], "changed_methods": [{"name": "getHost", "start_line": 41, "end_line": 52}, {"name": "main", "start_line": 13, "end_line": 40}], "nloc": 46, "complexity": 8, "token_count": 258}], "dmm_unit_size": 1.0, "dmm_unit_complexity": 1.0, "dmm_unit_interfacing": 1.0},
+    {"hash": "302b2d03d42221e6470be7145c1a63f94cfc516e", "msg": "Merge pull request #1 from @C0RB3N\n\nAdd GoRoutines & Sync for speed", "author": {"name": "003random", "email": "003random@protonmail.com"}, "committer": {"name": "GitHub", "email": "noreply@github.com"}, "author_date": "2019-02-11 15:02:57+01:00", "author_timezone": -3600, "committer_date": "2019-02-11 15:02:57+01:00", "committer_timezone": -3600, "branches": "{'master'}", "in_main_branch": true, "merge": true, "parents": ["089fecb134d73047c9d8225f1266a5fb226bb9c3", "7e94122ab1c8720adeda95d6b7e68951d161da8f"], "project_name": "online", "project_path": "/Volumes/nVME1T/Py/GitIn/output/temp/003random_all_20250523_172558/7f461654/7f461654/7f461654/online", "deletions": 12, "insertions": 21, "lines": 33, "files": 1, "modified_files": [], "dmm_unit_size": null, "dmm_unit_complexity": null, "dmm_unit_interfacing": null},
+    {"hash": "b650c846a4e2d68acac95db16af7c61515f4206a", "msg": "Update main.go", "author": {"name": "003random", "email": "003random@protonmail.com"}, "committer": {"name": "GitHub", "email": "noreply@github.com"}, "author_date": "2019-12-23 22:54:06+01:00", "author_timezone": -3600, "committer_date": "2019-12-23 22:54:06+01:00", "committer_timezone": -3600, "branches": "{'master'}", "in_main_branch": true, "merge": false, "parents": ["302b2d03d42221e6470be7145c1a63f94cfc516e"], "project_name": "online", "project_path": "/Volumes/nVME1T/Py/GitIn/output/temp/003random_all_20250523_172558/7f461654/7f461654/7f461654/online", "deletions": 1, "insertions": 1, "lines": 2, "files": 1, "modified_files": [{"old_path": "main.go", "new_path": "main.go", "filename": "main.go", "change_type": "ModificationType.MODIFY", "change_type_name": "MODIFY", "diff": "@@ -40,7 +40,7 @@ func main() {\n }\n func getHost(url string, wait *sync.WaitGroup) {\n \thttp.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}\n-\ttimeout := time.Duration(2 * time.Second)\n+\ttimeout := time.Duration(5 * time.Second)\n \tclient := http.Client{\n \t\tTimeout: timeout,\n \t}\n", "diff_parsed": {"added": [[43, "\ttimeout := time.Duration(5 * time.Second)"]], "deleted": [[43, "\ttimeout := time.Duration(2 * time.Second)"]]}, "added_lines": 1, "deleted_lines": 1, "source_code": "package main\n\nimport (\n\t\"bufio\"\n\t\"crypto/tls\"\n\t\"fmt\"\n\t\"net/http\"\n\t\"os\"\n\t\"sync\"\n\t\"time\"\n)\n\nfunc main() {\n\tvar wait sync.WaitGroup\n\tvar urls []string\n\n\tstat, err := os.Stdin.Stat()\n\tif err != nil {\n\t\tfmt.Fprintf(os.Stderr, \"[!] Usage: cat urls.txt | online\", err)\n\t\tos.Exit(3)\n\t}\n\n\tif (stat.Mode() & os.ModeCharDevice) == 0 {\n\t\tscanner := bufio.NewScanner(os.Stdin)\n\t\tfor scanner.Scan() {\n\t\t\turls = append(urls, scanner.Text())\n\t\t}\n\t\tif err := scanner.Err(); err != nil {\n\t\t\tfmt.Fprintf(os.Stderr, \"[!] Usage: cat urls.txt | online\", err)\n\t\t\tos.Exit(3)\n\t\t}\n\t}\n\n\twait.Add(len(urls))\n\n\tfor _, url := range urls {\n\t\tgo getHost(url, &wait)\n\t}\n\twait.Wait()\n}\nfunc getHost(url string, wait *sync.WaitGroup) {\n\thttp.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}\n\ttimeout := time.Duration(5 * time.Second)\n\tclient := http.Client{\n\t\tTimeout: timeout,\n\t}\n\t_, err := client.Get(url)\n\tif err == nil {\n\t\tfmt.Println(url)\n\t}\n\twait.Done()\n}\n", "source_code_before": "package main\n\nimport (\n\t\"bufio\"\n\t\"crypto/tls\"\n\t\"fmt\"\n\t\"net/http\"\n\t\"os\"\n\t\"sync\"\n\t\"time\"\n)\n\nfunc main() {\n\tvar wait sync.WaitGroup\n\tvar urls []string\n\n\tstat, err := os.Stdin.Stat()\n\tif err != nil {\n\t\tfmt.Fprintf(os.Stderr, \"[!] Usage: cat urls.txt | online\", err)\n\t\tos.Exit(3)\n\t}\n\n\tif (stat.Mode() & os.ModeCharDevice) == 0 {\n\t\tscanner := bufio.NewScanner(os.Stdin)\n\t\tfor scanner.Scan() {\n\t\t\turls = append(urls, scanner.Text())\n\t\t}\n\t\tif err := scanner.Err(); err != nil {\n\t\t\tfmt.Fprintf(os.Stderr, \"[!] Usage: cat urls.txt | online\", err)\n\t\t\tos.Exit(3)\n\t\t}\n\t}\n\n\twait.Add(len(urls))\n\n\tfor _, url := range urls {\n\t\tgo getHost(url, &wait)\n\t}\n\twait.Wait()\n}\nfunc getHost(url string, wait *sync.WaitGroup) {\n\thttp.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}\n\ttimeout := time.Duration(2 * time.Second)\n\tclient := http.Client{\n\t\tTimeout: timeout,\n\t}\n\t_, err := client.Get(url)\n\tif err == nil {\n\t\tfmt.Println(url)\n\t}\n\twait.Done()\n}\n", "methods": [{"name": "main", "start_line": 13, "end_line": 40}, {"name": "getHost", "start_line": 41, "end_line": 52}], "methods_before": [{"name": "main", "start_line": 13, "end_line": 40}, {"name": "getHost", "start_line": 41, "end_line": 52}], "changed_methods": [{"name": "getHost", "start_line": 41, "end_line": 52}], "nloc": 46, "complexity": 8, "token_count": 258}], "dmm_unit_size": null, "dmm_unit_complexity": null, "dmm_unit_interfacing": null}
+  ],
+  "process_metrics": {
+  "Week_1_2018-12-18": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_2_2018-12-25": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_3_2019-01-01": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_4_2019-01-08": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_5_2019-01-15": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_6_2019-01-22": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_7_2019-01-29": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_8_2019-02-05": {
+    "productivity": {
+      "change_set": {
+        "max": 1,
+        "avg": 0.5
+      },
+      "commits_count": {
+        "main.go": 1
+      },
+      "contributors_count": {
+        "total": {
+          "main.go": 1
+        },
+        "minor": {
+          "main.go": 0
+        }
+      },
+      "contributors_experience": {
+        "main.go": 1
+      },
+      "hunks_count": {
+        "main.go": 8
+      },
+      "lines_count": {
+        "added": {
+          "total": {
+            "main.go": 21
+          },
+          "max": {
+            "main.go": 21
+          },
+          "avg": {
+            "main.go": 21
+          }
+        },
+        "removed": {
+          "total": {
+            "main.go": 12
+          },
+          "max": {
+            "main.go": 12
+          },
+          "avg": {
+            "main.go": 12
+          }
+        },
+        "noop_added": {
+          "total": {
+            "main.go": 1
+          },
+          "max": {
+            "main.go": 1
+          },
+          "avg": {
+            "main.go": 1
+          }
+        },
+        "noop_removed": {
+          "total": {
+            "main.go": 0
+          },
+          "max": {
+            "main.go": 0
+          },
+          "avg": {
+            "main.go": 0
+          }
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 33,
+          "max": 33,
+          "avg": 33
+        },
+        "net_churn": {
+          "count": 9,
+          "max": 9,
+          "avg": 9
+        },
+        "added_removed": {
+          "added": 21,
+          "removed": 12
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 21,
+            "churn": 4
+          },
+          "per_author": {
+            "Corben Leo": {
+              "contribution": 21,
+              "churn": 4
+            }
+          },
+          "per_file": {
+            "main.go": {
+              "contribution": 21,
+              "churn": 4
+            }
+          }
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {
+          "main.go": 0.0
+        },
+        "overall_bug_work_percent": 0.0,
+        "total_bug_lines": 0,
+        "total_lines": 33
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 25,
+        "moved_lines_percent": 0.0,
+        "copy_pasted_lines_percent": 0.0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0.0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0.0
+        },
+        "total": {
+          "files": 1,
+          "lines": 53
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 1,
+          "lines": 53,
+          "meaningful_lines": 36,
+          "meaningful_percent": 67.9245283018868
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 33
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0.0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {
+        "corben@lynxsecurity.io": {
+          "total_diff_delta": 10.85,
+          "total_commits": 1,
+          "weekly_velocity": {
+            "2019-02-04": {
+              "diff_delta": 10.85,
+              "lines_added": 8,
+              "lines_updated": 0,
+              "lines_deleted": 7,
+              "lines_moved": 11,
+              "commits": 1,
+              "files_changed": 1,
+              "active_days": 1,
+              "velocity_per_day": 10.85
+            }
+          }
+        },
+        "003random@protonmail.com": {
+          "total_diff_delta": 0,
+          "total_commits": 1,
+          "weekly_velocity": {
+            "2019-02-11": {
+              "diff_delta": 0,
+              "lines_added": 0,
+              "lines_updated": 0,
+              "lines_deleted": 0,
+              "lines_moved": 0,
+              "commits": 1,
+              "files_changed": 0,
+              "active_days": 1,
+              "velocity_per_day": 0.0
+            }
+          }
+        }
+      },
+      "code_provenance": {
+        "corben@lynxsecurity.io": {
+          "weekly_provenance": {
+            "2019-02-04": {
+              "new_code_lines": 15,
+              "recent_code_lines": 0,
+              "old_code_lines": 2,
+              "legacy_code_lines": 0,
+              "total_lines": 17,
+              "new_code_percent": 88.23529411764706,
+              "recent_code_percent": 0.0,
+              "old_code_percent": 11.76470588235294,
+              "legacy_code_percent": 0.0
+            }
+          }
+        }
+      },
+      "developer_hours": {
+        "corben@lynxsecurity.io": {
+          "total_estimated_hours": 0.5625,
+          "total_sessions": 1,
+          "weekly_hours": {
+            "Week_6_2019-02-10": {
+              "estimated_hours": 0.56,
+              "sessions": 1,
+              "commits": 1,
+              "hours_per_day": 0.56
+            }
+          }
+        },
+        "003random@protonmail.com": {
+          "total_estimated_hours": 0.5625,
+          "total_sessions": 1,
+          "weekly_hours": {
+            "Week_7_2019-02-11": {
+              "estimated_hours": 0.56,
+              "sessions": 1,
+              "commits": 1,
+              "hours_per_day": 0.56
+            }
+          }
+        }
+      },
+      "code_domain": {
+        "corben@lynxsecurity.io": {
+          "total_by_domain": {
+            "backend": 33
+          },
+          "weekly_domains": {
+            "2019-02-04": {
+              "domains": {
+                "backend": 33
+              },
+              "total_changes": 33,
+              "percentages": {
+                "backend": 100.0
+              }
+            }
+          },
+          "domain_percentages": {
+            "backend": 100.0
+          }
+        }
+      },
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_9_2019-02-12": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_10_2019-02-19": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_11_2019-02-26": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_12_2019-03-05": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_13_2019-03-12": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_14_2019-03-19": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_15_2019-03-26": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_16_2019-04-02": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_17_2019-04-09": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_18_2019-04-16": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_19_2019-04-23": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_20_2019-04-30": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_21_2019-05-07": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_22_2019-05-14": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_23_2019-05-21": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_24_2019-05-28": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_25_2019-06-04": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_26_2019-06-11": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_27_2019-06-18": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_28_2019-06-25": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_29_2019-07-02": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_30_2019-07-09": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_31_2019-07-16": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_32_2019-07-23": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_33_2019-07-30": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_34_2019-08-06": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_35_2019-08-13": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_36_2019-08-20": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_37_2019-08-27": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_38_2019-09-03": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_39_2019-09-10": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_40_2019-09-17": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_41_2019-09-24": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_42_2019-10-01": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_43_2019-10-08": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_44_2019-10-15": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_45_2019-10-22": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_46_2019-10-29": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_47_2019-11-05": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_48_2019-11-12": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_49_2019-11-19": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_50_2019-11-26": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_51_2019-12-03": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_52_2019-12-10": {
+    "productivity": {
+      "change_set": {
+        "max": 0,
+        "avg": 0
+      },
+      "commits_count": {},
+      "contributors_count": {
+        "total": {},
+        "minor": {}
+      },
+      "contributors_experience": {},
+      "hunks_count": {},
+      "lines_count": {
+        "added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_added": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        },
+        "noop_removed": {
+          "total": {},
+          "max": {},
+          "avg": {}
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 0,
+          "removed": 0
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 0,
+            "churn": 0
+          },
+          "per_author": {},
+          "per_file": {}
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {},
+        "overall_bug_work_percent": 0,
+        "total_bug_lines": 0,
+        "total_lines": 0
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 0,
+        "moved_lines_percent": 0,
+        "copy_pasted_lines_percent": 0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0
+        },
+        "total": {
+          "files": 0,
+          "lines": 0
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 0,
+          "lines": 0,
+          "meaningful_lines": 0,
+          "meaningful_percent": 0
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 0
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {},
+      "code_provenance": {},
+      "developer_hours": {},
+      "code_domain": {},
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "Week_53_2019-12-17": {
+    "productivity": {
+      "change_set": {
+        "max": 1,
+        "avg": 1.0
+      },
+      "commits_count": {
+        "main.go": 1
+      },
+      "contributors_count": {
+        "total": {
+          "main.go": 1
+        },
+        "minor": {
+          "main.go": 0
+        }
+      },
+      "contributors_experience": {
+        "main.go": 1
+      },
+      "hunks_count": {
+        "main.go": 1
+      },
+      "lines_count": {
+        "added": {
+          "total": {
+            "main.go": 1
+          },
+          "max": {
+            "main.go": 1
+          },
+          "avg": {
+            "main.go": 1
+          }
+        },
+        "removed": {
+          "total": {
+            "main.go": 1
+          },
+          "max": {
+            "main.go": 1
+          },
+          "avg": {
+            "main.go": 1
+          }
+        },
+        "noop_added": {
+          "total": {
+            "main.go": 0
+          },
+          "max": {
+            "main.go": 0
+          },
+          "avg": {
+            "main.go": 0
+          }
+        },
+        "noop_removed": {
+          "total": {
+            "main.go": 0
+          },
+          "max": {
+            "main.go": 0
+          },
+          "avg": {
+            "main.go": 0
+          }
+        }
+      }
+    },
+    "quality": {
+      "code_churn": {
+        "total_churn": {
+          "count": 2,
+          "max": 2,
+          "avg": 2
+        },
+        "net_churn": {
+          "count": 0,
+          "max": 0,
+          "avg": 0
+        },
+        "added_removed": {
+          "added": 1,
+          "removed": 1
+        },
+        "true_churn": {
+          "overall": {
+            "contribution": 1,
+            "churn": 0
+          },
+          "per_author": {
+            "003random": {
+              "contribution": 1,
+              "churn": 0
+            }
+          },
+          "per_file": {
+            "main.go": {
+              "contribution": 1,
+              "churn": 0
+            }
+          }
+        }
+      },
+      "bugs": {
+        "bug_work_percent_by_file": {
+          "main.go": 0.0
+        },
+        "overall_bug_work_percent": 0.0,
+        "total_bug_lines": 0,
+        "total_lines": 2
+      },
+      "code_movement": {
+        "moved_lines_count": 0,
+        "copy_pasted_lines_count": 0,
+        "total_changed_lines": 2,
+        "moved_lines_percent": 0.0,
+        "copy_pasted_lines_percent": 0.0
+      },
+      "test_doc_pct": {
+        "test_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0.0
+        },
+        "doc_coverage": {
+          "files": 0,
+          "lines": 0,
+          "percent": 0.0
+        },
+        "total": {
+          "files": 1,
+          "lines": 53
+        },
+        "quality_score": 0.0
+      },
+      "meaningful_code": {
+        "total": {
+          "files": 1,
+          "lines": 53,
+          "meaningful_lines": 36,
+          "meaningful_percent": 67.9245283018868
+        },
+        "quality_score": 0.0,
+        "unrealistic_commits": {
+          "large_commits": 0,
+          "rapid_large_commits": 0,
+          "total": 0,
+          "skipped_lines": 2
+        },
+        "auto_generated": {
+          "long_sequences": 0,
+          "repeated_chars": 0,
+          "repetitive_patterns": 0,
+          "total": 0,
+          "percent": 0.0
+        }
+      }
+    },
+    "timings": {
+      "diff_delta": {
+        "003random@protonmail.com": {
+          "total_diff_delta": 1.25,
+          "total_commits": 1,
+          "weekly_velocity": {
+            "2019-12-23": {
+              "diff_delta": 1.25,
+              "lines_added": 1,
+              "lines_updated": 0,
+              "lines_deleted": 1,
+              "lines_moved": 0,
+              "commits": 1,
+              "files_changed": 1,
+              "active_days": 1,
+              "velocity_per_day": 1.25
+            }
+          }
+        }
+      },
+      "code_provenance": {
+        "003random@protonmail.com": {
+          "weekly_provenance": {
+            "2019-12-23": {
+              "new_code_lines": 1,
+              "recent_code_lines": 0,
+              "old_code_lines": 0,
+              "legacy_code_lines": 0,
+              "total_lines": 1,
+              "new_code_percent": 100.0,
+              "recent_code_percent": 0.0,
+              "old_code_percent": 0.0,
+              "legacy_code_percent": 0.0
+            }
+          }
+        }
+      },
+      "developer_hours": {
+        "003random@protonmail.com": {
+          "total_estimated_hours": 0.61875,
+          "total_sessions": 1,
+          "weekly_hours": {
+            "Week_52_2019-12-23": {
+              "estimated_hours": 0.62,
+              "sessions": 1,
+              "commits": 1,
+              "hours_per_day": 0.62
+            }
+          }
+        }
+      },
+      "code_domain": {
+        "003random@protonmail.com": {
+          "total_by_domain": {
+            "backend": 2
+          },
+          "weekly_domains": {
+            "2019-12-23": {
+              "domains": {
+                "backend": 2
+              },
+              "total_changes": 2,
+              "percentages": {
+                "backend": 100.0
+              }
+            }
+          },
+          "domain_percentages": {
+            "backend": 100.0
+          }
+        }
+      },
+      "comprehensive_time_analysis": {}
+    }
+  },
+  "developer_stats": {}
+},
+  "metrics_type": "weekly",
+  "processing": {
+    "total_commits": 6,
+    "total_lines_added": 96,
+    "total_lines_removed": 31
+  }
+}

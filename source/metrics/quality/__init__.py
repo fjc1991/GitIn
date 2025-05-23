@@ -1,4 +1,4 @@
-from ..productivity.base import BaseMetric
+from ..base import BaseMetric
 from .code_churn import EnhancedCodeChurn
 from .bugs import BugsMetric
 from .code_movement import CodeMovementMetric

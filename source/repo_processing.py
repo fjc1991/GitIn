@@ -485,8 +485,8 @@ def process_repo_directly(project_name, repo_url, start_date, end_date, ecosyste
                     
                     pbar.update(1)
             
-            # Fix import statement
-            from .metrics import calculate_metrics
+            # Import and calculate metrics properly
+            from .metrics.aggregator import calculate_metrics
             merged_metrics = calculate_metrics(
                 repo_url, repo_temp_dir, 
                 start_date, end_date, 

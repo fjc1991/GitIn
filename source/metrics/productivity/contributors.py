@@ -1,5 +1,5 @@
 from ...logger import get_logger
-from .base import BaseMetric
+from ..base import BaseMetric
 from pydriller import ModificationType
 
 logger = get_logger(__name__)
