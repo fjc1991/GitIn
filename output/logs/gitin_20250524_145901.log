@@ -1,0 +1,831 @@
+2025-05-24 14:59:01,460 - __main__ - INFO - Setting Python recursion limit to: 20000
+2025-05-24 14:59:01,461 - __main__ - INFO - Python recursion limit set to: 20000
+2025-05-24 14:59:01,461 - source.project_finder - INFO - Found 1 usernames with a total of 15 repositories
+2025-05-24 14:59:01,461 - __main__ - INFO - Found 1 users to analyze.
+2025-05-24 14:59:01,461 - __main__ - INFO - Using 9 worker processes with parallel=True, split_large_repos=True
+2025-05-24 14:59:01,464 - __main__ - INFO - Starting analysis of user: 003random (1/1)
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - Checking file: https://github.com/003random/003random.github.io
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/003random.github.io
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - Checking file: https://github.com/003random/003random
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/003random
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - Checking file: https://github.com/003random/003Recon
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/003Recon
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - Checking file: https://github.com/003random/BonTemps
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/BonTemps
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - Checking file: https://github.com/003random/csp
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/csp
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - Checking file: https://github.com/003random/diff_test
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/diff_test
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - Checking file: https://github.com/003random/getJS
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/getJS
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - Checking file: https://github.com/003random/heroku-test
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/heroku-test
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - Checking file: https://github.com/003random/ICU
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/ICU
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - Checking file: https://github.com/003random/JavaProgrammingClass
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/JavaProgrammingClass
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - Checking file: https://github.com/003random/loki
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/loki
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - Checking file: https://github.com/003random/netlify
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/netlify
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - Checking file: https://github.com/003random/online
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/online
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - Checking file: https://github.com/003random/PyScripts
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/PyScripts
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - Checking file: https://github.com/003random/sdto-test-gh.github.io
+2025-05-24 14:59:01,464 - source.file_filters - DEBUG - File passed filters: https://github.com/003random/sdto-test-gh.github.io
+2025-05-24 14:59:01,464 - __main__ - INFO - Analyzing 003random with 15 repositories
+2025-05-24 14:59:01,465 - source.analysis - DEBUG - Using override output directory: /Volumes/nVME1T/Py/GitIn/output/data/003random
+2025-05-24 14:59:02,327 - source.analysis - DEBUG - Processing ICU...
+2025-05-24 14:59:02,327 - source.analysis - DEBUG - Starting process_single_repo for ICU
+2025-05-24 14:59:08,859 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-24 14:59:11,195 - source.memory_scheduler - DEBUG - Memory check: Current usage 65.9%, Limit 85%
+2025-05-24 14:59:11,699 - source.metrics.quality.code_movement - WARNING - Could not retrieve source code for tools/dependencies/sublister in commit fd519918f2192de40d7437064df736dc6aa4a108: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-24 14:59:11,712 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit fd519918f2192de40d7437064df736dc6aa4a108): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-24 14:59:11,736 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit fd519918f2192de40d7437064df736dc6aa4a108): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-24 14:59:11,752 - source.metrics.quality.meaningful_code - ERROR - Error retrieving source code for sublister: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-24 14:59:11,942 - source.metrics.quality.code_movement - WARNING - Could not retrieve source code for tools/dependencies/sublister in commit fd519918f2192de40d7437064df736dc6aa4a108: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-24 14:59:11,955 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit fd519918f2192de40d7437064df736dc6aa4a108): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-24 14:59:11,979 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit fd519918f2192de40d7437064df736dc6aa4a108): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-24 14:59:11,994 - source.metrics.quality.meaningful_code - ERROR - Error retrieving source code for sublister: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-24 14:59:12,976 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for get_subdomains.py in commit ffb978474e7f44bb54142491bc5c6e2927c1dc26 (before decoding). Treating as empty.
+2025-05-24 14:59:12,977 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for sublister in commit ffb978474e7f44bb54142491bc5c6e2927c1dc26 (before decoding). Treating as empty.
+2025-05-24 14:59:13,001 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for get_subdomains.py in commit ffb978474e7f44bb54142491bc5c6e2927c1dc26 (before decoding). Treating as empty.
+2025-05-24 14:59:13,003 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for sublister in commit ffb978474e7f44bb54142491bc5c6e2927c1dc26 (before decoding). Treating as empty.
+2025-05-24 14:59:13,015 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for get_subdomains.py in commit ffb978474e7f44bb54142491bc5c6e2927c1dc26. Treating as empty.
+2025-05-24 14:59:13,021 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for sublister in commit ffb978474e7f44bb54142491bc5c6e2927c1dc26. Treating as empty.
+2025-05-24 14:59:13,597 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit 4e349b9e5b6a8abcb82c506e06e500e9fcfa9afe (before decoding). Treating as empty.
+2025-05-24 14:59:13,616 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit 4e349b9e5b6a8abcb82c506e06e500e9fcfa9afe (before decoding). Treating as empty.
+2025-05-24 14:59:13,787 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit 4e349b9e5b6a8abcb82c506e06e500e9fcfa9afe (before decoding). Treating as empty.
+2025-05-24 14:59:13,805 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit 4e349b9e5b6a8abcb82c506e06e500e9fcfa9afe (before decoding). Treating as empty.
+2025-05-24 14:59:13,979 - source.metrics.quality.code_movement - WARNING - Could not retrieve source code for tools/dependencies/sublister in commit 17348d82ac736f16eb4ee99de6ed73e58ccc25a9: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-24 14:59:13,991 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit 17348d82ac736f16eb4ee99de6ed73e58ccc25a9): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-24 14:59:14,014 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit 17348d82ac736f16eb4ee99de6ed73e58ccc25a9): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-24 14:59:14,026 - source.metrics.quality.meaningful_code - ERROR - Error retrieving source code for sublister: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-24 14:59:14,198 - source.metrics.quality.code_movement - WARNING - Could not retrieve source code for tools/dependencies/sublister in commit 17348d82ac736f16eb4ee99de6ed73e58ccc25a9: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-24 14:59:14,209 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit 17348d82ac736f16eb4ee99de6ed73e58ccc25a9): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-24 14:59:14,231 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for sublister (commit 17348d82ac736f16eb4ee99de6ed73e58ccc25a9): SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'. Treating as empty.
+2025-05-24 14:59:14,242 - source.metrics.quality.meaningful_code - ERROR - Error retrieving source code for sublister: SHA b'832d544fa643928f7fd5a5a556a4bbe5624bbce0' could not be resolved, git returned: b'832d544fa643928f7fd5a5a556a4bbe5624bbce0 missing'
+2025-05-24 14:59:14,424 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.py in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,424 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,424 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,424 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for sublister in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,444 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.py in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,444 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,444 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,444 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for sublister in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,454 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for credentials.py in commit d8169a58af67587614b720b126560c1fd5bc0598. Treating as empty.
+2025-05-24 14:59:14,454 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for credentials.pyc in commit d8169a58af67587614b720b126560c1fd5bc0598. Treating as empty.
+2025-05-24 14:59:14,456 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for sublister in commit d8169a58af67587614b720b126560c1fd5bc0598. Treating as empty.
+2025-05-24 14:59:14,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.py in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for sublister in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,653 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.py in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,653 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,653 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for run_logs.txt in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,653 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for sublister in commit d8169a58af67587614b720b126560c1fd5bc0598 (before decoding). Treating as empty.
+2025-05-24 14:59:14,663 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for credentials.py in commit d8169a58af67587614b720b126560c1fd5bc0598. Treating as empty.
+2025-05-24 14:59:14,663 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for credentials.pyc in commit d8169a58af67587614b720b126560c1fd5bc0598. Treating as empty.
+2025-05-24 14:59:14,665 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for sublister in commit d8169a58af67587614b720b126560c1fd5bc0598. Treating as empty.
+2025-05-24 14:59:21,635 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit b3c2fb358208e96e4f8991f8d136806835b58cd8 (before decoding). Treating as empty.
+2025-05-24 14:59:21,653 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit b3c2fb358208e96e4f8991f8d136806835b58cd8 (before decoding). Treating as empty.
+2025-05-24 14:59:21,662 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for credentials.pyc in commit b3c2fb358208e96e4f8991f8d136806835b58cd8. Treating as empty.
+2025-05-24 14:59:21,823 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit b3c2fb358208e96e4f8991f8d136806835b58cd8 (before decoding). Treating as empty.
+2025-05-24 14:59:21,841 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for credentials.pyc in commit b3c2fb358208e96e4f8991f8d136806835b58cd8 (before decoding). Treating as empty.
+2025-05-24 14:59:21,850 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for credentials.pyc in commit b3c2fb358208e96e4f8991f8d136806835b58cd8. Treating as empty.
+2025-05-24 14:59:25,480 - source.metrics.aggregator - DEBUG - Processed 42/42 commits
+2025-05-24 14:59:25,494 - source.analysis - DEBUG - Finished process_single_repo for ICU
+2025-05-24 14:59:25,497 - source.analysis - DEBUG - Processing heroku-test...
+2025-05-24 14:59:25,497 - source.analysis - DEBUG - Starting process_single_repo for heroku-test
+2025-05-24 14:59:26,748 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-24 14:59:27,903 - source.metrics.aggregator - INFO - No commits found in the repository for the given time period.
+2025-05-24 14:59:27,906 - source.analysis - DEBUG - Finished process_single_repo for heroku-test
+2025-05-24 14:59:27,911 - source.analysis - DEBUG - Processing getJS...
+2025-05-24 14:59:27,911 - source.analysis - DEBUG - Starting process_single_repo for getJS
+2025-05-24 14:59:35,275 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-24 14:59:37,838 - source.memory_scheduler - DEBUG - Memory check: Current usage 66.3%, Limit 85%
+2025-05-24 14:59:52,268 - source.metrics.aggregator - DEBUG - Processed 45/45 commits
+2025-05-24 14:59:52,310 - source.analysis - DEBUG - Finished process_single_repo for getJS
+2025-05-24 14:59:52,314 - source.analysis - DEBUG - Processing sdto-test-gh.github.io...
+2025-05-24 14:59:52,314 - source.analysis - DEBUG - Starting process_single_repo for sdto-test-gh.github.io
+2025-05-24 14:59:53,748 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-24 14:59:54,832 - source.metrics.aggregator - INFO - No commits found in the repository for the given time period.
+2025-05-24 14:59:54,835 - source.analysis - DEBUG - Finished process_single_repo for sdto-test-gh.github.io
+2025-05-24 14:59:54,840 - source.analysis - DEBUG - Processing BonTemps...
+2025-05-24 14:59:54,840 - source.analysis - DEBUG - Starting process_single_repo for BonTemps
+2025-05-24 15:00:37,826 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-24 15:00:45,422 - source.memory_scheduler - DEBUG - Memory check: Current usage 66.0%, Limit 85%
+2025-05-24 15:00:48,477 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,478 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,478 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,478 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Index.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,508 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,508 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,508 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,508 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Index.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,529 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Delete.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56. Treating as empty.
+2025-05-24 15:00:48,529 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Details.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56. Treating as empty.
+2025-05-24 15:00:48,529 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Edit.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56. Treating as empty.
+2025-05-24 15:00:48,529 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Index.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56. Treating as empty.
+2025-05-24 15:00:48,787 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,788 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,788 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,788 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Index.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,817 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,817 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,817 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,817 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Index.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56 (before decoding). Treating as empty.
+2025-05-24 15:00:48,839 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Delete.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56. Treating as empty.
+2025-05-24 15:00:48,839 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Details.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56. Treating as empty.
+2025-05-24 15:00:48,839 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Edit.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56. Treating as empty.
+2025-05-24 15:00:48,839 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Index.cshtml in commit b2db0d73569e8e6d18d8f0072cb5055388089c56. Treating as empty.
+2025-05-24 15:00:49,138 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for About.cshtml in commit 443b60061eb8a719509e51df13a1a94446b9182a (before decoding). Treating as empty.
+2025-05-24 15:00:49,138 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Contact.cshtml in commit 443b60061eb8a719509e51df13a1a94446b9182a (before decoding). Treating as empty.
+2025-05-24 15:00:49,175 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for About.cshtml in commit 443b60061eb8a719509e51df13a1a94446b9182a (before decoding). Treating as empty.
+2025-05-24 15:00:49,175 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Contact.cshtml in commit 443b60061eb8a719509e51df13a1a94446b9182a (before decoding). Treating as empty.
+2025-05-24 15:00:49,204 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for About.cshtml in commit 443b60061eb8a719509e51df13a1a94446b9182a. Treating as empty.
+2025-05-24 15:00:49,205 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Contact.cshtml in commit 443b60061eb8a719509e51df13a1a94446b9182a. Treating as empty.
+2025-05-24 15:00:49,517 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for About.cshtml in commit 443b60061eb8a719509e51df13a1a94446b9182a (before decoding). Treating as empty.
+2025-05-24 15:00:49,517 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Contact.cshtml in commit 443b60061eb8a719509e51df13a1a94446b9182a (before decoding). Treating as empty.
+2025-05-24 15:00:49,552 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for About.cshtml in commit 443b60061eb8a719509e51df13a1a94446b9182a (before decoding). Treating as empty.
+2025-05-24 15:00:49,552 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Contact.cshtml in commit 443b60061eb8a719509e51df13a1a94446b9182a (before decoding). Treating as empty.
+2025-05-24 15:00:49,579 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for About.cshtml in commit 443b60061eb8a719509e51df13a1a94446b9182a. Treating as empty.
+2025-05-24 15:00:49,579 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Contact.cshtml in commit 443b60061eb8a719509e51df13a1a94446b9182a. Treating as empty.
+2025-05-24 15:00:52,554 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,554 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,554 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,554 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Index.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,554 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,585 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,585 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,586 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,586 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Index.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,586 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,609 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Delete.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb. Treating as empty.
+2025-05-24 15:00:52,609 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Details.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb. Treating as empty.
+2025-05-24 15:00:52,609 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Edit.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb. Treating as empty.
+2025-05-24 15:00:52,609 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Index.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb. Treating as empty.
+2025-05-24 15:00:52,609 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Create.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb. Treating as empty.
+2025-05-24 15:00:52,879 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,879 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,879 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,879 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Index.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,879 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,910 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,910 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,910 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,910 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Index.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,910 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb (before decoding). Treating as empty.
+2025-05-24 15:00:52,934 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Delete.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb. Treating as empty.
+2025-05-24 15:00:52,934 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Details.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb. Treating as empty.
+2025-05-24 15:00:52,934 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Edit.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb. Treating as empty.
+2025-05-24 15:00:52,934 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Index.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb. Treating as empty.
+2025-05-24 15:00:52,934 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Create.cshtml in commit a00998e448e3835a7ef60f4b28394af911d669eb. Treating as empty.
+2025-05-24 15:00:53,200 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,200 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,200 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,200 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,229 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,229 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,229 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,229 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,249 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Create.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22. Treating as empty.
+2025-05-24 15:00:53,249 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Delete.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22. Treating as empty.
+2025-05-24 15:00:53,249 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Details.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22. Treating as empty.
+2025-05-24 15:00:53,249 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Edit.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22. Treating as empty.
+2025-05-24 15:00:53,508 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,509 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,509 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,509 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,537 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,537 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,537 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,537 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22 (before decoding). Treating as empty.
+2025-05-24 15:00:53,557 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Create.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22. Treating as empty.
+2025-05-24 15:00:53,557 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Delete.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22. Treating as empty.
+2025-05-24 15:00:53,557 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Details.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22. Treating as empty.
+2025-05-24 15:00:53,557 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Edit.cshtml in commit 0b0318984ddcf9c72693ba7ca99397be50aedc22. Treating as empty.
+2025-05-24 15:01:17,677 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for EmployeeController.cs in commit 8275d0c0706cd87bf6954661108827f5c6432e07 (before decoding). Treating as empty.
+2025-05-24 15:01:17,708 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for EmployeeController.cs in commit 8275d0c0706cd87bf6954661108827f5c6432e07 (before decoding). Treating as empty.
+2025-05-24 15:01:17,732 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for EmployeeController.cs in commit 8275d0c0706cd87bf6954661108827f5c6432e07. Treating as empty.
+2025-05-24 15:01:17,998 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for EmployeeController.cs in commit 8275d0c0706cd87bf6954661108827f5c6432e07 (before decoding). Treating as empty.
+2025-05-24 15:01:18,030 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for EmployeeController.cs in commit 8275d0c0706cd87bf6954661108827f5c6432e07 (before decoding). Treating as empty.
+2025-05-24 15:01:18,054 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for EmployeeController.cs in commit 8275d0c0706cd87bf6954661108827f5c6432e07. Treating as empty.
+2025-05-24 15:01:20,641 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit 0a07a31c6e6d62e95dcce2e48adb2653b87c6e21 (before decoding). Treating as empty.
+2025-05-24 15:01:20,943 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit 0a07a31c6e6d62e95dcce2e48adb2653b87c6e21 (before decoding). Treating as empty.
+2025-05-24 15:01:21,749 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Edit.cshtml in commit 0a07a31c6e6d62e95dcce2e48adb2653b87c6e21. Treating as empty.
+2025-05-24 15:01:22,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit 0a07a31c6e6d62e95dcce2e48adb2653b87c6e21 (before decoding). Treating as empty.
+2025-05-24 15:01:22,948 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit 0a07a31c6e6d62e95dcce2e48adb2653b87c6e21 (before decoding). Treating as empty.
+2025-05-24 15:01:23,751 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Edit.cshtml in commit 0a07a31c6e6d62e95dcce2e48adb2653b87c6e21. Treating as empty.
+2025-05-24 15:01:28,376 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit 90de4eed2884b3e9eb28c75102d660482f0bf8c7 (before decoding). Treating as empty.
+2025-05-24 15:01:28,408 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit 90de4eed2884b3e9eb28c75102d660482f0bf8c7 (before decoding). Treating as empty.
+2025-05-24 15:01:28,433 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Create.cshtml in commit 90de4eed2884b3e9eb28c75102d660482f0bf8c7. Treating as empty.
+2025-05-24 15:01:28,722 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit 90de4eed2884b3e9eb28c75102d660482f0bf8c7 (before decoding). Treating as empty.
+2025-05-24 15:01:28,756 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit 90de4eed2884b3e9eb28c75102d660482f0bf8c7 (before decoding). Treating as empty.
+2025-05-24 15:01:28,780 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Create.cshtml in commit 90de4eed2884b3e9eb28c75102d660482f0bf8c7. Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201712081256347_Initialize.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801121327313_Add enum to gender.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801121327313_Add enum to gender.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801121327313_Add enum to gender.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801171959397_add createdate prop.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801171959397_add createdate prop.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801171959397_add createdate prop.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801181956550_update.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801181956550_update.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801181956550_update.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801260837372_Menu image.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,603 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801260837372_Menu image.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,603 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801260837372_Menu image.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,603 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,603 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,603 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,603 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801291129427_Allergy model altered.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,603 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801291129427_Allergy model altered.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,603 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801302317463_test.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,603 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801302317463_test.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,603 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801302317463_test.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,603 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801310943317_Initialize.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201712081256347_Initialize.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801121327313_Add enum to gender.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801121327313_Add enum to gender.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801121327313_Add enum to gender.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801171959397_add createdate prop.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801171959397_add createdate prop.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801171959397_add createdate prop.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801181956550_update.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801181956550_update.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801181956550_update.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801260837372_Menu image.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801260837372_Menu image.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801260837372_Menu image.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801291129427_Allergy model altered.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801291129427_Allergy model altered.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801302317463_test.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801302317463_test.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,644 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801302317463_test.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,645 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801310943317_Initialize.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201712081256347_Initialize.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801121327313_Add enum to gender.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801121327313_Add enum to gender.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801121327313_Add enum to gender.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801171959397_add createdate prop.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801171959397_add createdate prop.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801171959397_add createdate prop.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801181956550_update.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801181956550_update.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801181956550_update.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801260837372_Menu image.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801260837372_Menu image.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801260837372_Menu image.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,671 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,672 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801291129427_Allergy model altered.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,672 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801291129427_Allergy model altered.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,672 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801302317463_test.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:36,674 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801310943317_Initialize.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201712081256347_Initialize.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801121327313_Add enum to gender.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801121327313_Add enum to gender.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801121327313_Add enum to gender.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801171959397_add createdate prop.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801171959397_add createdate prop.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801171959397_add createdate prop.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801181956550_update.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801181956550_update.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801181956550_update.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801260837372_Menu image.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801260837372_Menu image.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801260837372_Menu image.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801291129427_Allergy model altered.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801291129427_Allergy model altered.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801302317463_test.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801302317463_test.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,044 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801302317463_test.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,045 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801310943317_Initialize.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,084 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201712081256347_Initialize.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,084 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801121327313_Add enum to gender.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,084 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801121327313_Add enum to gender.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,084 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801121327313_Add enum to gender.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,084 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,084 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,084 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,084 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801171959397_add createdate prop.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801171959397_add createdate prop.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801171959397_add createdate prop.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801181956550_update.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801181956550_update.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801181956550_update.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801260837372_Menu image.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801260837372_Menu image.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801260837372_Menu image.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801291129427_Allergy model altered.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801291129427_Allergy model altered.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801302317463_test.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801302317463_test.cs in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801302317463_test.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,085 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 201801310943317_Initialize.resx in commit 2d18c158b87b1cc128936c430550809e41a91326 (before decoding). Treating as empty.
+2025-05-24 15:01:37,111 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201712081256347_Initialize.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,111 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801121327313_Add enum to gender.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,111 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801121327313_Add enum to gender.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,111 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801121327313_Add enum to gender.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,111 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,111 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,111 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801140051563_remove required from prefix in customer.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,111 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801171959397_add createdate prop.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,111 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801171959397_add createdate prop.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,111 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801171959397_add createdate prop.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,111 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801181956550_update.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,112 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801181956550_update.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,112 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801181956550_update.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,112 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,112 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,112 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801182001432_update_uniqe table layout.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,112 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801260837372_Menu image.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,112 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801260837372_Menu image.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,112 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801260837372_Menu image.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,112 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,112 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,112 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801262111474_Customermodel edited. Phone to string with regex.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,112 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801291129427_Allergy model altered.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,112 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801291129427_Allergy model altered.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,112 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801302317463_test.Designer.cs in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:37,114 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 201801310943317_Initialize.resx in commit 2d18c158b87b1cc128936c430550809e41a91326. Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 00916c0b-e661-4b6e-92d2-d0fd1f2d51ab.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 14445a8e-b57a-44d6-9154-43cde139a689.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 89e3aab0-da10-44e5-ad3c-af8564399f5d.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 8da3c9ad-ae18-4643-8e5c-c75be705781e.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for b253dab4-1a5f-40c0-831c-b269f965759d.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for e97f6990-b5bf-4ba7-9db5-a205643cfc2b.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 235c09ef-2429-4ad3-9d35-597f9a603058.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 2904d4b6-03aa-46be-be1b-54bdbdfce6e2.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 398d808d-5133-47ef-8b6b-596f12a1d2d8.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 3cd0404f-3964-4a9e-ace3-481a5fa18a30.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 466c6f4a-4b43-4d31-b9c5-2b3fc80e2464.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 57bb2aac-d3b7-4ce1-807e-3e3c84f76a33.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 5b842f01-6bd6-4d82-9ba8-c1b5aa4a74cb.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 5ef0541d-57c1-4868-8f87-fe4242c94cbb.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 6b956960-fcdf-4186-b9fe-5ff3af9c63a6.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 7c09f14f-e56d-4d44-bb26-482fbf537657.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 832ccef7-7ffe-4634-986a-20839214b51f.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for ad7bc189-5aa2-4e31-b8f2-3be2ed1d760f.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for aefa402e-2022-4daa-8f09-7ca741bb8582.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for c1e2b056-1d3f-4f95-9908-e6432704817c.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for c6d05134-ead8-41c1-92d3-214bea54ead6.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cebd6167-93d6-45e1-9124-8d13d411b863.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for f438b359-621d-4e5e-b11d-c8f3c3552777.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,493 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for f4d72482-bd74-41de-bda0-3918d06ed713.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 00916c0b-e661-4b6e-92d2-d0fd1f2d51ab.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 14445a8e-b57a-44d6-9154-43cde139a689.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 89e3aab0-da10-44e5-ad3c-af8564399f5d.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 8da3c9ad-ae18-4643-8e5c-c75be705781e.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for b253dab4-1a5f-40c0-831c-b269f965759d.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for e97f6990-b5bf-4ba7-9db5-a205643cfc2b.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 235c09ef-2429-4ad3-9d35-597f9a603058.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 2904d4b6-03aa-46be-be1b-54bdbdfce6e2.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 398d808d-5133-47ef-8b6b-596f12a1d2d8.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 3cd0404f-3964-4a9e-ace3-481a5fa18a30.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 466c6f4a-4b43-4d31-b9c5-2b3fc80e2464.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 57bb2aac-d3b7-4ce1-807e-3e3c84f76a33.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 5b842f01-6bd6-4d82-9ba8-c1b5aa4a74cb.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 5ef0541d-57c1-4868-8f87-fe4242c94cbb.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 6b956960-fcdf-4186-b9fe-5ff3af9c63a6.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 7c09f14f-e56d-4d44-bb26-482fbf537657.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 832ccef7-7ffe-4634-986a-20839214b51f.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for ad7bc189-5aa2-4e31-b8f2-3be2ed1d760f.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for aefa402e-2022-4daa-8f09-7ca741bb8582.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,602 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for c1e2b056-1d3f-4f95-9908-e6432704817c.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,603 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for c6d05134-ead8-41c1-92d3-214bea54ead6.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,603 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cebd6167-93d6-45e1-9124-8d13d411b863.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,603 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for f438b359-621d-4e5e-b11d-c8f3c3552777.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,603 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for f4d72482-bd74-41de-bda0-3918d06ed713.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:39,663 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 00916c0b-e661-4b6e-92d2-d0fd1f2d51ab.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,663 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 14445a8e-b57a-44d6-9154-43cde139a689.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,663 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 89e3aab0-da10-44e5-ad3c-af8564399f5d.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,663 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 8da3c9ad-ae18-4643-8e5c-c75be705781e.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,663 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for b253dab4-1a5f-40c0-831c-b269f965759d.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,663 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for e97f6990-b5bf-4ba7-9db5-a205643cfc2b.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,663 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 235c09ef-2429-4ad3-9d35-597f9a603058.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 2904d4b6-03aa-46be-be1b-54bdbdfce6e2.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 398d808d-5133-47ef-8b6b-596f12a1d2d8.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 3cd0404f-3964-4a9e-ace3-481a5fa18a30.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 466c6f4a-4b43-4d31-b9c5-2b3fc80e2464.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 57bb2aac-d3b7-4ce1-807e-3e3c84f76a33.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 5b842f01-6bd6-4d82-9ba8-c1b5aa4a74cb.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 5ef0541d-57c1-4868-8f87-fe4242c94cbb.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 6b956960-fcdf-4186-b9fe-5ff3af9c63a6.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 7c09f14f-e56d-4d44-bb26-482fbf537657.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 832ccef7-7ffe-4634-986a-20839214b51f.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for ad7bc189-5aa2-4e31-b8f2-3be2ed1d760f.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for aefa402e-2022-4daa-8f09-7ca741bb8582.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for c1e2b056-1d3f-4f95-9908-e6432704817c.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for c6d05134-ead8-41c1-92d3-214bea54ead6.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cebd6167-93d6-45e1-9124-8d13d411b863.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for f438b359-621d-4e5e-b11d-c8f3c3552777.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:39,664 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for f4d72482-bd74-41de-bda0-3918d06ed713.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,632 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 00916c0b-e661-4b6e-92d2-d0fd1f2d51ab.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,632 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 14445a8e-b57a-44d6-9154-43cde139a689.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,632 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 89e3aab0-da10-44e5-ad3c-af8564399f5d.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,632 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 8da3c9ad-ae18-4643-8e5c-c75be705781e.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,632 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for b253dab4-1a5f-40c0-831c-b269f965759d.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,632 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for e97f6990-b5bf-4ba7-9db5-a205643cfc2b.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,632 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 235c09ef-2429-4ad3-9d35-597f9a603058.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,632 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 2904d4b6-03aa-46be-be1b-54bdbdfce6e2.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 398d808d-5133-47ef-8b6b-596f12a1d2d8.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 3cd0404f-3964-4a9e-ace3-481a5fa18a30.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 466c6f4a-4b43-4d31-b9c5-2b3fc80e2464.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 57bb2aac-d3b7-4ce1-807e-3e3c84f76a33.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 5b842f01-6bd6-4d82-9ba8-c1b5aa4a74cb.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 5ef0541d-57c1-4868-8f87-fe4242c94cbb.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 6b956960-fcdf-4186-b9fe-5ff3af9c63a6.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 7c09f14f-e56d-4d44-bb26-482fbf537657.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 832ccef7-7ffe-4634-986a-20839214b51f.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for ad7bc189-5aa2-4e31-b8f2-3be2ed1d760f.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for aefa402e-2022-4daa-8f09-7ca741bb8582.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for c1e2b056-1d3f-4f95-9908-e6432704817c.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for c6d05134-ead8-41c1-92d3-214bea54ead6.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cebd6167-93d6-45e1-9124-8d13d411b863.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for f438b359-621d-4e5e-b11d-c8f3c3552777.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,633 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for f4d72482-bd74-41de-bda0-3918d06ed713.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 00916c0b-e661-4b6e-92d2-d0fd1f2d51ab.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 14445a8e-b57a-44d6-9154-43cde139a689.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 89e3aab0-da10-44e5-ad3c-af8564399f5d.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 8da3c9ad-ae18-4643-8e5c-c75be705781e.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for b253dab4-1a5f-40c0-831c-b269f965759d.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for e97f6990-b5bf-4ba7-9db5-a205643cfc2b.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 235c09ef-2429-4ad3-9d35-597f9a603058.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 2904d4b6-03aa-46be-be1b-54bdbdfce6e2.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 398d808d-5133-47ef-8b6b-596f12a1d2d8.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 3cd0404f-3964-4a9e-ace3-481a5fa18a30.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 466c6f4a-4b43-4d31-b9c5-2b3fc80e2464.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 57bb2aac-d3b7-4ce1-807e-3e3c84f76a33.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 5b842f01-6bd6-4d82-9ba8-c1b5aa4a74cb.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 5ef0541d-57c1-4868-8f87-fe4242c94cbb.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 6b956960-fcdf-4186-b9fe-5ff3af9c63a6.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 7c09f14f-e56d-4d44-bb26-482fbf537657.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for 832ccef7-7ffe-4634-986a-20839214b51f.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for ad7bc189-5aa2-4e31-b8f2-3be2ed1d760f.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for aefa402e-2022-4daa-8f09-7ca741bb8582.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for c1e2b056-1d3f-4f95-9908-e6432704817c.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for c6d05134-ead8-41c1-92d3-214bea54ead6.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cebd6167-93d6-45e1-9124-8d13d411b863.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for f438b359-621d-4e5e-b11d-c8f3c3552777.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,741 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for f4d72482-bd74-41de-bda0-3918d06ed713.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267 (before decoding). Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 00916c0b-e661-4b6e-92d2-d0fd1f2d51ab.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 14445a8e-b57a-44d6-9154-43cde139a689.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 89e3aab0-da10-44e5-ad3c-af8564399f5d.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 8da3c9ad-ae18-4643-8e5c-c75be705781e.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for b253dab4-1a5f-40c0-831c-b269f965759d.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for e97f6990-b5bf-4ba7-9db5-a205643cfc2b.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 235c09ef-2429-4ad3-9d35-597f9a603058.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 2904d4b6-03aa-46be-be1b-54bdbdfce6e2.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 398d808d-5133-47ef-8b6b-596f12a1d2d8.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 3cd0404f-3964-4a9e-ace3-481a5fa18a30.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 466c6f4a-4b43-4d31-b9c5-2b3fc80e2464.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 57bb2aac-d3b7-4ce1-807e-3e3c84f76a33.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 5b842f01-6bd6-4d82-9ba8-c1b5aa4a74cb.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 5ef0541d-57c1-4868-8f87-fe4242c94cbb.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 6b956960-fcdf-4186-b9fe-5ff3af9c63a6.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 7c09f14f-e56d-4d44-bb26-482fbf537657.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for 832ccef7-7ffe-4634-986a-20839214b51f.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for ad7bc189-5aa2-4e31-b8f2-3be2ed1d760f.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for aefa402e-2022-4daa-8f09-7ca741bb8582.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for c1e2b056-1d3f-4f95-9908-e6432704817c.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for c6d05134-ead8-41c1-92d3-214bea54ead6.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cebd6167-93d6-45e1-9124-8d13d411b863.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for f438b359-621d-4e5e-b11d-c8f3c3552777.jpg in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:40,802 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for f4d72482-bd74-41de-bda0-3918d06ed713.png in commit d4744fec50a09912cbff4562fca1b2daaf9af267. Treating as empty.
+2025-05-24 15:01:42,017 - source.metrics.aggregator - DEBUG - Processed 100/142 commits
+2025-05-24 15:01:42,017 - source.memory_scheduler - DEBUG - Memory check: Current usage 66.0%, Limit 85%
+2025-05-24 15:01:47,482 - source.metrics.quality.code_movement - WARNING - Could not retrieve source code for darktooltip in commit ea4d0a8316419541ff170f496749f4002245f35d: SHA b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88' could not be resolved, git returned: b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88 missing'
+2025-05-24 15:01:47,501 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for darktooltip (commit ea4d0a8316419541ff170f496749f4002245f35d): SHA b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88' could not be resolved, git returned: b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88 missing'. Treating as empty.
+2025-05-24 15:01:47,536 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for darktooltip (commit ea4d0a8316419541ff170f496749f4002245f35d): SHA b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88' could not be resolved, git returned: b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88 missing'. Treating as empty.
+2025-05-24 15:01:47,569 - source.metrics.quality.meaningful_code - ERROR - Error retrieving source code for darktooltip: SHA b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88' could not be resolved, git returned: b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88 missing'
+2025-05-24 15:01:47,825 - source.metrics.quality.code_movement - WARNING - Could not retrieve source code for darktooltip in commit ea4d0a8316419541ff170f496749f4002245f35d: SHA b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88' could not be resolved, git returned: b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88 missing'
+2025-05-24 15:01:47,842 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for darktooltip (commit ea4d0a8316419541ff170f496749f4002245f35d): SHA b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88' could not be resolved, git returned: b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88 missing'. Treating as empty.
+2025-05-24 15:01:47,875 - source.metrics.quality.test_doc_pct - DEBUG - Could not retrieve source code for darktooltip (commit ea4d0a8316419541ff170f496749f4002245f35d): SHA b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88' could not be resolved, git returned: b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88 missing'. Treating as empty.
+2025-05-24 15:01:47,907 - source.metrics.quality.meaningful_code - ERROR - Error retrieving source code for darktooltip: SHA b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88' could not be resolved, git returned: b'0f09a2298f6a52b2e16d67bb5f85134b85c29d88 missing'
+2025-05-24 15:01:55,583 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,583 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,583 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,583 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,583 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Index.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,612 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,612 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,612 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,612 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,612 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Index.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,632 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Create.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b. Treating as empty.
+2025-05-24 15:01:55,632 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Delete.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b. Treating as empty.
+2025-05-24 15:01:55,632 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Details.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b. Treating as empty.
+2025-05-24 15:01:55,632 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Edit.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b. Treating as empty.
+2025-05-24 15:01:55,633 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Index.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b. Treating as empty.
+2025-05-24 15:01:55,883 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,883 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,883 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,883 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,883 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Index.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,912 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Create.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,912 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Delete.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,912 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Details.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,912 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Edit.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,912 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for Index.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b (before decoding). Treating as empty.
+2025-05-24 15:01:55,932 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Create.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b. Treating as empty.
+2025-05-24 15:01:55,932 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Delete.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b. Treating as empty.
+2025-05-24 15:01:55,932 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Details.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b. Treating as empty.
+2025-05-24 15:01:55,932 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Edit.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b. Treating as empty.
+2025-05-24 15:01:55,932 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for Index.cshtml in commit 36c907db835948bf2ac7743636713dd98719555b. Treating as empty.
+2025-05-24 15:02:00,189 - source.metrics.aggregator - DEBUG - Processed 142/142 commits
+2025-05-24 15:02:00,430 - source.analysis - DEBUG - Finished process_single_repo for BonTemps
+2025-05-24 15:02:00,442 - source.analysis - DEBUG - Processing 003random...
+2025-05-24 15:02:00,442 - source.analysis - DEBUG - Starting process_single_repo for 003random
+2025-05-24 15:02:01,997 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-24 15:02:03,255 - source.metrics.aggregator - INFO - No commits found in the repository for the given time period.
+2025-05-24 15:02:03,258 - source.analysis - DEBUG - Finished process_single_repo for 003random
+2025-05-24 15:02:03,274 - source.analysis - DEBUG - Processing 003Recon...
+2025-05-24 15:02:03,275 - source.analysis - DEBUG - Starting process_single_repo for 003Recon
+2025-05-24 15:02:17,317 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-24 15:02:19,826 - source.memory_scheduler - DEBUG - Memory check: Current usage 66.2%, Limit 85%
+2025-05-24 15:02:19,944 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit 1c598de4bb5d8c470220c1659bf4edf68b231d0a (before decoding). Treating as empty.
+2025-05-24 15:02:19,966 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit 1c598de4bb5d8c470220c1659bf4edf68b231d0a (before decoding). Treating as empty.
+2025-05-24 15:02:19,977 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit 1c598de4bb5d8c470220c1659bf4edf68b231d0a. Treating as empty.
+2025-05-24 15:02:20,169 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit 1c598de4bb5d8c470220c1659bf4edf68b231d0a (before decoding). Treating as empty.
+2025-05-24 15:02:20,192 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit 1c598de4bb5d8c470220c1659bf4edf68b231d0a (before decoding). Treating as empty.
+2025-05-24 15:02:20,202 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit 1c598de4bb5d8c470220c1659bf4edf68b231d0a. Treating as empty.
+2025-05-24 15:02:20,398 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit f071eb2154384b95202476535c01a990ea5373c6 (before decoding). Treating as empty.
+2025-05-24 15:02:20,420 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit f071eb2154384b95202476535c01a990ea5373c6 (before decoding). Treating as empty.
+2025-05-24 15:02:20,431 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for crlf.sh in commit f071eb2154384b95202476535c01a990ea5373c6. Treating as empty.
+2025-05-24 15:02:20,621 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit f071eb2154384b95202476535c01a990ea5373c6 (before decoding). Treating as empty.
+2025-05-24 15:02:20,642 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit f071eb2154384b95202476535c01a990ea5373c6 (before decoding). Treating as empty.
+2025-05-24 15:02:20,653 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for crlf.sh in commit f071eb2154384b95202476535c01a990ea5373c6. Treating as empty.
+2025-05-24 15:02:20,845 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit b9099eba0350d31455c72d8b6ec8bbac02875049 (before decoding). Treating as empty.
+2025-05-24 15:02:20,866 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit b9099eba0350d31455c72d8b6ec8bbac02875049 (before decoding). Treating as empty.
+2025-05-24 15:02:20,877 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for error_page_info_check.py in commit b9099eba0350d31455c72d8b6ec8bbac02875049. Treating as empty.
+2025-05-24 15:02:21,072 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit b9099eba0350d31455c72d8b6ec8bbac02875049 (before decoding). Treating as empty.
+2025-05-24 15:02:21,093 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit b9099eba0350d31455c72d8b6ec8bbac02875049 (before decoding). Treating as empty.
+2025-05-24 15:02:21,104 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for error_page_info_check.py in commit b9099eba0350d31455c72d8b6ec8bbac02875049. Treating as empty.
+2025-05-24 15:02:21,301 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit 755882af23dd464234528c3ec3b4a6fae6c5927c (before decoding). Treating as empty.
+2025-05-24 15:02:21,324 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit 755882af23dd464234528c3ec3b4a6fae6c5927c (before decoding). Treating as empty.
+2025-05-24 15:02:21,337 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for header_scan.py in commit 755882af23dd464234528c3ec3b4a6fae6c5927c. Treating as empty.
+2025-05-24 15:02:21,542 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit 755882af23dd464234528c3ec3b4a6fae6c5927c (before decoding). Treating as empty.
+2025-05-24 15:02:21,563 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit 755882af23dd464234528c3ec3b4a6fae6c5927c (before decoding). Treating as empty.
+2025-05-24 15:02:21,574 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for header_scan.py in commit 755882af23dd464234528c3ec3b4a6fae6c5927c. Treating as empty.
+2025-05-24 15:02:21,768 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit e0e9ec821d4836e0d688de1e0cb4998dfe1b4645 (before decoding). Treating as empty.
+2025-05-24 15:02:21,790 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit e0e9ec821d4836e0d688de1e0cb4998dfe1b4645 (before decoding). Treating as empty.
+2025-05-24 15:02:21,801 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_extractor.py in commit e0e9ec821d4836e0d688de1e0cb4998dfe1b4645. Treating as empty.
+2025-05-24 15:02:21,995 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit e0e9ec821d4836e0d688de1e0cb4998dfe1b4645 (before decoding). Treating as empty.
+2025-05-24 15:02:22,016 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit e0e9ec821d4836e0d688de1e0cb4998dfe1b4645 (before decoding). Treating as empty.
+2025-05-24 15:02:22,028 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_extractor.py in commit e0e9ec821d4836e0d688de1e0cb4998dfe1b4645. Treating as empty.
+2025-05-24 15:02:22,218 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit 5a963995525410243e1156a608e2ba9166b04a73 (before decoding). Treating as empty.
+2025-05-24 15:02:22,239 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit 5a963995525410243e1156a608e2ba9166b04a73 (before decoding). Treating as empty.
+2025-05-24 15:02:22,250 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit 5a963995525410243e1156a608e2ba9166b04a73. Treating as empty.
+2025-05-24 15:02:22,447 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit 5a963995525410243e1156a608e2ba9166b04a73 (before decoding). Treating as empty.
+2025-05-24 15:02:22,468 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit 5a963995525410243e1156a608e2ba9166b04a73 (before decoding). Treating as empty.
+2025-05-24 15:02:22,479 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit 5a963995525410243e1156a608e2ba9166b04a73. Treating as empty.
+2025-05-24 15:02:22,686 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit 208a703f1613123d6880c9df27c932740f1dda82 (before decoding). Treating as empty.
+2025-05-24 15:02:22,708 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit 208a703f1613123d6880c9df27c932740f1dda82 (before decoding). Treating as empty.
+2025-05-24 15:02:22,720 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for nmap_scan.sh in commit 208a703f1613123d6880c9df27c932740f1dda82. Treating as empty.
+2025-05-24 15:02:22,917 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit 208a703f1613123d6880c9df27c932740f1dda82 (before decoding). Treating as empty.
+2025-05-24 15:02:22,938 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit 208a703f1613123d6880c9df27c932740f1dda82 (before decoding). Treating as empty.
+2025-05-24 15:02:22,950 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for nmap_scan.sh in commit 208a703f1613123d6880c9df27c932740f1dda82. Treating as empty.
+2025-05-24 15:02:23,146 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit 8717e3ad3f300f3011248a09d12c024129498f2a (before decoding). Treating as empty.
+2025-05-24 15:02:23,167 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit 8717e3ad3f300f3011248a09d12c024129498f2a (before decoding). Treating as empty.
+2025-05-24 15:02:23,178 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for online.py in commit 8717e3ad3f300f3011248a09d12c024129498f2a. Treating as empty.
+2025-05-24 15:02:23,368 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit 8717e3ad3f300f3011248a09d12c024129498f2a (before decoding). Treating as empty.
+2025-05-24 15:02:23,390 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit 8717e3ad3f300f3011248a09d12c024129498f2a (before decoding). Treating as empty.
+2025-05-24 15:02:23,400 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for online.py in commit 8717e3ad3f300f3011248a09d12c024129498f2a. Treating as empty.
+2025-05-24 15:02:23,591 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for open_redirect.py in commit 7da1931baef3717fb44c713c5288842f4c3bbae7 (before decoding). Treating as empty.
+2025-05-24 15:02:23,613 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for open_redirect.py in commit 7da1931baef3717fb44c713c5288842f4c3bbae7 (before decoding). Treating as empty.
+2025-05-24 15:02:23,624 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for open_redirect.py in commit 7da1931baef3717fb44c713c5288842f4c3bbae7. Treating as empty.
+2025-05-24 15:02:23,822 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for open_redirect.py in commit 7da1931baef3717fb44c713c5288842f4c3bbae7 (before decoding). Treating as empty.
+2025-05-24 15:02:23,844 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for open_redirect.py in commit 7da1931baef3717fb44c713c5288842f4c3bbae7 (before decoding). Treating as empty.
+2025-05-24 15:02:23,854 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for open_redirect.py in commit 7da1931baef3717fb44c713c5288842f4c3bbae7. Treating as empty.
+2025-05-24 15:02:24,049 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for start_recon.sh in commit 1b3e7583bf5f685a57a97ba03688a610805d6fad (before decoding). Treating as empty.
+2025-05-24 15:02:24,071 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for start_recon.sh in commit 1b3e7583bf5f685a57a97ba03688a610805d6fad (before decoding). Treating as empty.
+2025-05-24 15:02:24,082 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for start_recon.sh in commit 1b3e7583bf5f685a57a97ba03688a610805d6fad. Treating as empty.
+2025-05-24 15:02:24,274 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for start_recon.sh in commit 1b3e7583bf5f685a57a97ba03688a610805d6fad (before decoding). Treating as empty.
+2025-05-24 15:02:24,295 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for start_recon.sh in commit 1b3e7583bf5f685a57a97ba03688a610805d6fad (before decoding). Treating as empty.
+2025-05-24 15:02:24,306 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for start_recon.sh in commit 1b3e7583bf5f685a57a97ba03688a610805d6fad. Treating as empty.
+2025-05-24 15:02:24,500 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit 429d90406eff0aba8408aa784a67921802deea57 (before decoding). Treating as empty.
+2025-05-24 15:02:24,522 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit 429d90406eff0aba8408aa784a67921802deea57 (before decoding). Treating as empty.
+2025-05-24 15:02:24,533 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for subdomain_takeover_scan.py in commit 429d90406eff0aba8408aa784a67921802deea57. Treating as empty.
+2025-05-24 15:02:24,730 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit 429d90406eff0aba8408aa784a67921802deea57 (before decoding). Treating as empty.
+2025-05-24 15:02:24,752 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit 429d90406eff0aba8408aa784a67921802deea57 (before decoding). Treating as empty.
+2025-05-24 15:02:24,763 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for subdomain_takeover_scan.py in commit 429d90406eff0aba8408aa784a67921802deea57. Treating as empty.
+2025-05-24 15:02:24,957 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit c0bcf0d3e78fb95c82cb8638dfe2cf8fddbf2234 (before decoding). Treating as empty.
+2025-05-24 15:02:24,979 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit c0bcf0d3e78fb95c82cb8638dfe2cf8fddbf2234 (before decoding). Treating as empty.
+2025-05-24 15:02:24,990 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wordpress_check.py in commit c0bcf0d3e78fb95c82cb8638dfe2cf8fddbf2234. Treating as empty.
+2025-05-24 15:02:25,195 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit c0bcf0d3e78fb95c82cb8638dfe2cf8fddbf2234 (before decoding). Treating as empty.
+2025-05-24 15:02:25,221 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit c0bcf0d3e78fb95c82cb8638dfe2cf8fddbf2234 (before decoding). Treating as empty.
+2025-05-24 15:02:25,233 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wordpress_check.py in commit c0bcf0d3e78fb95c82cb8638dfe2cf8fddbf2234. Treating as empty.
+2025-05-24 15:02:25,428 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit 05fe11025eec60ba0d773c9ae18cfeb6eab106f2 (before decoding). Treating as empty.
+2025-05-24 15:02:25,450 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit 05fe11025eec60ba0d773c9ae18cfeb6eab106f2 (before decoding). Treating as empty.
+2025-05-24 15:02:25,460 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wpscan_domains.sh in commit 05fe11025eec60ba0d773c9ae18cfeb6eab106f2. Treating as empty.
+2025-05-24 15:02:25,651 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit 05fe11025eec60ba0d773c9ae18cfeb6eab106f2 (before decoding). Treating as empty.
+2025-05-24 15:02:25,674 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit 05fe11025eec60ba0d773c9ae18cfeb6eab106f2 (before decoding). Treating as empty.
+2025-05-24 15:02:25,685 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wpscan_domains.sh in commit 05fe11025eec60ba0d773c9ae18cfeb6eab106f2. Treating as empty.
+2025-05-24 15:02:45,994 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for .gitignore in commit 14d630d04423684ddd90a68890f719564cad6b77 (before decoding). Treating as empty.
+2025-05-24 15:02:46,017 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for .gitignore in commit 14d630d04423684ddd90a68890f719564cad6b77 (before decoding). Treating as empty.
+2025-05-24 15:02:46,028 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for .gitignore in commit 14d630d04423684ddd90a68890f719564cad6b77. Treating as empty.
+2025-05-24 15:02:46,220 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for .gitignore in commit 14d630d04423684ddd90a68890f719564cad6b77 (before decoding). Treating as empty.
+2025-05-24 15:02:46,241 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for .gitignore in commit 14d630d04423684ddd90a68890f719564cad6b77 (before decoding). Treating as empty.
+2025-05-24 15:02:46,252 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for .gitignore in commit 14d630d04423684ddd90a68890f719564cad6b77. Treating as empty.
+2025-05-24 15:02:47,711 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for recon.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,711 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,711 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,711 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,711 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,711 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,711 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,711 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,711 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,711 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,711 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,711 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,737 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for recon.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,737 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,737 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,737 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,737 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,737 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,737 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,737 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,737 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,737 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,737 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,737 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,750 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for recon.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:47,750 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:47,750 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for crlf.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:47,750 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for error_page_info_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:47,750 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for header_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:47,750 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_extractor.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:47,750 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:47,750 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for nmap_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:47,750 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for online.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:47,750 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for subdomain_takeover_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:47,750 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wordpress_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:47,750 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wpscan_domains.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:47,982 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for recon.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,982 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,982 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,982 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,982 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,983 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,983 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,983 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,983 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,983 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,983 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:47,983 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:48,009 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for recon.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:48,009 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:48,009 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for crlf.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:48,009 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for error_page_info_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:48,009 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for header_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:48,009 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_extractor.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:48,009 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:48,009 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for nmap_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:48,009 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for online.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:48,009 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for subdomain_takeover_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:48,009 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wordpress_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:48,009 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for wpscan_domains.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799 (before decoding). Treating as empty.
+2025-05-24 15:02:48,023 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for recon.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:48,023 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for cors_misconfiguration_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:48,023 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for crlf.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:48,023 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for error_page_info_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:48,023 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for header_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:48,023 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_extractor.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:48,023 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_link_extractor.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:48,023 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for nmap_scan.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:48,023 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for online.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:48,023 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for subdomain_takeover_scan.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:48,023 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wordpress_check.py in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:48,023 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for wpscan_domains.sh in commit d63747996caf3cc05b12d0fce610af0c8455e799. Treating as empty.
+2025-05-24 15:02:51,130 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_and_links_extractor.py in commit 96a3778b817d1ab2bed403b66892f54c674b90df (before decoding). Treating as empty.
+2025-05-24 15:02:51,153 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_and_links_extractor.py in commit 96a3778b817d1ab2bed403b66892f54c674b90df (before decoding). Treating as empty.
+2025-05-24 15:02:51,163 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_and_links_extractor.py in commit 96a3778b817d1ab2bed403b66892f54c674b90df. Treating as empty.
+2025-05-24 15:02:51,360 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_and_links_extractor.py in commit 96a3778b817d1ab2bed403b66892f54c674b90df (before decoding). Treating as empty.
+2025-05-24 15:02:51,382 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for javascript_files_and_links_extractor.py in commit 96a3778b817d1ab2bed403b66892f54c674b90df (before decoding). Treating as empty.
+2025-05-24 15:02:51,393 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for javascript_files_and_links_extractor.py in commit 96a3778b817d1ab2bed403b66892f54c674b90df. Treating as empty.
+2025-05-24 15:02:52,399 - source.metrics.aggregator - DEBUG - Processed 76/76 commits
+2025-05-24 15:02:52,417 - source.analysis - DEBUG - Finished process_single_repo for 003Recon
+2025-05-24 15:02:52,430 - source.analysis - DEBUG - Processing 003random.github.io...
+2025-05-24 15:02:52,430 - source.analysis - DEBUG - Starting process_single_repo for 003random.github.io
+2025-05-24 15:02:54,321 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-24 15:02:56,514 - source.memory_scheduler - DEBUG - Memory check: Current usage 66.2%, Limit 85%
+2025-05-24 15:02:57,434 - source.metrics.aggregator - DEBUG - Processed 2/2 commits
+2025-05-24 15:02:57,444 - source.analysis - DEBUG - Finished process_single_repo for 003random.github.io
+2025-05-24 15:02:57,457 - source.analysis - DEBUG - Processing loki...
+2025-05-24 15:02:57,457 - source.analysis - DEBUG - Starting process_single_repo for loki
+2025-05-24 15:03:00,230 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-24 15:03:02,446 - source.memory_scheduler - DEBUG - Memory check: Current usage 66.6%, Limit 85%
+2025-05-24 15:03:07,105 - source.metrics.aggregator - DEBUG - Processed 11/11 commits
+2025-05-24 15:03:07,113 - source.analysis - DEBUG - Finished process_single_repo for loki
+2025-05-24 15:03:07,126 - source.analysis - DEBUG - Processing JavaProgrammingClass...
+2025-05-24 15:03:07,126 - source.analysis - DEBUG - Starting process_single_repo for JavaProgrammingClass
+2025-05-24 15:03:09,083 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-24 15:03:11,486 - source.memory_scheduler - DEBUG - Memory check: Current usage 66.6%, Limit 85%
+2025-05-24 15:03:11,629 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for misc.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-24 15:03:11,629 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for workspace.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-24 15:03:11,655 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for misc.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-24 15:03:11,655 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for workspace.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-24 15:03:11,672 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for misc.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd. Treating as empty.
+2025-05-24 15:03:11,672 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for workspace.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd. Treating as empty.
+2025-05-24 15:03:11,908 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for misc.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-24 15:03:11,908 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for workspace.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-24 15:03:11,936 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for misc.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-24 15:03:11,936 - source.metrics.quality.test_doc_pct - DEBUG - Source code is None for workspace.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd (before decoding). Treating as empty.
+2025-05-24 15:03:11,952 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for misc.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd. Treating as empty.
+2025-05-24 15:03:11,952 - source.metrics.quality.meaningful_code - DEBUG - Source code is None for workspace.xml in commit 18bbb2dc4edea4f6cb3ca606eb701aceddb081bd. Treating as empty.
+2025-05-24 15:03:12,059 - source.metrics.aggregator - DEBUG - Processed 1/1 commits
+2025-05-24 15:03:12,079 - source.analysis - DEBUG - Finished process_single_repo for JavaProgrammingClass
+2025-05-24 15:03:12,092 - source.analysis - DEBUG - Processing online...
+2025-05-24 15:03:12,092 - source.analysis - DEBUG - Starting process_single_repo for online
+2025-05-24 15:03:14,024 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-24 15:03:16,273 - source.memory_scheduler - DEBUG - Memory check: Current usage 66.7%, Limit 85%
+2025-05-24 15:03:17,228 - source.metrics.aggregator - DEBUG - Processed 3/3 commits
+2025-05-24 15:03:17,238 - source.analysis - DEBUG - Finished process_single_repo for online
+2025-05-24 15:03:17,252 - source.analysis - DEBUG - Processing diff_test...
+2025-05-24 15:03:17,252 - source.analysis - DEBUG - Starting process_single_repo for diff_test
+2025-05-24 15:03:18,659 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-24 15:03:19,706 - source.metrics.aggregator - INFO - No commits found in the repository for the given time period.
+2025-05-24 15:03:19,709 - source.analysis - DEBUG - Finished process_single_repo for diff_test
+2025-05-24 15:03:19,725 - source.analysis - DEBUG - Processing csp...
+2025-05-24 15:03:19,725 - source.analysis - DEBUG - Starting process_single_repo for csp
+2025-05-24 15:03:21,773 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-24 15:03:22,921 - source.metrics.aggregator - INFO - No commits found in the repository for the given time period.
+2025-05-24 15:03:22,924 - source.analysis - DEBUG - Finished process_single_repo for csp
+2025-05-24 15:03:22,940 - source.analysis - DEBUG - Processing netlify...
+2025-05-24 15:03:22,940 - source.analysis - DEBUG - Starting process_single_repo for netlify
+2025-05-24 15:03:24,459 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-24 15:03:25,641 - source.metrics.aggregator - INFO - No commits found in the repository for the given time period.
+2025-05-24 15:03:25,646 - source.analysis - DEBUG - Finished process_single_repo for netlify
+2025-05-24 15:03:25,664 - source.analysis - DEBUG - Processing PyScripts...
+2025-05-24 15:03:25,664 - source.analysis - DEBUG - Starting process_single_repo for PyScripts
+2025-05-24 15:03:28,409 - source.metrics.aggregator - INFO - Traversing repository to collect metrics...
+2025-05-24 15:03:29,479 - source.metrics.aggregator - INFO - No commits found in the repository for the given time period.
+2025-05-24 15:03:29,483 - source.analysis - DEBUG - Finished process_single_repo for PyScripts
+2025-05-24 15:03:29,576 - source.analysis - DEBUG - Combined analysis complete for 003random all repositories!
+2025-05-24 15:03:29,576 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_003random.github.io_full_history_analysis.json']
+2025-05-24 15:03:29,576 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_003random_full_history_analysis.json']
+2025-05-24 15:03:29,576 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_003Recon_full_history_analysis.json']
+2025-05-24 15:03:29,576 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_BonTemps_full_history_analysis.json']
+2025-05-24 15:03:29,576 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_csp_full_history_analysis.json']
+2025-05-24 15:03:29,576 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_diff_test_full_history_analysis.json']
+2025-05-24 15:03:29,576 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_getJS_full_history_analysis.json']
+2025-05-24 15:03:29,577 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_heroku-test_full_history_analysis.json']
+2025-05-24 15:03:29,577 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_ICU_full_history_analysis.json']
+2025-05-24 15:03:29,577 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_JavaProgrammingClass_full_history_analysis.json']
+2025-05-24 15:03:29,577 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_loki_full_history_analysis.json']
+2025-05-24 15:03:29,577 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_netlify_full_history_analysis.json']
+2025-05-24 15:03:29,577 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_online_full_history_analysis.json']
+2025-05-24 15:03:29,577 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_PyScripts_full_history_analysis.json']
+2025-05-24 15:03:29,577 - source.analysis - DEBUG - Found JSON files: ['/Volumes/nVME1T/Py/GitIn/output/data/003random/003random_sdto-test-gh.github.io_full_history_analysis.json']
+2025-05-24 15:03:29,589 - __main__ - INFO - User 003random successfully completed
+2025-05-24 15:03:29,589 - __main__ - INFO - Processing time for 003random: 268.13s
+2025-05-24 15:03:29,589 - __main__ - INFO - 
+================================================================================
+2025-05-24 15:03:29,589 - __main__ - INFO - ANALYSIS COMPLETE!
+2025-05-24 15:03:29,589 - __main__ - INFO - Successfully processed 1 users
+2025-05-24 15:03:29,589 - __main__ - INFO - Total processing time: 268.13s
+2025-05-24 15:03:29,589 - __main__ - INFO - ================================================================================
+2025-05-24 15:03:29,589 - __main__ - INFO - Performing final cleanup of temporary directories...
+2025-05-24 15:03:29,589 - __main__ - INFO - Temporary directories cleanup completed.

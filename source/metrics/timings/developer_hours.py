@@ -190,12 +190,12 @@ class DeveloperHoursMetric(BaseMetric):
                 
                 # Analyze diff deltas for meaningful content
                 if hasattr(modified_file, 'diff_parsed') and modified_file.diff_parsed:
-                    for delta in modified_file.diff_parsed['added']:
-                        if self._is_meaningful_line(delta):
+                    for line_number, line_content in modified_file.diff_parsed['added']:
+                        if self._is_meaningful_line(line_content):
                             meaningful_count += 1
                     
-                    for delta in modified_file.diff_parsed['deleted']:
-                        if self._is_meaningful_line(delta):
+                    for line_number, line_content in modified_file.diff_parsed['deleted']:
+                        if self._is_meaningful_line(line_content):
                             meaningful_count += 1
                 else:
                     # Fallback: use a portion of raw changes as meaningful
