@@ -116,7 +116,9 @@ class DiffDeltaMetric(BaseMetric):
             updates = min(len(added_lines) - len(moved_lines), 
                          len(deleted_lines) - len(moved_lines))
             if updates > 0:
-                meaningful_updates = int(updates * 0.8)  # Assume 80% are meaningful
+                # Heuristic: Assumes 80% of lines involved in an update (min of non-moved additions/deletions) 
+                # are meaningful changes, acknowledging that some churn or minor refactoring might be less impactful.
+                meaningful_updates = int(updates * 0.8)
                 diff_delta += meaningful_updates * self.weights['update']
                 self.developer_stats[developer_email]['weekly_velocity'][week_key]['lines_updated'] += meaningful_updates
             
@@ -143,6 +145,9 @@ class DiffDeltaMetric(BaseMetric):
     
     def _detect_moved_lines(self, added_lines, deleted_lines):
         """Detect lines that were moved rather than truly added/deleted."""
+        # Detects moved lines by comparing stripped content. This may not perfectly 
+        # distinguish content moves from lines that are deleted and re-added with 
+        # only whitespace/indentation changes, but provides a reasonable approximation.
         moved = set()
         deleted_content = {line[1].strip() for line in deleted_lines if line[1].strip()}
         
@@ -162,31 +167,42 @@ class DiffDeltaMetric(BaseMetric):
             return False
         
         # Single character lines (often just braces)
+        # TODO: Consider expanding this to exclude very short lines (e.g., 2-3 chars) 
+        # or assign them lower weight if they are often less meaningful (e.g., '});', 'fi').
         if len(stripped) <= 1:
             return False
         
         # Common comment patterns
         comment_patterns = [
-            r'^\s*#',        # Python, Ruby, Shell
-            r'^\s*//',       # C++, Java, JavaScript
-            r'^\s*/\*',      # C-style block comment start
-            r'^\s*\*',       # C-style block comment continuation
-            r'^\s*<!--',     # HTML/XML
-            r'^\s*"""',      # Python docstring
-            r"^\s*'''",      # Python docstring
+            r'^\s*#',        # Python, Ruby, Shell, etc.
+            r'^\s*//',       # C++, Java, JavaScript, C#, etc.
+            r'^\s*/\*',      # C-style block comment start (Java, C++, C#, JavaScript, etc.)
+            r'^\s*\*',       # C-style block comment continuation or Javadoc/Doxygen
+            r'^\s*<!--',     # HTML, XML
+            r'^\s*--',       # SQL comments
+            r'^\s*"""',      # Python docstring start/end
+            r"^\s*'''",      # Python docstring start/end
+            # Add more language-specific comment patterns if needed
         ]
         
         for pattern in comment_patterns:
             if re.match(pattern, line):
                 return False
         
-        # Import/include statements (lower value)
+        # Import/include statements (lower value or skip)
+        # TODO: Consider assigning these a very low weight instead of outright skipping,
+        # as adding/removing imports can sometimes be part of a meaningful change.
         import_patterns = [
-            r'^\s*import\s+',
-            r'^\s*from\s+.*\s+import',
-            r'^\s*#include\s*[<"]',
-            r'^\s*using\s+',
-            r'^\s*require\s*\(',
+            r'^\s*import\s+',              # Python, Java, JavaScript (ES6 modules), etc.
+            r'^\s*from\s+.*\s+import',    # Python
+            r'^\s*#include\s*[<"]',       # C, C++
+            r'^\s*using\s+.*;',           # C#, C++ (namespaces)
+            r'^\s*require\s*\(',         # Node.js (CommonJS)
+            r'^\s*include\s+',            # Ruby, PHP
+            r'^\s*use\s+',                # PHP (namespaces), Rust
+            r'^\s*package\s+',            # Java, Go
+            r'^\s*extern crate\s+',       # Rust
+            # Add more language-specific import/dependency patterns if needed
         ]
         
         for pattern in import_patterns:
@@ -197,17 +213,47 @@ class DiffDeltaMetric(BaseMetric):
     
     def _should_skip_file(self, filename):
         """Determine if a file should be skipped for velocity calculations."""
+        # TODO: This list should be configurable or more context-aware.
+        # Skipping all .json, .xml, .yaml might be too broad for projects where these define significant logic.
         skip_patterns = [
-            r'\.min\.',           # Minified files
-            r'\.map$',            # Source maps
-            r'package-lock\.json', # Lock files
-            r'yarn\.lock',
-            r'\.generated\.',     # Generated files
+            # Lock files
+            r'package-lock\.json$',
+            r'yarn\.lock$',
+            r'Gemfile\.lock$',
+            r'poetry\.lock$',
+            r'Pipfile\.lock$',
+            
+            # Minified files
+            r'\.min\.',
+            
+            # Source maps
+            r'\.map$',
+            
+            # Generated code
+            r'\.generated\.',
             r'\.auto\.',
-            r'vendor/',           # Vendor directories
+            
+            # Build artifacts and directories
+            r'dist/',
+            r'build/',
+            r'target/',
+            r'out/',
+            
+            # Vendor/dependency directories
+            r'vendor/',
             r'node_modules/',
+            
+            # IDE/editor specific files/folders
+            r'\.vscode/',
+            r'\.idea/',
+            r'.*\.iml$',
+            r'\.DS_Store$',
+            
+            # Version control
             r'\.git/',
-            r'\.svg$',            # Binary/data files
+            
+            # Common binary/data file extensions (add more as needed)
+            r'\.svg$',
             r'\.png$',
             r'\.jpg$',
             r'\.jpeg$',
@@ -216,6 +262,20 @@ class DiffDeltaMetric(BaseMetric):
             r'\.woff2?$',
             r'\.ttf$',
             r'\.eot$',
+            r'\.pdf$',
+            r'\.zip$',
+            r'\.tar\.gz$',
+            
+            # Common data/config files (use with caution - some might be important)
+            # For now, keeping this commented out or very minimal.
+            # r'\.json$', # Too broad, many configs are important
+            # r'\.xml$',  # Too broad
+            # r'\.yaml$', # Too broad
+            # r'\.yml$',  # Too broad
+            # r'\.csv$',
+            # r'\.tsv$',
+            # r'\.md$',   # Documentation changes can be valuable
+            # r'\.txt$',
         ]
         
         for pattern in skip_patterns:
