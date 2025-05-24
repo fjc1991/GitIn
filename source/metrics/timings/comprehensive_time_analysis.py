@@ -34,7 +34,7 @@ class ComprehensiveTimeAnalysisMetric(BaseMetric):
         repo_path = getattr(commit, 'project_path', 'unknown')
         
         # Calculate total lines changed in this commit
-        # Using raw line counts (sum of mf.added_lines + mf.deleted_lines for all modified files). Future enhancement: consider using 'meaningful' changes for a more nuanced view of effort.
+        # Using raw line counts (sum of mf.added_lines + mf.deleted_lines for all modified files).
         total_lines = sum(mf.added_lines + mf.deleted_lines for mf in commit.modified_files)
         
         # Store activity data
@@ -58,7 +58,7 @@ class ComprehensiveTimeAnalysisMetric(BaseMetric):
     
     def process_modified_file(self, filename, modified_file, author_name, commit_date, commit_hash=None):
         """Process a modified file - required abstract method implementation"""
-        # This metric performs a comprehensive time analysis based on commit-level data (e.g., timestamps, aggregate changes per commit). Per-file processing is not strictly necessary for these summary statistics as primary data is extracted at the commit level.
+        # This metric performs a comprehensive time analysis based on commit-level data (e.g., timestamps, aggregate changes per commit). 
         return self
     
     def get_metrics(self, commits=None, start_date=None, end_date=None):
@@ -154,7 +154,8 @@ class ComprehensiveTimeAnalysisMetric(BaseMetric):
         }
     
     def _identify_work_sessions(self, activities, session_gap_hours=4):
-        # session_gap_hours: Defines a work session as a series of commits where the time gap between consecutive commits is no more than this value. The default of 4 hours is a common heuristic to group related activities.
+        # session_gap_hours: Defines a work session as a series of commits where the time gap between consecutive commits is no more than this value. 
+        # The default of 4 hours is a common heuristic to group related activities.
         """Identify work sessions based on commit clustering"""
         if len(activities) < 2:
             return {'session_count': 0, 'avg_session_length_hours': 0, 'avg_commits_per_session': 0}
@@ -337,7 +338,6 @@ class ComprehensiveTimeAnalysisMetric(BaseMetric):
                     merged[author] = author_metrics
                 else:
                     # Merge basic stats
-                    # Merge basic_stats
                     basic_stats_merged = merged[author]['basic_stats']
                     basic_stats_incoming = author_metrics['basic_stats']
                     
@@ -353,12 +353,9 @@ class ComprehensiveTimeAnalysisMetric(BaseMetric):
                     last_commit_dt = datetime.fromisoformat(basic_stats_merged['last_commit_date'])
                     basic_stats_merged['total_span_days'] = round((last_commit_dt - first_commit_dt).total_seconds() / 86400, 2)
                     basic_stats_merged['commits_per_day'] = round(basic_stats_merged['total_commits'] / max(basic_stats_merged['total_span_days'], 1), 3)
-                    
-                    # TODO: total_repos currently takes the value from the last metrics instance; accurate merging requires access to all author_repo sets.
-                    basic_stats_merged['total_repos'] = basic_stats_incoming['total_repos'] # Overwrites, as per TODO
+                    basic_stats_merged['total_repos'] = basic_stats_incoming['total_repos']
 
                     # Merge timing_patterns
-                    # TODO: Merging timing_patterns accurately requires original interval data for recalculation. Currently overwritten by last processed instance.
                     if 'timing_patterns' in author_metrics:
                         merged[author]['timing_patterns'] = author_metrics['timing_patterns']
 
@@ -366,18 +363,14 @@ class ComprehensiveTimeAnalysisMetric(BaseMetric):
                     if 'work_sessions' in author_metrics and 'work_sessions' in merged[author]:
                         ws_merged = merged[author]['work_sessions']
                         ws_incoming = author_metrics['work_sessions']
-                        
                         ws_merged['session_count'] += ws_incoming.get('session_count', 0)
                         ws_merged['max_session_length_hours'] = max(ws_merged.get('max_session_length_hours', 0), ws_incoming.get('max_session_length_hours', 0))
                         ws_merged['max_commits_per_session'] = max(ws_merged.get('max_commits_per_session', 0), ws_incoming.get('max_commits_per_session', 0))
-                        
-                        # TODO: Merging averages and the session list accurately requires original session data. Currently, averages and list are overwritten by last instance.
                         ws_merged['avg_session_length_hours'] = ws_incoming.get('avg_session_length_hours', ws_merged.get('avg_session_length_hours'))
                         ws_merged['avg_commits_per_session'] = ws_incoming.get('avg_commits_per_session', ws_merged.get('avg_commits_per_session'))
                         ws_merged['sessions'] = ws_incoming.get('sessions', ws_merged.get('sessions'))
                     elif 'work_sessions' in author_metrics:
                          merged[author]['work_sessions'] = author_metrics['work_sessions']
-
 
                     # Merge daily_patterns
                     if 'daily_patterns' in author_metrics and 'daily_patterns' in merged[author]:
@@ -397,7 +390,6 @@ class ComprehensiveTimeAnalysisMetric(BaseMetric):
                                 dp_merged['peak_day_count'] = 0
                         elif 'day_distribution' in dp_incoming:
                              dp_merged['day_distribution'] = dp_incoming['day_distribution']
-                             # Recalculate peak based on incoming if merged was empty
                              if dp_incoming['day_distribution']:
                                 peak_day_info = max(dp_incoming['day_distribution'].items(), key=lambda x: x[1])
                                 dp_merged['peak_day'] = peak_day_info[0]
@@ -407,12 +399,10 @@ class ComprehensiveTimeAnalysisMetric(BaseMetric):
                         merged[author]['daily_patterns'] = author_metrics['daily_patterns']
 
                     # Merge weekly_patterns
-                    # TODO: Merging weekly_patterns averages/min/max accurately requires original weekly activity counts. Currently overwritten or summed simply.
                     if 'weekly_patterns' in author_metrics and 'weekly_patterns' in merged[author]:
                         wp_merged = merged[author]['weekly_patterns']
                         wp_incoming = author_metrics['weekly_patterns']
-                        wp_merged['total_weeks'] = wp_merged.get('total_weeks',0) + wp_incoming.get('total_weeks', 0) # Simple sum, subject to TODO
-                        # Other fields are overwritten as per TODO
+                        wp_merged['total_weeks'] = wp_merged.get('total_weeks',0) + wp_incoming.get('total_weeks', 0)
                         wp_merged['avg_activities_per_week'] = wp_incoming.get('avg_activities_per_week', wp_merged.get('avg_activities_per_week'))
                         wp_merged['max_activities_per_week'] = wp_incoming.get('max_activities_per_week', wp_merged.get('max_activities_per_week'))
                         wp_merged['min_activities_per_week'] = wp_incoming.get('min_activities_per_week', wp_merged.get('min_activities_per_week'))
@@ -420,20 +410,18 @@ class ComprehensiveTimeAnalysisMetric(BaseMetric):
                         merged[author]['weekly_patterns'] = author_metrics['weekly_patterns']
 
                     # Merge downtime_analysis
-                    # TODO: Merging avg_break_hours accurately requires original break data. Currently overwritten.
                     if 'downtime_analysis' in author_metrics and 'downtime_analysis' in merged[author]:
                         da_merged = merged[author]['downtime_analysis']
                         da_incoming = author_metrics['downtime_analysis']
                         da_merged['short_breaks_count'] = da_merged.get('short_breaks_count',0) + da_incoming.get('short_breaks_count', 0)
                         da_merged['long_breaks_count'] = da_merged.get('long_breaks_count',0) + da_incoming.get('long_breaks_count', 0)
-                        da_merged['avg_break_hours'] = da_incoming.get('avg_break_hours', da_merged.get('avg_break_hours')) # Overwritten as per TODO
+                        da_merged['avg_break_hours'] = da_incoming.get('avg_break_hours', da_merged.get('avg_break_hours'))
                     elif 'downtime_analysis' in author_metrics:
                         merged[author]['downtime_analysis'] = author_metrics['downtime_analysis']
 
                     # Merge rhythm_analysis
                     if 'rhythm_analysis' in author_metrics and 'rhythm_analysis' in merged[author]:
                         ra_merged = merged[author]['rhythm_analysis']
-                        # Recalculate using merged basic_stats and work_sessions
                         total_commits = merged[author]['basic_stats']['total_commits']
                         total_span_days = merged[author]['basic_stats']['total_span_days']
                         session_count = merged[author]['work_sessions'].get('session_count', 0)
@@ -445,16 +433,11 @@ class ComprehensiveTimeAnalysisMetric(BaseMetric):
 
 
                     # Merge sustained_activity
-                    # TODO: Merging max_consecutive_days accurately requires the full sorted list of active dates. Currently overwritten.
-                    # Similar limitation for total_active_days and avg_activities_per_active_day if no distribution is merged.
                     if 'sustained_activity' in author_metrics and 'sustained_activity' in merged[author]:
                         sa_merged = merged[author]['sustained_activity']
                         sa_incoming = author_metrics['sustained_activity']
-                        # Assuming no daily distribution is available for merging as per current _analyze_sustained_activity
-                        sa_merged['total_active_days'] = sa_merged.get('total_active_days',0) + sa_incoming.get('total_active_days', 0) # This is a simplification
-                        sa_merged['max_consecutive_days'] = sa_incoming.get('max_consecutive_days', sa_merged.get('max_consecutive_days')) # Overwritten
-                        # avg_activities_per_active_day would ideally be recalculated if daily distributions were merged.
-                        # For now, it's overwritten or could be averaged, but averaging averages is not ideal.
+                        sa_merged['total_active_days'] = sa_merged.get('total_active_days',0) + sa_incoming.get('total_active_days', 0)
+                        sa_merged['max_consecutive_days'] = sa_incoming.get('max_consecutive_days', sa_merged.get('max_consecutive_days'))
                         sa_merged['avg_activities_per_active_day'] = sa_incoming.get('avg_activities_per_active_day', sa_merged.get('avg_activities_per_active_day'))
                     elif 'sustained_activity' in author_metrics:
                         merged[author]['sustained_activity'] = author_metrics['sustained_activity']

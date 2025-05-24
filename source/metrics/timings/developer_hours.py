@@ -1,4 +1,3 @@
-# source/metrics/velocity/developer_hours.py
 from ...logger import get_logger
 from ..base import BaseMetric
 from collections import defaultdict
@@ -50,12 +49,17 @@ class DeveloperHoursMetric(BaseMetric):
         developer_email = commit.author.email.strip().lower()
         commit_datetime = commit.committer_date
         
+        # Calculate both raw and meaningful changes
+        raw_changes = commit.insertions + commit.deletions
+        meaningful_changes = self._calculate_meaningful_changes(commit)
+        
         # Add commit to developer's timeline
         self.developer_sessions[developer_email].append({
             'timestamp': commit_datetime,
             'commit': commit.hash,
-            # Using raw line counts (insertions + deletions). Future enhancement: consider using 'meaningful' changes (e.g., from DiffDelta) for more accurate hour adjustments.
-            'changes': commit.insertions + commit.deletions
+            'raw_changes': raw_changes,
+            'meaningful_changes': meaningful_changes,
+            'changes': meaningful_changes if meaningful_changes > 0 else raw_changes  # Use meaningful if available
         })
         
         return self
@@ -171,6 +175,70 @@ class DeveloperHoursMetric(BaseMetric):
             if len(week_stats['productive_days']) > 0:
                 week_stats['hours_per_day'] = week_stats['estimated_hours'] / len(week_stats['productive_days'])
     
+    def _calculate_meaningful_changes(self, commit):
+        """
+        Calculate meaningful changes by analyzing diff deltas.
+        Filters out trivial changes like whitespace, comments, and generated code.
+        """
+        meaningful_count = 0
+        
+        try:
+            for modified_file in commit.modified_files:
+                # Skip generated files, configs, and documentation
+                if self._is_trivial_file(modified_file.filename):
+                    continue
+                
+                # Analyze diff deltas for meaningful content
+                if hasattr(modified_file, 'diff_parsed') and modified_file.diff_parsed:
+                    for delta in modified_file.diff_parsed['added']:
+                        if self._is_meaningful_line(delta):
+                            meaningful_count += 1
+                    
+                    for delta in modified_file.diff_parsed['deleted']:
+                        if self._is_meaningful_line(delta):
+                            meaningful_count += 1
+                else:
+                    # Fallback: use a portion of raw changes as meaningful
+                    file_changes = (modified_file.added_lines or 0) + (modified_file.deleted_lines or 0)
+                    meaningful_count += int(file_changes * 0.7)  # Assume 70% are meaningful
+                    
+        except Exception as e:
+            logger.warning(f"Error calculating meaningful changes for commit {commit.hash}: {e}")
+            return 0
+            
+        return meaningful_count
+    
+    def _is_trivial_file(self, filename):
+        """Check if file is likely to contain trivial changes."""
+        trivial_extensions = {'.json', '.xml', '.yaml', '.yml', '.lock', '.md', '.txt'}
+        trivial_patterns = {'package-lock.json', 'yarn.lock', 'composer.lock', 'Pipfile.lock'}
+        
+        return (any(filename.endswith(ext) for ext in trivial_extensions) or
+                any(pattern in filename for pattern in trivial_patterns) or
+                'generated' in filename.lower() or
+                'dist/' in filename or
+                'build/' in filename)
+    
+    def _is_meaningful_line(self, line_content):
+        """Determine if a line represents meaningful code change."""
+        line = line_content.strip()
+        
+        # Skip empty lines, comments, and trivial changes
+        if (not line or 
+            line.startswith('//') or 
+            line.startswith('#') or 
+            line.startswith('/*') or 
+            line.startswith('*') or
+            line in ['{', '}', '(', ')', '[', ']', ';'] or
+            len(line) < 3):
+            return False
+            
+        # Skip import/include statements (often auto-generated)
+        if any(line.startswith(keyword) for keyword in ['import ', 'from ', '#include', 'using ', 'require']):
+            return False
+            
+        return True
+
     def _calculate_session_hours(self, session):
         """Calculate estimated hours for a coding session."""
         duration = session['duration']
@@ -178,7 +246,8 @@ class DeveloperHoursMetric(BaseMetric):
         
         # Apply adjustments based on session characteristics
         commit_count = len(session['commits'])
-        changes = session['total_changes']
+        # Use meaningful changes if available, fallback to raw changes
+        changes = sum(commit.get('meaningful_changes', commit.get('changes', 0)) for commit in session['commits'])
         
         # Adjustment factors
         # Single commit sessions are often shorter or less representative of continuous work, hence reduced.
