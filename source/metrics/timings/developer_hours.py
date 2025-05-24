@@ -36,10 +36,14 @@ class DeveloperHoursMetric(BaseMetric):
         })
         
         # Session parameters (based on GitClear research)
-        self.max_commit_gap = timedelta(hours=2)  # Max time between commits in same session
-        self.min_session_length = timedelta(minutes=30)  # Minimum session length
-        self.default_first_commit_time = timedelta(minutes=30)  # Time before first commit
-        self.default_last_commit_time = timedelta(minutes=15)  # Time after last commit
+        # Defines the maximum time allowed between two commits for them to be considered part of the same coding session.
+        self.max_commit_gap = timedelta(hours=2)
+        # Defines the minimum total duration for a series of commits to be recognized as a valid coding session.
+        self.min_session_length = timedelta(minutes=30)
+        # Estimated time spent on work before the first commit of a session is made.
+        self.default_first_commit_time = timedelta(minutes=30)
+        # Estimated time spent on wrapping up work after the last commit of a session.
+        self.default_last_commit_time = timedelta(minutes=15)
         
     def process_commit(self, commit):
         """Process commit for hour estimation."""
@@ -50,13 +54,14 @@ class DeveloperHoursMetric(BaseMetric):
         self.developer_sessions[developer_email].append({
             'timestamp': commit_datetime,
             'commit': commit.hash,
+            # Using raw line counts (insertions + deletions). Future enhancement: consider using 'meaningful' changes (e.g., from DiffDelta) for more accurate hour adjustments.
             'changes': commit.insertions + commit.deletions
         })
         
         return self
     
     def process_modified_file(self, filename, modified_file, author_name, commit_date, commit_hash=None):
-        """Not used for this metric - all processing done at commit level."""
+        # This metric calculates developer hours based on commit-level data (timestamps and aggregate changes). Per-file analysis is not required for this estimation approach.
         return self
     
     def get_metrics(self):
@@ -176,18 +181,23 @@ class DeveloperHoursMetric(BaseMetric):
         changes = session['total_changes']
         
         # Adjustment factors
+        # Single commit sessions are often shorter or less representative of continuous work, hence reduced.
         if commit_count == 1:
             # Single commit sessions might be overestimated
             hours *= 0.75
+        # Sessions with a very high number of commits might indicate automated processes (e.g., bulk refactoring, script-generated commits) rather than typical developer work.
         elif commit_count > 10:
             # Many commits might indicate automated activity
             hours *= 0.9
         
         # Adjust based on change volume
-        changes_per_hour = changes / max(0.1, hours)
+        # 'changes' currently refers to raw line counts. Adjustments based on this might be less accurate than if based on 'meaningful' changes.
+        changes_per_hour = changes / max(0.1, hours) # max(0.1, hours) to avoid division by zero for very short sessions
+        # Extremely high change rates can indicate bulk operations (e.g., adding large generated files, formatting changes) not reflective of typical coding effort per hour.
         if changes_per_hour > 1000:
             # Very high change rate might indicate generated code
             hours *= 0.8
+        # Very low change rates might suggest activities like deep research, debugging, or problem-solving that involve less code modification but are still valuable time spent.
         elif changes_per_hour < 50:
             # Low change rate might indicate research/debugging
             hours *= 1.1
@@ -198,7 +208,7 @@ class DeveloperHoursMetric(BaseMetric):
     def _get_week_key(self, date):
         """Get week key for date."""
         year, week, _ = date.isocalendar()
-        return f"Week_{week}_{year}-{date.strftime('%m-%d')}"
+        return f"{year}-W{week:02d}" # Example: 2023-W34
     
     @staticmethod
     def merge_metrics(metrics_list):
@@ -213,6 +223,7 @@ class DeveloperHoursMetric(BaseMetric):
                 'estimated_hours': 0,
                 'sessions': 0,
                 'commits': 0,
+                'productive_days': set(), # Add this
                 'hours_per_day': 0
             })
         })
@@ -231,6 +242,9 @@ class DeveloperHoursMetric(BaseMetric):
                     merged[developer]['weekly_hours'][week]['estimated_hours'] += week_stats.get('estimated_hours', 0)
                     merged[developer]['weekly_hours'][week]['sessions'] += week_stats.get('sessions', 0)
                     merged[developer]['weekly_hours'][week]['commits'] += week_stats.get('commits', 0)
+                    # Ensure productive_days are merged as a set
+                    if 'productive_days' in week_stats: # Check if productive_days exists
+                         merged[developer]['weekly_hours'][week]['productive_days'].update(week_stats['productive_days'])
         
         # Recalculate hours per day for merged weekly data
         result = {}
@@ -242,8 +256,8 @@ class DeveloperHoursMetric(BaseMetric):
             }
             
             for week, week_stats in stats['weekly_hours'].items():
-                # Assume 7 days per week for simplicity in merged data
-                hours_per_day = week_stats['estimated_hours'] / 7 if week_stats['estimated_hours'] > 0 else 0
+                num_productive_days = len(week_stats['productive_days']) # Get count from merged set
+                hours_per_day = week_stats['estimated_hours'] / num_productive_days if num_productive_days > 0 else 0
                 
                 result[developer]['weekly_hours'][week] = {
                     'estimated_hours': round(week_stats['estimated_hours'], 2),
